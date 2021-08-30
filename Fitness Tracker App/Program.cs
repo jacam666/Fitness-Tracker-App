@@ -8,8 +8,13 @@ namespace Fitness_Tracker_App
     {
         static void Main(string[] args)
         {
-            UI.UsersNameWelcomeMessage();
+            UI.UsersNameAgeBodyWeightWelcomeMessage();
         }
+        
+        
+        
+
+        
 
     }
 }

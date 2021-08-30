@@ -13,7 +13,7 @@ namespace Fitness_Tracker_App
             Console.WriteLine("Hi there, please enter your name :");
             string Name;
             Name = Console.ReadLine();
-            int Age = new ();
+            int Age = new int();
             Age = UsersDateOfBirth(Age);           
             double BodyWeight;
             Console.WriteLine("Now please enter your bodyweight in Kilograms :");

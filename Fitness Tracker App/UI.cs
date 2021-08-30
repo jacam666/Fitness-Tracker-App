@@ -14,15 +14,13 @@ namespace Fitness_Tracker_App
             string Name;
             Name = Console.ReadLine();
             int Age;
-            Console.WriteLine("Please enter your age?");
+            Console.WriteLine("Please enter your age :");
             Age = Convert.ToInt32(Console.ReadLine());
             double BodyWeight;
-            Console.WriteLine("Now please enter your bodyweight?");
+            Console.WriteLine("Now please enter your bodyweight in Kilograms :");
             BodyWeight = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine($"Hi {Name} Welcome to your fitness tracker.");
             Console.WriteLine($"You are currently {Age} and weigh {BodyWeight} Kilograms");
         }
-        
-
     }
 }

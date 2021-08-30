@@ -13,7 +13,7 @@ namespace Fitness_Tracker_App
             Console.WriteLine("Hi there, please enter your name :");
             string Name;
             Name = Console.ReadLine();
-            Console.WriteLine($"Hi {Name},and welcome to your fitness tracker.");
+            Console.WriteLine($"Hi {Name},Welcome to your fitness tracker.");
         }
         
 

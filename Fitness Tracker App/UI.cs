@@ -9,23 +9,6 @@ namespace Fitness_Tracker_App
 {
     class UI
     {
-        //public static void UsersNameAgeBodyWeightWelcomeMessage()
-        //{
-        //    Console.WriteLine("Hi there, please enter your name :");
-        //    string Name;
-        //    Name = Console.ReadLine();
-        //    double Age = new();
-        //    Age = UsersDateOfBirth();
-        //    double BodyWeight;
-        //    Console.WriteLine("Now please enter your bodyweight in Kilograms :");
-        //    BodyWeight = Convert.ToDouble(Console.ReadLine());
-        //    Console.WriteLine($"Hi {Name}Welcome to your fitness tracker.");
-
-
-
-        //    Console.WriteLine($"You are currently {String.Format("{0:0.#}", Age)} years old and weigh {BodyWeight} Kilograms");
-        //}
-
         internal static User EnterNewUser()
         {
             User u = new();

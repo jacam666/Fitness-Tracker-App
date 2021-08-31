@@ -13,7 +13,7 @@ namespace Fitness_Tracker_App
 
             User testUser = UI.EnterNewUser();
 
-            Console.WriteLine($"Hello {testUser.FirstName}{testUser.LastName} Welcome to your Fitness Tracker.");
+            
 
 
         }      

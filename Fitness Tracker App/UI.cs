@@ -15,14 +15,14 @@ namespace Fitness_Tracker_App
         //    string Name;
         //    Name = Console.ReadLine();
         //    double Age = new();
-        //    Age = UsersDateOfBirth();           
+        //    Age = UsersDateOfBirth();
         //    double BodyWeight;
         //    Console.WriteLine("Now please enter your bodyweight in Kilograms :");
         //    BodyWeight = Convert.ToDouble(Console.ReadLine());
         //    Console.WriteLine($"Hi {Name}Welcome to your fitness tracker.");
 
-       
-            
+
+
         //    Console.WriteLine($"You are currently {String.Format("{0:0.#}", Age)} years old and weigh {BodyWeight} Kilograms");
         //}
 
@@ -31,26 +31,32 @@ namespace Fitness_Tracker_App
             User u = new User();
             Console.WriteLine("Please Enter your First name :");
             u.FirstName = Console.ReadLine();
-            Console.WriteLine("Please Enter your last name");
+            Console.WriteLine("Please Enter your last name :");
             u.LastName = Console.ReadLine();
+            double Age;
+            Age = UsersDateOfBirth();
+            double BodyWeight;
+            Console.WriteLine("Now please Enter your bodyweight in kilograms :");
+            BodyWeight = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine($"you are currently {String.Format("{0:0.}" , Age)} years old and weigh {BodyWeight} Kg's.");
 
             //get all the data
 
             return u;
         }
 
-        //public static double UsersDateOfBirth()
-        //{
-        //    DateTime Today = DateTime.Today;
-        //    Console.WriteLine("Please enter you Date Of Birth yyyy, m, dd");
-        //    DateTime DateOfBirth = Convert.ToDateTime(Console.ReadLine());
-        //    double totalDays = (Today - DateOfBirth).TotalDays;
-        //    double totalYears = totalDays / 365;
+        public static double UsersDateOfBirth()
+        {
+            DateTime Today = DateTime.Today;
+            Console.WriteLine("Please enter you Date Of Birth yyyy, m, dd");
+            DateTime DateOfBirth = Convert.ToDateTime(Console.ReadLine());
+            double totalDays = (Today - DateOfBirth).TotalDays;
+            double totalYears = totalDays / 365;
 
 
-        //    Console.WriteLine($"you are {totalYears} years of age");
-        //    return totalYears;
+            //Console.WriteLine($"you are {totalYears} years of age");
+            return totalYears;
             
-        //}
+        }
     }
 }

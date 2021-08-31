@@ -13,7 +13,28 @@ namespace Fitness_Tracker_App
 
             User testUser = UI.EnterNewUser();
             UI.TodaysSessionDetails();
+
+
+            //ChestWorkout chestWorkout = new ChestWorkout();
+            List<string> ChestExercises = new();
+            ChestExercises.Add("Barbell Bench Press");
+            ChestExercises.Add("Incline Barbell Bench");
+            ChestExercises.Add("Cable Flyes");
+            ChestExercises.Add("Decline Barbell Bench");
+            ChestExercises.Add("Dumbbell Flyes");
+            ChestExercises.Add("Pec Dec");
+            ChestExercises.Add("Cable Crossover");
+            Console.WriteLine("SO these are your exercises for you to complete today :");
+            foreach (var i in ChestExercises)
+            {              
+                Console.WriteLine(i);
+            }
            
+
+            
+            
+
+            
             
 
 
@@ -21,6 +42,7 @@ namespace Fitness_Tracker_App
 
 
         }
-
+       
     }
+    
 }

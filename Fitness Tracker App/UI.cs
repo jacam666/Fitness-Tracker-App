@@ -21,7 +21,7 @@ namespace Fitness_Tracker_App
             double BodyWeight;
             Console.WriteLine("Now please Enter your bodyweight in kilograms :");
             BodyWeight = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine($"you are currently {String.Format("{0:0.}" , Age)} years old and weigh {BodyWeight} Kg's.");
+            Console.WriteLine($"Hi {u.FirstName} {u.LastName} you are currently {String.Format("{0:0.}" , Age)} years old and weigh {BodyWeight} Kg's.");
 
             //get all the data
 
@@ -36,8 +36,7 @@ namespace Fitness_Tracker_App
             double totalDays = (Today - DateOfBirth).TotalDays;
             double totalYears = totalDays / 365;
 
-            return totalYears;
-            
+            return totalYears;           
         }
         public static TrainingDay TodaysSessionDetails()
         {

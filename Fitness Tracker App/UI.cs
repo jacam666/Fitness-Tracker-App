@@ -42,11 +42,26 @@ namespace Fitness_Tracker_App
         {
             TrainingDay train = new();
             DateTime Today = DateTime.Today;
-            string BodyPartSelection;
+            string BodyPartSelection;      
             Console.WriteLine("Please select what BodyPart you would like to Train :");
-            BodyPartSelection = Convert.ToString(Console.ReadLine());
+            BodyPartSelection = Console.ReadLine().ToUpper();             
             Console.WriteLine($"Perfect on the {Today} you will be training {BodyPartSelection}");
             return train;
+        }
+
+        public static ChestWorkout ChestExercise(List<string> ChestExercise)
+        {
+            
+            List<string> ChestExercises= new();
+            ChestExercises.Add("Barbell Bench Press");
+            ChestExercises.Add("Incline Barbell Bench");
+            ChestExercises.Add("Cable Flyes");
+            ChestExercises.Add("Decline Barbell Bench");
+            ChestExercises.Add("Dumbbell Flyes");
+            ChestExercises.Add("Pec Dec");
+            ChestExercises.Add("Cable Crossover");
+            return ;
+            
         }
     }
 }

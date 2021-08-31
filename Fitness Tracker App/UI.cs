@@ -53,10 +53,16 @@ namespace Fitness_Tracker_App
             double totalDays = (Today - DateOfBirth).TotalDays;
             double totalYears = totalDays / 365;
 
-
-            //Console.WriteLine($"you are {totalYears} years of age");
             return totalYears;
             
+        }
+        public static TrainingDay TodaysSessionDetails()
+        {
+            TrainingDay train = new();
+            DateTime Today = DateTime.Today;
+            Console.WriteLine("Please select what BodyPart you would like to Train :");
+            Console.ReadLine();
+            return train;
         }
     }
 }

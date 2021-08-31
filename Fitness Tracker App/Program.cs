@@ -13,10 +13,10 @@ namespace Fitness_Tracker_App
 
             User testUser = UI.EnterNewUser();
 
-            
+             
 
 
-        }      
+        }
 
     }
 }

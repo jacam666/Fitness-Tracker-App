@@ -34,7 +34,7 @@ namespace Fitness_Tracker_App
             Console.WriteLine("Please Enter your last name :");
             u.LastName = Console.ReadLine();
             double Age;
-            Age = UsersDateOfBirth();
+            Age = CalculateUsersDateOfBirth();
             double BodyWeight;
             Console.WriteLine("Now please Enter your bodyweight in kilograms :");
             BodyWeight = Convert.ToDouble(Console.ReadLine());
@@ -45,7 +45,7 @@ namespace Fitness_Tracker_App
             return u;
         }
 
-        public static double UsersDateOfBirth()
+        public static double CalculateUsersDateOfBirth()
         {
             DateTime Today = DateTime.Today;
             Console.WriteLine("Please enter you Date Of Birth yyyy, m, dd");

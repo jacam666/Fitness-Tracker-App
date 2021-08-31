@@ -28,7 +28,7 @@ namespace Fitness_Tracker_App
 
         internal static User EnterNewUser()
         {
-            User u = new User();
+            User u = new();
             Console.WriteLine("Please Enter your First name :");
             u.FirstName = Console.ReadLine();
             Console.WriteLine("Please Enter your last name :");
@@ -60,8 +60,10 @@ namespace Fitness_Tracker_App
         {
             TrainingDay train = new();
             DateTime Today = DateTime.Today;
+            string BodyPartSelection;
             Console.WriteLine("Please select what BodyPart you would like to Train :");
-            Console.ReadLine();
+            BodyPartSelection = Convert.ToString(Console.ReadLine());
+            Console.WriteLine($"Perfect on the {Today} you will be training {BodyPartSelection}");
             return train;
         }
     }

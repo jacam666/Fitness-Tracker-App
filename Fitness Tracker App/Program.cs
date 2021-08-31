@@ -12,8 +12,10 @@ namespace Fitness_Tracker_App
             //UI.UsersNameAgeBodyWeightWelcomeMessage();
 
             User testUser = UI.EnterNewUser();
+            UI.TodaysSessionDetails();
 
-             
+
+
 
 
         }

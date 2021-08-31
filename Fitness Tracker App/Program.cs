@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fitness_Tracker_App.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -8,34 +9,14 @@ namespace Fitness_Tracker_App
     {
         static void Main(string[] args)
         {
-            UI.UsersNameAgeBodyWeightWelcomeMessage();
-            
+            //UI.UsersNameAgeBodyWeightWelcomeMessage();
 
-            {            
-                //DateTime Today = DateTime.Today;  
-                //Console.WriteLine("Please enter you Date Of Birth yyyy, m, dd");
-                //DateTime DateOfBirth = Convert.ToDateTime(Console.ReadLine());
-                //var totalDays = (Today - DateOfBirth).TotalDays;
-                //var totalYears = Math.Truncate(totalDays / 365);
-               
-                //Console.WriteLine($"you are {totalYears} years of age");
-            }
-        }
-        //public static int DateOfBirth(int age)
-        //{
-        //    DateTime Today = DateTime.Today;
-        //    Console.WriteLine("Please enter you Date Of Birth yyyy, m, dd");
-        //    DateTime DateOfBirth = Convert.ToDateTime(Console.ReadLine());
-        //    var totalDays = (Today - DateOfBirth).TotalDays;
-        //    var totalYears = Math.Truncate(totalDays / 365);
+            User testUser = UI.EnterNewUser();
 
-        //    Console.WriteLine($"you are {totalYears} years of age");
-        //    return age;
-        //}
-        
-        
+            Console.WriteLine($"Hello {testUser.FirstName}{testUser.LastName} Welcome to your Fitness Tracker.");
 
-        
+
+        }      
 
     }
 }

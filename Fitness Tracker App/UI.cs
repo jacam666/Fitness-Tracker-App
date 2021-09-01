@@ -21,7 +21,7 @@ namespace Fitness_Tracker_App
             double BodyWeight;
             Console.WriteLine("Now please Enter your bodyweight in kilograms :");
             BodyWeight = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine($"Hi {u.FirstName} {u.LastName} you are currently {String.Format("{0:0.}" , Age)} years old and weigh {BodyWeight} Kg's.");
+            Console.WriteLine($"Hi {u.FirstName} {u.LastName} you are currently {String.Format("{0:0.}", Age)} years old and weigh {BodyWeight} Kg's.");
 
             //get all the data
 
@@ -36,23 +36,23 @@ namespace Fitness_Tracker_App
             double totalDays = (Today - DateOfBirth).TotalDays;
             double totalYears = totalDays / 365;
 
-            return totalYears;           
+            return totalYears;
         }
         public static TrainingDay TodaysSessionDetails()
         {
             TrainingDay train = new();
             DateTime Today = DateTime.Today;
-            string BodyPartSelection;      
+           // bool BodyPartSelection;
             Console.WriteLine("Please select what BodyPart you would like to Train :");
-            BodyPartSelection = Console.ReadLine().ToUpper();             
-            Console.WriteLine($"Perfect on the {Today} you will be training {BodyPartSelection}");
+            //BodyPartSelection = UsersWorkoutChoice();
+            Console.WriteLine($"Perfect on the {Today} you will be training {UsersWorkoutChoice()}");
             return train;
         }
 
         public static ChestWorkout ChestExercise()
         {
             ChestWorkout ChestExercise = new();
-            List<string> ChestExercises= new();
+            List<string> ChestExercises = new();
             ChestExercises.Add("Barbell Bench Press");
             ChestExercises.Add("Incline Barbell Bench");
             ChestExercises.Add("Cable Flyes");
@@ -65,8 +65,45 @@ namespace Fitness_Tracker_App
             {
                 Console.WriteLine(i);
             }
-            return ChestExercise ;
-            
+            return ChestExercise;
+
+        }
+
+        public static LegWorkout LegExercise()
+        {
+            LegWorkout LegExercise = new();
+            List<string> LegExercises = new();
+            LegExercises.Add("Barbell Squats");
+            LegExercises.Add("Leg Press");
+            LegExercises.Add("Leg extensions");
+            LegExercises.Add("Hack Squats");
+            LegExercises.Add("Walking Lunges");
+            LegExercises.Add("Pec Dec");
+            LegExercises.Add("Lying Leg Curl");
+            LegExercises.Add("Seated Leg Curl");
+            Console.WriteLine("So these will be the exercises that you complete today :");
+            foreach (var i in LegExercises)
+            {
+                Console.WriteLine(i);
+            }
+            return LegExercise;
+        }
+        public static bool UsersWorkoutChoice()
+        {
+            string Choice;
+            bool ExerciseChosen = false;
+            Choice = Console.ReadLine().ToUpper();
+            if (Choice == "chest")
+            {
+                ExerciseChosen = true;
+                Console.WriteLine(ChestExercise());
+            }
+            if(Choice == "legs")
+            {
+                ExerciseChosen = true;
+                Console.WriteLine(LegExercise());
+            }
+            return ExerciseChosen;
         }
     }
 }

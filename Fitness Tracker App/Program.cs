@@ -11,8 +11,9 @@ namespace Fitness_Tracker_App
         {
             User testUser = UI.EnterNewUser();
             UI.TodaysSessionDetails();
-            UI.ChestExercise();
-         
+            //UI.ChestExercise();
+            //UI.TodaysSessionDetails();
+
             //Console.WriteLine("SO these are your exercises for you to complete today :");
             //foreach (var i in ChestExercises)
             //{              

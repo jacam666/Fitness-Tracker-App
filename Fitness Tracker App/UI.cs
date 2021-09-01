@@ -49,9 +49,9 @@ namespace Fitness_Tracker_App
             return train;
         }
 
-        public static ChestWorkout ChestExercise(List<string> ChestExercise)
+        public static ChestWorkout ChestExercise()
         {
-            
+            ChestWorkout ChestExercise = new();
             List<string> ChestExercises= new();
             ChestExercises.Add("Barbell Bench Press");
             ChestExercises.Add("Incline Barbell Bench");
@@ -60,7 +60,12 @@ namespace Fitness_Tracker_App
             ChestExercises.Add("Dumbbell Flyes");
             ChestExercises.Add("Pec Dec");
             ChestExercises.Add("Cable Crossover");
-            return ;
+            Console.WriteLine("So these will be the exercises that you complete today :");
+            foreach (var i in ChestExercises)
+            {
+                Console.WriteLine(i);
+            }
+            return ChestExercise ;
             
         }
     }

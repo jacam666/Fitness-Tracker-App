@@ -11,6 +11,7 @@ namespace Fitness_Tracker_App
         {
             User testUser = UI.EnterNewUser();
             UI.TodaysSessionDetails();
+            UI.ChestExercise();
          
             //Console.WriteLine("SO these are your exercises for you to complete today :");
             //foreach (var i in ChestExercises)
@@ -24,28 +25,28 @@ namespace Fitness_Tracker_App
             //    Console.WriteLine(i);
             //}
         }
-       public static void Chestworkout()
-        {
-            List<string> ChestExercises = new();
-            ChestExercises.Add("Barbell Bench Press");
-            ChestExercises.Add("Incline Barbell Bench");
-            ChestExercises.Add("Cable Flyes");
-            ChestExercises.Add("Decline Barbell Bench");
-            ChestExercises.Add("Dumbbell Flyes");
-            ChestExercises.Add("Pec Dec");
-            ChestExercises.Add("Cable Crossover");
-        }
-        public static void LegWorkout()
-        {
-            List<string> LegExercises = new();
-            LegExercises.Add("Barbell Squats");
-            LegExercises.Add("Leg Press");
-            LegExercises.Add("Leg extensions");
-            LegExercises.Add("Hack Squats");
-            LegExercises.Add("Walking Lunges");
-            LegExercises.Add("Lying Leg Curl");
-            LegExercises.Add("Seated Leg Curl");
-        }
+       //public static void Chestworkout()
+       // {
+       //     List<string> ChestExercises = new();
+       //     ChestExercises.Add("Barbell Bench Press");
+       //     ChestExercises.Add("Incline Barbell Bench");
+       //     ChestExercises.Add("Cable Flyes");
+       //     ChestExercises.Add("Decline Barbell Bench");
+       //     ChestExercises.Add("Dumbbell Flyes");
+       //     ChestExercises.Add("Pec Dec");
+       //     ChestExercises.Add("Cable Crossover");
+       // }
+       // public static void LegWorkout()
+       // {
+       //     List<string> LegExercises = new();
+       //     LegExercises.Add("Barbell Squats");
+       //     LegExercises.Add("Leg Press");
+       //     LegExercises.Add("Leg extensions");
+       //     LegExercises.Add("Hack Squats");
+       //     LegExercises.Add("Walking Lunges");
+       //     LegExercises.Add("Lying Leg Curl");
+       //     LegExercises.Add("Seated Leg Curl");
+       // }
     }
     
 }

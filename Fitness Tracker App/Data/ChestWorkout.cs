@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Fitness_Tracker_App
 {
-    class ChestWorkout
+   public class ChestWorkout
     {
         public string ExerciseName;
         public string FirstExercise;

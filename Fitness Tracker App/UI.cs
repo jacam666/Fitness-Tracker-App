@@ -97,42 +97,42 @@ namespace Fitness_Tracker_App
         /// list of backexercises
         /// </summary>
         /// <returns>Backexercises</returns>
-        public static Workout BackWorkout()
+        public static Workout BackExercise()
         {
-            Workout BackExercises = new();
-            List<string> BackExercise = new();
-            BackExercise.Add("Barbell Row");
-            BackExercise.Add("Cable Lat Pulldown");
-            BackExercise.Add("Close grip Cable Pulldown");
-            BackExercise.Add("Single Arm Dumbbell row");
-            BackExercise.Add("Machine Back extension");
-            BackExercise.Add("Seated Cable row");
+            Workout BackExercise = new();
+            List<string> BackExercises = new();
+            BackExercises.Add("Barbell Row");
+            BackExercises.Add("Cable Lat Pulldown");
+            BackExercises.Add("Close grip Cable Pulldown");
+            BackExercises.Add("Single Arm Dumbbell row");
+            BackExercises.Add("Machine Back extension");
+            BackExercises.Add("Seated Cable row");
 
-            return BackExercises;
+            return BackExercise;
         }
         /// <summary>
         /// list of ShoulderExercises
         /// </summary>
         /// <returns>ShoulderExercise</returns>
-        public static Workout ShoulderWorkout()
+        public static Workout ShoulderExercise()
         {
-            Workout ShoulderExercises = new();
-            List<string> ShoulderExercise = new();
-            ShoulderExercise.Add("Barbell Press");
-            ShoulderExercise.Add("Dumbbell Press");
-            ShoulderExercise.Add("Dumbbell side raises");
-            ShoulderExercise.Add("Dumbbell Front raises");
-            ShoulderExercise.Add("Reverse Pec Dec");
-            ShoulderExercise.Add("Barbell Shrugs");
-            ShoulderExercise.Add("Cable Upright Rows");
+            Workout ShoulderExercise = new();
+            List<string> ShoulderExercises = new();
+            ShoulderExercises.Add("Barbell Press");
+            ShoulderExercises.Add("Dumbbell Press");
+            ShoulderExercises.Add("Dumbbell side raises");
+            ShoulderExercises.Add("Dumbbell Front raises");
+            ShoulderExercises.Add("Reverse Pec Dec");
+            ShoulderExercises.Add("Barbell Shrugs");
+            ShoulderExercises.Add("Cable Upright Rows");
 
-            return ShoulderExercises;
+            return ShoulderExercise;
         }
         /// <summary>
         /// list of arm exercises
         /// </summary>
         /// <returns>ArmExercise</returns>
-        public static Workout ArmWorkout()
+        public static Workout ArmWExercise()
         {
             Workout ArmExercises = new();
             List<string> ArmExercise = new();
@@ -158,11 +158,15 @@ namespace Fitness_Tracker_App
             Choice = Console.ReadLine().ToUpper();
             if (Choice == "CHEST")
             { 
-                Console.WriteLine(ChestExercise());  // need to get this to work  RETURNS FALSE INSTEAD OF LIST OF EXERCISES!!!!!!
+                Console.WriteLine(ChestExercise());  
             }
             if(Choice == "LEGS")
             {               
                 Console.WriteLine(LegExercise());
+            }
+            if (Choice == "BACK")
+            {
+                Console.WriteLine(BackExercise());
             }
             return ExerciseChosen;
         }

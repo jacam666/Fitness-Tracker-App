@@ -65,7 +65,7 @@ namespace Fitness_Tracker_App
             //{
             //    Console.WriteLine(i);
             //}
-            //return ChestExercise;
+            return ChestExercise;
         }
 
         public static Workout LegExercise()
@@ -85,7 +85,7 @@ namespace Fitness_Tracker_App
             //{
             //    Console.WriteLine(i);
             //}
-            //return LegExercise;
+            return LegExercise;
         }
 
         public static Workout BackWorkout()

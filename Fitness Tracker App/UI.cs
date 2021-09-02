@@ -147,7 +147,10 @@ namespace Fitness_Tracker_App
             ArmExercise.Add("Single arm cable pushdowns");
             return ArmExercises;
         }
-
+        /// <summary>
+        /// User chooses what bodypart they would like to train, program prints out list of exercises for that bodypart
+        /// </summary>
+        /// <returns>ExerciseChosen</returns>
         public static bool UsersWorkoutChoice()
         {
             string Choice;

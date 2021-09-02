@@ -105,5 +105,6 @@ namespace Fitness_Tracker_App
             }
             return ExerciseChosen;
         }
+       
     }
 }

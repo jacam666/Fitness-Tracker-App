@@ -13,41 +13,20 @@ namespace Fitness_Tracker_App
             UI.TodaysSessionDetails();
             //UI.ChestExercise();
             //UI.TodaysSessionDetails();
+            Workout workout = new();
+            workout.AmountOfReps = Convert.ToInt32(Console.ReadLine());
+            workout.AmountOfSets = Convert.ToInt32(Console.ReadLine());
+            workout.Date = DateTime.Today;
+            Console.WriteLine("Pleas enter the amount of Reps completed :");
+            Console.WriteLine($"The amount of Reps you completed for this exercise are {workout.AmountOfReps}:");
+            
 
-            //Console.WriteLine("SO these are your exercises for you to complete today :");
-            //foreach (var i in ChestExercises)
-            //{              
-            //    Console.WriteLine(i);
-            //}
 
-            //Console.WriteLine("SO these are your exercises for you to complete today :");
-            //foreach (var i in LegExercises)
-            //{
-            //    Console.WriteLine(i);
-            //}
+
+
+
         }
-       //public static void Chestworkout()
-       // {
-       //     List<string> ChestExercises = new();
-       //     ChestExercises.Add("Barbell Bench Press");
-       //     ChestExercises.Add("Incline Barbell Bench");
-       //     ChestExercises.Add("Cable Flyes");
-       //     ChestExercises.Add("Decline Barbell Bench");
-       //     ChestExercises.Add("Dumbbell Flyes");
-       //     ChestExercises.Add("Pec Dec");
-       //     ChestExercises.Add("Cable Crossover");
-       // }
-       // public static void LegWorkout()
-       // {
-       //     List<string> LegExercises = new();
-       //     LegExercises.Add("Barbell Squats");
-       //     LegExercises.Add("Leg Press");
-       //     LegExercises.Add("Leg extensions");
-       //     LegExercises.Add("Hack Squats");
-       //     LegExercises.Add("Walking Lunges");
-       //     LegExercises.Add("Lying Leg Curl");
-       //     LegExercises.Add("Seated Leg Curl");
-       // }
+
     }
     
 }

@@ -42,10 +42,8 @@ namespace Fitness_Tracker_App
         {
             TrainingDay train = new();
             DateTime Today = DateTime.Today;
-           // bool BodyPartSelection;
             Console.WriteLine("Please select what BodyPart you would like to Train :");
-            //BodyPartSelection = UsersWorkoutChoice();
-            //Console.WriteLine($"Perfect on the {Today} you will be training {UsersWorkoutChoice()}");
+            
             return train;
         }
         /// <summary>
@@ -107,6 +105,7 @@ namespace Fitness_Tracker_App
             BackExercises.Add("Single Arm Dumbbell row");
             BackExercises.Add("Machine Back extension");
             BackExercises.Add("Seated Cable row");
+            Console.WriteLine("So these will be the exercises that you complete today :");
             foreach (var i in BackExercises)
             {
                 Console.WriteLine(i);
@@ -129,6 +128,7 @@ namespace Fitness_Tracker_App
             ShoulderExercises.Add("Reverse Pec Dec");
             ShoulderExercises.Add("Barbell Shrugs");
             ShoulderExercises.Add("Cable Upright Rows");
+            Console.WriteLine("So these will be the exercises that you complete today :");
             foreach (var i in ShoulderExercises)
             {
                 Console.WriteLine(i);
@@ -153,6 +153,7 @@ namespace Fitness_Tracker_App
             ArmExercise.Add("Dumbbell Tricep Extension");
             ArmExercise.Add("Dumbbell Kickbacks");
             ArmExercise.Add("Single arm cable pushdowns");
+            Console.WriteLine("So these will be the exercises that you complete today :");
             foreach (var i in ArmExercise)
             {
                 Console.WriteLine(i);

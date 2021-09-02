@@ -48,7 +48,10 @@ namespace Fitness_Tracker_App
             Console.WriteLine($"Perfect on the {Today} you will be training {UsersWorkoutChoice()}");
             return train;
         }
-
+        /// <summary>
+        /// list of chest exercises
+        /// </summary>
+        /// <returns>chestexercises</returns>
         public static Workout ChestExercise()
         {
             Workout ChestExercise = new();

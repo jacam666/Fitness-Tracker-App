@@ -64,10 +64,10 @@ namespace Fitness_Tracker_App
             ChestExercises.Add("Pec Dec");
             ChestExercises.Add("Cable Crossover");
             Console.WriteLine("So these will be the exercises that you complete today :");
-            //foreach (var i in ChestExercises)
-            //{
-            //    Console.WriteLine(i);
-            //}
+            foreach (var i in ChestExercises)
+            {
+                Console.WriteLine(i);
+            }
             return ChestExercise;
         }
         /// <summary>
@@ -156,14 +156,12 @@ namespace Fitness_Tracker_App
             string Choice;
             bool ExerciseChosen = false;
             Choice = Console.ReadLine().ToUpper();
-            if (Choice == "chest")
-            {
-                ExerciseChosen = true;
+            if (Choice == "CHEST")
+            { 
                 Console.WriteLine(ChestExercise());  // need to get this to work  RETURNS FALSE INSTEAD OF LIST OF EXERCISES!!!!!!
             }
-            if(Choice == "legs")
-            {
-                ExerciseChosen = true;
+            if(Choice == "LEGS")
+            {               
                 Console.WriteLine(LegExercise());
             }
             return ExerciseChosen;

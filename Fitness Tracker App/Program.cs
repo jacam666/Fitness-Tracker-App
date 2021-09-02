@@ -9,8 +9,8 @@ namespace Fitness_Tracker_App
     {
         static void Main(string[] args)
         {
-            User testUser = UI.EnterNewUser();
-            UI.TodaysSessionDetails();
+            //User testUser = UI.EnterNewUser();
+            //UI.TodaysSessionDetails();
             UI.UsersWorkoutChoice();
             Workout workout = new(); 
             workout.Date = DateTime.Today;

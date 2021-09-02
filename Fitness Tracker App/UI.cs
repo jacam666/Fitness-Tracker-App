@@ -45,7 +45,7 @@ namespace Fitness_Tracker_App
            // bool BodyPartSelection;
             Console.WriteLine("Please select what BodyPart you would like to Train :");
             //BodyPartSelection = UsersWorkoutChoice();
-            Console.WriteLine($"Perfect on the {Today} you will be training {UsersWorkoutChoice()}");
+            //Console.WriteLine($"Perfect on the {Today} you will be training {UsersWorkoutChoice()}");
             return train;
         }
         /// <summary>
@@ -87,10 +87,10 @@ namespace Fitness_Tracker_App
             LegExercises.Add("Lying Leg Curl");
             LegExercises.Add("Seated Leg Curl");
             Console.WriteLine("So these will be the exercises that you complete today :");
-            //foreach (var i in LegExercises)
-            //{
-            //    Console.WriteLine(i);
-            //}
+            foreach (var i in LegExercises)
+            {
+                Console.WriteLine(i);
+            }
             return LegExercise;
         }
         /// <summary>
@@ -107,6 +107,10 @@ namespace Fitness_Tracker_App
             BackExercises.Add("Single Arm Dumbbell row");
             BackExercises.Add("Machine Back extension");
             BackExercises.Add("Seated Cable row");
+            foreach (var i in BackExercises)
+            {
+                Console.WriteLine(i);
+            }
 
             return BackExercise;
         }
@@ -125,6 +129,10 @@ namespace Fitness_Tracker_App
             ShoulderExercises.Add("Reverse Pec Dec");
             ShoulderExercises.Add("Barbell Shrugs");
             ShoulderExercises.Add("Cable Upright Rows");
+            foreach (var i in ShoulderExercises)
+            {
+                Console.WriteLine(i);
+            }
 
             return ShoulderExercise;
         }
@@ -145,6 +153,11 @@ namespace Fitness_Tracker_App
             ArmExercise.Add("Dumbbell Tricep Extension");
             ArmExercise.Add("Dumbbell Kickbacks");
             ArmExercise.Add("Single arm cable pushdowns");
+            foreach (var i in ArmExercise)
+            {
+                Console.WriteLine(i);
+            }
+
             return ArmExercises;
         }
         /// <summary>
@@ -158,23 +171,28 @@ namespace Fitness_Tracker_App
             Choice = Console.ReadLine().ToUpper();
             if (Choice == "CHEST")
             { 
-                Console.WriteLine(ChestExercise());  
+                Console.WriteLine(ChestExercise());
+                Console.WriteLine("Enjoy your workout.");
             }
-            if(Choice == "LEGS")
+            if (Choice == "LEGS")
             {               
                 Console.WriteLine(LegExercise());
+                Console.WriteLine("Enjoy your workout.");
             }
             if (Choice == "BACK")
             {
                 Console.WriteLine(BackExercise());
+                Console.WriteLine("Enjoy your workout.");
             }
             if (Choice == "ARM")
             {
                 Console.WriteLine(ArmExercise());
+                Console.WriteLine("Enjoy your workout.");
             }
             if (Choice == "SHOULDER")
             {
                 Console.WriteLine(ShoulderExercise());
+                Console.WriteLine("Enjoy your workout.");
             }
             return ExerciseChosen;
         }
@@ -182,13 +200,14 @@ namespace Fitness_Tracker_App
         /// user inputs amount of reps and sets completed
         /// </summary>
         public static void RepsSetsCompleted()
-        {
+        {            
             Workout CompletedSetsReps = new();
+            DateTime today = DateTime.Today;
             Console.WriteLine("Please enter the amount of Reps completed :");
             CompletedSetsReps.AmountOfReps = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Please enter the amount of Sets completed :");
             CompletedSetsReps.AmountOfSets = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine($"On the {CompletedSetsReps.Date} you completed {CompletedSetsReps.AmountOfSets} sets of {CompletedSetsReps.AmountOfReps} Reps");
+            Console.WriteLine($"On the {today} you completed {CompletedSetsReps.AmountOfSets} sets of {CompletedSetsReps.AmountOfReps} Reps");
         }
        
     }

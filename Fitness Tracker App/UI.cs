@@ -42,7 +42,12 @@ namespace Fitness_Tracker_App
         {
             TrainingDay train = new();
             DateTime Today = DateTime.Today;
-            Console.WriteLine("Please select what BodyPart you would like to Train :");
+            Console.WriteLine("Please select what BodyPart from theses choices you would like to Train :");
+            Console.Write("BACK, ");
+            Console.Write("CHEST, ");
+            Console.Write("LEGS, ");
+            Console.Write("ARM, ");
+            Console.WriteLine("SHOULDER.");
             
             return train;
         }
@@ -142,24 +147,24 @@ namespace Fitness_Tracker_App
         /// <returns>ArmExercise</returns>
         public static Workout ArmExercise()
         {
-            Workout ArmExercises = new();
-            List<string> ArmExercise = new();
-            ArmExercise.Add("Barbell Curls");
-            ArmExercise.Add("Cable Rope curls");
-            ArmExercise.Add("Seated machine curls");
-            ArmExercise.Add("Dumbbell Concertration curls");
-            ArmExercise.Add("Close grip Bench press");
-            ArmExercise.Add("Rope cable Pushdown");
-            ArmExercise.Add("Dumbbell Tricep Extension");
-            ArmExercise.Add("Dumbbell Kickbacks");
-            ArmExercise.Add("Single arm cable pushdowns");
+            Workout ArmExercise = new();
+            List<string> ArmExercises = new();
+            ArmExercises.Add("Barbell Curls");
+            ArmExercises.Add("Cable Rope curls");
+            ArmExercises.Add("Seated machine curls");
+            ArmExercises.Add("Dumbbell Concertration curls");
+            ArmExercises.Add("Close grip Bench press");
+            ArmExercises.Add("Rope cable Pushdown");
+            ArmExercises.Add("Dumbbell Tricep Extension");
+            ArmExercises.Add("Dumbbell Kickbacks");
+            ArmExercises.Add("Single arm cable pushdowns");
             Console.WriteLine("So these will be the exercises that you complete today :");
-            foreach (var i in ArmExercise)
+            foreach (var i in ArmExercises)
             {
                 Console.WriteLine(i);
             }
 
-            return ArmExercises;
+            return ArmExercise;
         }
         /// <summary>
         /// User chooses what bodypart they would like to train, program prints out list of exercises for that bodypart

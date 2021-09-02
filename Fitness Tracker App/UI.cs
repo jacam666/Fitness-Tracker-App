@@ -110,7 +110,10 @@ namespace Fitness_Tracker_App
 
             return BackExercises;
         }
-
+        /// <summary>
+        /// list of ShoulderExercises
+        /// </summary>
+        /// <returns>ShoulderExercise</returns>
         public static Workout ShoulderWorkout()
         {
             Workout ShoulderExercises = new();

@@ -133,8 +133,6 @@ namespace Fitness_Tracker_App
             return ArmExercises;
         }
 
-
-
         public static bool UsersWorkoutChoice()
         {
             string Choice;
@@ -143,7 +141,7 @@ namespace Fitness_Tracker_App
             if (Choice == "chest")
             {
                 ExerciseChosen = true;
-                Console.WriteLine(ChestExercise());
+                Console.WriteLine(ChestExercise());  // need to get this to work  RETURNS FALSE INSTEAD OF LIST OF EXERCISES!!!!!!
             }
             if(Choice == "legs")
             {
@@ -151,6 +149,16 @@ namespace Fitness_Tracker_App
                 Console.WriteLine(LegExercise());
             }
             return ExerciseChosen;
+        }
+
+        public static void RepsSetsCompleted()
+        {
+            Workout CompletedSetsReps = new();
+            Console.WriteLine("Please enter the amount of Reps completed :");
+            CompletedSetsReps.AmountOfReps = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Please enter the amount of Sets completed :");
+            CompletedSetsReps.AmountOfSets = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"On the {CompletedSetsReps.Date} you completed {CompletedSetsReps.AmountOfSets} sets of {CompletedSetsReps.AmountOfReps} Reps");
         }
        
     }

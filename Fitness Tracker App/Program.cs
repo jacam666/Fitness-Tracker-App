@@ -11,15 +11,10 @@ namespace Fitness_Tracker_App
         {
             User testUser = UI.EnterNewUser();
             UI.TodaysSessionDetails();
-            //UI.ChestExercise();
-            //UI.TodaysSessionDetails();
-            Workout workout = new();
-            workout.AmountOfReps = Convert.ToInt32(Console.ReadLine());
-            workout.AmountOfSets = Convert.ToInt32(Console.ReadLine());
+            UI.UsersWorkoutChoice();
+            Workout workout = new(); 
             workout.Date = DateTime.Today;
-            Console.WriteLine("Please enter the amount of Reps completed :");       
-            Console.WriteLine("Please enter the amount of Sets completed :");
-            Console.WriteLine($"On the {workout.Date} you completed {workout.AmountOfSets} sets of {workout.AmountOfReps} Reps");
+            UI.RepsSetsCompleted();
 
         }
 

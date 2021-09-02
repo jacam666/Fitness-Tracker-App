@@ -165,7 +165,9 @@ namespace Fitness_Tracker_App
             }
             return ExerciseChosen;
         }
-
+        /// <summary>
+        /// user inputs amount of reps and sets completed
+        /// </summary>
         public static void RepsSetsCompleted()
         {
             Workout CompletedSetsReps = new();

@@ -117,6 +117,22 @@ namespace Fitness_Tracker_App
             return ShoulderExercises;
         }
 
+        public static Workout ArmWorkout()
+        {
+            Workout ArmExercises = new();
+            List<string> ArmExercise = new();
+            ArmExercise.Add("Barbell Curls");
+            ArmExercise.Add("Cable Rope curls");
+            ArmExercise.Add("Seated machine curls");
+            ArmExercise.Add("Dumbbell Concertration curls");
+            ArmExercise.Add("Close grip Bench press");
+            ArmExercise.Add("Rope cable Pushdown");
+            ArmExercise.Add("Dumbbell Tricep Extension");
+            ArmExercise.Add("Dumbbell Kickbacks");
+            ArmExercise.Add("Single arm cable pushdowns");
+            return ArmExercises;
+        }
+
 
 
         public static bool UsersWorkoutChoice()

@@ -70,7 +70,10 @@ namespace Fitness_Tracker_App
             //}
             return ChestExercise;
         }
-
+        /// <summary>
+        /// list of leg exercises
+        /// </summary>
+        /// <returns>leg exercises</returns>
         public static Workout LegExercise()
         {
             Workout LegExercise = new();

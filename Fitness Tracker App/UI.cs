@@ -49,9 +49,9 @@ namespace Fitness_Tracker_App
             return train;
         }
 
-        public static ChestWorkout ChestExercise()
+        public static Workout ChestExercise()
         {
-            ChestWorkout ChestExercise = new();
+            Workout ChestExercise = new();
             List<string> ChestExercises = new();
             ChestExercises.Add("Barbell Bench Press");
             ChestExercises.Add("Incline Barbell Bench");
@@ -69,9 +69,9 @@ namespace Fitness_Tracker_App
 
         }
 
-        public static LegWorkout LegExercise()
+        public static Workout LegExercise()
         {
-            LegWorkout LegExercise = new();
+            Workout LegExercise = new();
             List<string> LegExercises = new();
             LegExercises.Add("Barbell Squats");
             LegExercises.Add("Leg Press");
@@ -88,6 +88,25 @@ namespace Fitness_Tracker_App
             }
             return LegExercise;
         }
+
+        public static Workout BackWorkout()
+        {
+            Workout BackExercises = new();
+            List<string> BackExercise = new();
+            BackExercise.Add("Barbell Row");
+            BackExercise.Add("Cable Lat Pulldown");
+            BackExercise.Add("Close grip Cable Pulldown");
+            BackExercise.Add("Single Arm Dumbbell row");
+            BackExercise.Add("Machine Back extension");
+            BackExercise.Add("Seated Cable row");
+
+
+            return BackExercises;
+        }
+
+
+
+
         public static bool UsersWorkoutChoice()
         {
             string Choice;

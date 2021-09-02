@@ -132,7 +132,7 @@ namespace Fitness_Tracker_App
         /// list of arm exercises
         /// </summary>
         /// <returns>ArmExercise</returns>
-        public static Workout ArmWExercise()
+        public static Workout ArmExercise()
         {
             Workout ArmExercises = new();
             List<string> ArmExercise = new();
@@ -167,6 +167,14 @@ namespace Fitness_Tracker_App
             if (Choice == "BACK")
             {
                 Console.WriteLine(BackExercise());
+            }
+            if (Choice == "ARM")
+            {
+                Console.WriteLine(ArmExercise());
+            }
+            if (Choice == "SHOULDER")
+            {
+                Console.WriteLine(ShoulderExercise());
             }
             return ExerciseChosen;
         }

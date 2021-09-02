@@ -23,10 +23,6 @@ namespace Fitness_Tracker_App
             Console.WriteLine($"The amount of Sets you completed for this exercise are {workout.AmountOfSets}:");
             Console.WriteLine($"On the {workout.Date} you completed {workout.AmountOfSets} sets of {workout.AmountOfReps} Reps");
 
-
-
-
-
         }
 
     }

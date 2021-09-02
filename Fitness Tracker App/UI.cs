@@ -61,12 +61,11 @@ namespace Fitness_Tracker_App
             ChestExercises.Add("Pec Dec");
             ChestExercises.Add("Cable Crossover");
             Console.WriteLine("So these will be the exercises that you complete today :");
-            foreach (var i in ChestExercises)
-            {
-                Console.WriteLine(i);
-            }
-            return ChestExercise;
-
+            //foreach (var i in ChestExercises)
+            //{
+            //    Console.WriteLine(i);
+            //}
+            //return ChestExercise;
         }
 
         public static Workout LegExercise()
@@ -82,11 +81,11 @@ namespace Fitness_Tracker_App
             LegExercises.Add("Lying Leg Curl");
             LegExercises.Add("Seated Leg Curl");
             Console.WriteLine("So these will be the exercises that you complete today :");
-            foreach (var i in LegExercises)
-            {
-                Console.WriteLine(i);
-            }
-            return LegExercise;
+            //foreach (var i in LegExercises)
+            //{
+            //    Console.WriteLine(i);
+            //}
+            //return LegExercise;
         }
 
         public static Workout BackWorkout()
@@ -100,10 +99,23 @@ namespace Fitness_Tracker_App
             BackExercise.Add("Machine Back extension");
             BackExercise.Add("Seated Cable row");
 
-
             return BackExercises;
         }
 
+        public static Workout ShoulderWorkout()
+        {
+            Workout ShoulderExercises = new();
+            List<string> ShoulderExercise = new();
+            ShoulderExercise.Add("Barbell Press");
+            ShoulderExercise.Add("Dumbbell Press");
+            ShoulderExercise.Add("Dumbbell side raises");
+            ShoulderExercise.Add("Dumbbell Front raises");
+            ShoulderExercise.Add("Reverse Pec Dec");
+            ShoulderExercise.Add("Barbell Shrugs");
+            ShoulderExercise.Add("Cable Upright Rows");
+
+            return ShoulderExercises;
+        }
 
 
 

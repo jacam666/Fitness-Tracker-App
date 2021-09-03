@@ -31,6 +31,10 @@ namespace Fitness_Tracker_App
 
             return u;
         }
+        /// <summary>
+        /// calculates users date of birth
+        /// </summary>
+        /// <returns>total years</returns>
         public static double CalculateUsersDateOfBirth()
         {
             DateTime Today = DateTime.Today;

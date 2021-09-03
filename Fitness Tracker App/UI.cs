@@ -9,6 +9,10 @@ namespace Fitness_Tracker_App
 {
     class UI
     {
+        /// <summary>
+        /// takes users name, dob, and bodyweight info
+        /// </summary>
+        /// <returns>userdata</returns>
         internal static User EnterNewUser()
         {
             User u = new();

@@ -27,7 +27,6 @@ namespace Fitness_Tracker_App
 
             return u;
         }
-
         public static double CalculateUsersDateOfBirth()
         {
             DateTime Today = DateTime.Today;
@@ -41,13 +40,15 @@ namespace Fitness_Tracker_App
         public static TrainingDay TodaysSessionDetails()
         {
             TrainingDay train = new();
-            DateTime Today = DateTime.Today;
+            DateTime Today = DateTime.Today;            
             Console.WriteLine("Please select what BodyPart from theses choices you would like to Train :");
             Console.Write("BACK, ");
             Console.Write("CHEST, ");
             Console.Write("LEGS, ");
             Console.Write("ARM, ");
             Console.WriteLine("SHOULDER.");
+            bool Workout = UI.UsersWorkoutChoice();
+            Console.WriteLine(Workout);
             
             return train;
         }

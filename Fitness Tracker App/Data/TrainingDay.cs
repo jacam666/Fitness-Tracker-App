@@ -9,7 +9,7 @@ namespace Fitness_Tracker_App.Data
     public class TrainingDay
     {
         public DateTime TodaysDate;
-        public List<TrainingDay> trainingDays;
+        public List<TrainingDay> Workout;
         public double BodyWeight;
     }
 }

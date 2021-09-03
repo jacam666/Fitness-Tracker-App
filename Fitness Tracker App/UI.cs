@@ -56,7 +56,6 @@ namespace Fitness_Tracker_App
             Console.Write("ARM, ");
             Console.WriteLine("SHOULDER.");
             bool Workout = UI.UsersWorkoutChoice();
-            Console.WriteLine(Workout);
             
             return train;
         }

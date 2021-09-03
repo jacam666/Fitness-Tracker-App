@@ -11,6 +11,5 @@ namespace Fitness_Tracker_App.Data
         public string ExerciseName;
         public int AmountOfSets;
         public int AmountOfReps;
-        public DateTime Date;
     }
 }

@@ -11,9 +11,7 @@ namespace Fitness_Tracker_App
         {
             UI.EnterNewUser();
             UI.TodaysSessionDetails();
-            //UI.UsersWorkoutChoice();
             Workout workout = new(); 
-            workout.Date = DateTime.Today;
             UI.RepsSetsCompleted();
 
         }

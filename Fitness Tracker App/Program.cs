@@ -10,12 +10,16 @@ namespace Fitness_Tracker_App
         static void Main(string[] args)
         {
             UI.EnterNewUser();
-
             UI.TodaysSessionDetails();
             UI.RepsSetsCompleted();
-
         }
-      
+        public static void TraingDay()
+        {
+            DateTime Today = DateTime.Today;
+            double Bodyweight;
+            Bodyweight = UI.UsersBodyweight();
+        }
+
 
         //public static void DateOfBirth()
         //{

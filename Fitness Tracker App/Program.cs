@@ -10,12 +10,24 @@ namespace Fitness_Tracker_App
         static void Main(string[] args)
         {
             UI.EnterNewUser();
+
             UI.TodaysSessionDetails();
-            Workout workout = new(); 
             UI.RepsSetsCompleted();
 
         }
+      
+
+        //public static void DateOfBirth()
+        //{
+        //    DateTime Today = DateTime.Today;
+        //    DateTime DateOfBirth = Convert.ToDateTime(Console.ReadLine());
+        //    double totalDays = (Today - DateOfBirth).TotalDays;
+        //    double totalYears = totalDays / 365;
+        //}
 
     }
-    
+
+
+
+
 }

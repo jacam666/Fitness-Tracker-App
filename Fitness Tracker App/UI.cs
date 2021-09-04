@@ -22,12 +22,7 @@ namespace Fitness_Tracker_App
             u.LastName = Console.ReadLine();
             double Age;
             Age = CalculateUsersDateOfBirth();
-            double BodyWeight;
-            Console.WriteLine("Now please Enter your bodyweight in kilograms :");
-            BodyWeight = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine($"Hi {u.FirstName} {u.LastName} you are currently {String.Format("{0:0.}", Age)} years old and weigh {BodyWeight} Kg's.");
-
-            //get all the data
+            Console.WriteLine($"Hi {u.FirstName} {u.LastName} you are currently {String.Format("{0:0.}", Age)} years old and weigh {UI.UsersBodyweight()} Kg's.");
 
             return u;
         }
@@ -222,7 +217,16 @@ namespace Fitness_Tracker_App
             Console.WriteLine("Please enter the amount of Sets completed :");
             CompletedSetsReps.AmountOfSets = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine($"On the {today} you completed {CompletedSetsReps.AmountOfSets} sets of {CompletedSetsReps.AmountOfReps} Reps");
+            
         }
-       
+
+        public static double UsersBodyweight()
+        {
+            double BodyWeight;
+            Console.WriteLine("Now please Enter your bodyweight in kilograms :");
+            BodyWeight = Convert.ToDouble(Console.ReadLine());
+            return BodyWeight;
+        }
+
     }
 }

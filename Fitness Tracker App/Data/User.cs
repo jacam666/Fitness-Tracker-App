@@ -12,6 +12,5 @@ namespace Fitness_Tracker_App.Data
         public String LastName;
         public DateTime DOB;
         public List<TrainingDay> TrainingDays;
-    
     }
 }

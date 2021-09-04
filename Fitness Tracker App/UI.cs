@@ -44,12 +44,13 @@ namespace Fitness_Tracker_App
         {
             TrainingDay train = new();
             DateTime Today = DateTime.Today;            
-            Console.WriteLine("Please select what BodyPart from theses choices you would like to Train :");
-            Console.Write("BACK, ");
-            Console.Write("CHEST, ");
-            Console.Write("LEGS, ");
-            Console.Write("ARM, ");
-            Console.WriteLine("SHOULDER.");
+            //Console.WriteLine("Please select what BodyPart from theses choices you would like to Train :");
+            //Console.Write("BACK, ");
+            //Console.Write("CHEST, ");
+            //Console.Write("LEGS, ");
+            //Console.Write("ARM, ");
+            //Console.WriteLine("SHOULDER.");
+
             bool Workout = UI.UsersWorkoutChoice();
             
             return train;
@@ -226,6 +227,16 @@ namespace Fitness_Tracker_App
             Console.WriteLine("Now please Enter your bodyweight in kilograms :");
             BodyWeight = Convert.ToDouble(Console.ReadLine());
             return BodyWeight;
+        }
+
+        public static void UsersBodyPartChoice()
+        {
+            Console.WriteLine("Please select what BodyPart from theses choices you would like to Train :");
+            Console.Write("BACK, ");
+            Console.Write("CHEST, ");
+            Console.Write("LEGS, ");
+            Console.Write("ARM, ");
+            Console.WriteLine("SHOULDER.");
         }
 
     }

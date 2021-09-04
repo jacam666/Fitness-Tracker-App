@@ -11,6 +11,7 @@ namespace Fitness_Tracker_App
         {
             UI.EnterNewUser();
             UI.TodaysSessionDetails();
+            UI.UsersBodyPartChoice();
             UI.RepsSetsCompleted();
         }
         public static void TraingDay()
@@ -19,6 +20,8 @@ namespace Fitness_Tracker_App
             double Bodyweight;
             Bodyweight = UI.UsersBodyweight();
         }
+
+      
 
 
         //public static void DateOfBirth()

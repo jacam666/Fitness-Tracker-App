@@ -25,6 +25,17 @@ namespace Fitness_Tracker_App
             UI.UsersBodyPartChoice();
             bool BodyPart = UI.UsersWorkoutChoice();
         }
+        public static void User()
+        {
+            string FirstName;
+            string LastName;
+            DateTime DOB;
+            DateTime Today = DateTime.Today;
+            UI.UsersDateOfBirth();
+            DateTime DateOfBirth = Convert.ToDateTime(Console.ReadLine());
+            double totalDays = (Today - DateOfBirth).TotalDays;
+            double totalYears = totalDays / 365;
+        }
 
 
 

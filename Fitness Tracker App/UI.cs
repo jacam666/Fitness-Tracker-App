@@ -20,9 +20,9 @@ namespace Fitness_Tracker_App
             u.FirstName = Console.ReadLine();
             Console.WriteLine("Please Enter your last name :");
             u.LastName = Console.ReadLine();
-            double Age;
-            Age = CalculateUsersDateOfBirth();
-            Console.WriteLine($"Hi {u.FirstName} {u.LastName} you are currently {String.Format("{0:0.}", Age)} years old and weigh {UI.UsersBodyweight()} Kg's.");
+            UsersDateOfBirth();
+            DateTime today = DateTime.Today;
+            Console.WriteLine($"Hi {u.FirstName} {u.LastName} you are currently {String.Format("{0:0.}", u.DOB)} years old and weigh {UI.UsersBodyweight()} Kg's.");
 
             return u;
         }
@@ -30,22 +30,18 @@ namespace Fitness_Tracker_App
         /// calculates users date of birth
         /// </summary>
         /// <returns>total years</returns>
-        public static double CalculateUsersDateOfBirth()
+        public static void UsersDateOfBirth()
         {
-            DateTime Today = DateTime.Today;
-            Console.WriteLine("Please enter you Date Of Birth yyyy, m, dd");
-            DateTime DateOfBirth = Convert.ToDateTime(Console.ReadLine());
-            double totalDays = (Today - DateOfBirth).TotalDays;
-            double totalYears = totalDays / 365;
-
-            return totalYears;
+       
+            Console.WriteLine("Please enter you Date Of Birth yyyy, m, dd");;
+            Console.ReadLine();
         }
         public static TrainingDay TodaysSessionDetails()
         {
             TrainingDay train = new();
-            DateTime Today = DateTime.Today;            
+            DateTime Today = DateTime.Today;
             bool Workout = UI.UsersWorkoutChoice();
-            
+
             return train;
         }
         /// <summary>
@@ -173,12 +169,12 @@ namespace Fitness_Tracker_App
             bool ExerciseChosen = false;
             Choice = Console.ReadLine().ToUpper();
             if (Choice == "CHEST")
-            { 
+            {
                 Console.WriteLine(ChestExercise());
                 Console.WriteLine("Enjoy your workout.");
             }
             if (Choice == "LEGS")
-            {               
+            {
                 Console.WriteLine(LegExercise());
                 Console.WriteLine("Enjoy your workout.");
             }
@@ -203,7 +199,7 @@ namespace Fitness_Tracker_App
         /// user inputs amount of reps and sets completed
         /// </summary>
         public static void RepsSetsCompleted()
-        {            
+        {
             Workout CompletedSetsReps = new();
             DateTime today = DateTime.Today;
             Console.WriteLine("Please enter the amount of Reps completed :");
@@ -211,7 +207,7 @@ namespace Fitness_Tracker_App
             Console.WriteLine("Please enter the amount of Sets completed :");
             CompletedSetsReps.AmountOfSets = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine($"On the {today} you completed {CompletedSetsReps.AmountOfSets} sets of {CompletedSetsReps.AmountOfReps} Reps");
-            
+
         }
 
         public static double UsersBodyweight()
@@ -229,7 +225,7 @@ namespace Fitness_Tracker_App
             Console.Write("CHEST, ");
             Console.Write("LEGS, ");
             Console.Write("ARM, ");
-            Console.WriteLine("SHOULDER.");           
+            Console.WriteLine("SHOULDER.");
         }
 
     }

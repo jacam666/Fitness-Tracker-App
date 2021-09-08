@@ -9,7 +9,7 @@ namespace Fitness_Tracker_App.Data
     public class Exercise
     {
         public string ExerciseName;
-        string BodyPart;
-        string ExerciseDescription;
+        public string BodyPart;
+        public string ExerciseDescription;
     }
 }

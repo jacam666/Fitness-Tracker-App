@@ -20,27 +20,29 @@ namespace Fitness_Tracker_App
             u.FirstName = Console.ReadLine();
             Console.WriteLine("Please Enter your last name :");
             u.LastName = Console.ReadLine();
-            UsersDateOfBirth();
+            u.DOB = EnterDateOfBirth();
             DateTime today = DateTime.Today;
-            Console.WriteLine($"Hi {u.FirstName} {u.LastName} you are currently {String.Format("{0:0.}", u.DOB)} years old and weigh {UI.UsersBodyweight()} Kg's.");
-
+            Console.WriteLine($"Hi {u.FirstName} {u.LastName} you are currently {string.Format("{0:0.}", u.DOB)} years old and weigh {EnterBodyweight()} Kg's.");
+            //remove the bodywight from here
             return u;
         }
         /// <summary>
         /// calculates users date of birth
         /// </summary>
         /// <returns>total years</returns>
-        public static void UsersDateOfBirth()
+        /// 
+        public static DateTime EnterDateOfBirth()
         {
-       
-            Console.WriteLine("Please enter you Date Of Birth yyyy, m, dd");;
-            Console.ReadLine();
+            Console.WriteLine("Please enter you Date Of Birth yyyy, m, dd");
+            string Input = Console.ReadLine();
+            DateTime dob = DateTime.Parse(Input);
+            return dob;
         }
         public static TrainingDay TodaysSessionDetails()
         {
             TrainingDay train = new();
             DateTime Today = DateTime.Today;
-            bool Workout = UI.UsersWorkoutChoice();
+            bool Workout = UI.SelectBodyPart();
 
             return train;
         }
@@ -48,7 +50,7 @@ namespace Fitness_Tracker_App
         /// list of chest exercises
         /// </summary>
         /// <returns>chestexercises</returns>
-        public static Workout ChestExercise()
+        public static Workout PrintSpecificWorkoutOptions()
         {
             Workout ChestExercise = new();
             List<string> ChestExercises = new();
@@ -66,6 +68,17 @@ namespace Fitness_Tracker_App
             }
             return ChestExercise;
         }
+
+        public static void PrintSpecificWorkoutOptions(List<string> options)
+        {
+            foreach(string option in options)
+            {
+                Console.WriteLine(option);
+            }
+        }
+
+
+
         /// <summary>
         /// list of leg exercises
         /// </summary>
@@ -163,15 +176,15 @@ namespace Fitness_Tracker_App
         /// User chooses what bodypart they would like to train, program prints out list of exercises for that bodypart
         /// </summary>
         /// <returns>ExerciseChosen</returns>
-        public static bool UsersWorkoutChoice()
+        public static BodyPart SelectBodyPart()
         {
+            //print the list of available bodyparts
             string Choice;
-            bool ExerciseChosen = false;
+   
             Choice = Console.ReadLine().ToUpper();
             if (Choice == "CHEST")
             {
-                Console.WriteLine(ChestExercise());
-                Console.WriteLine("Enjoy your workout.");
+                return BodyPart.Chest;
             }
             if (Choice == "LEGS")
             {
@@ -198,23 +211,24 @@ namespace Fitness_Tracker_App
         /// <summary>
         /// user inputs amount of reps and sets completed
         /// </summary>
-        public static void RepsSetsCompleted()
+        public static Workout EnterWorkoutData(string exerciseName)
         {
-            Workout CompletedSetsReps = new();
-            DateTime today = DateTime.Today;
+            Workout currentWorkout = new();
+            //  DateTime today = DateTime.Today;
+            currentWorkout.ExerciseName = exerciseName;
             Console.WriteLine("Please enter the amount of Reps completed :");
-            CompletedSetsReps.AmountOfReps = Convert.ToInt32(Console.ReadLine());
+            currentWorkout.AmountOfReps = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Please enter the amount of Sets completed :");
-            CompletedSetsReps.AmountOfSets = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine($"On the {today} you completed {CompletedSetsReps.AmountOfSets} sets of {CompletedSetsReps.AmountOfReps} Reps");
-
+            currentWorkout.AmountOfSets = Convert.ToInt32(Console.ReadLine());
+            //  Console.WriteLine($"On the {today} you completed {CompletedSetsReps.AmountOfSets} sets of {CompletedSetsReps.AmountOfReps} Reps");
+            return currentWorkout;
         }
 
-        public static double UsersBodyweight()
+        public static double EnterBodyweight()
         {
             double BodyWeight;
             Console.WriteLine("Now please Enter your bodyweight in kilograms :");
-            BodyWeight = Convert.ToDouble(Console.ReadLine());
+            BodyWeight = Convert.ToDouble(Console.ReadLine());  //maybe use tryparse
             return BodyWeight;
         }
 

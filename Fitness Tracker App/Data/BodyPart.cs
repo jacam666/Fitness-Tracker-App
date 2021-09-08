@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace Fitness_Tracker_App.Data
 {
-    public class TrainingDay
+    public enum BodyPart
     {
-        public DateTime TodaysDate;
-        public List<Workout> Workouts;
-        public double BodyWeight;
+        UNDEFINED,
+        Leg,
+        Shoulder,
+        Arm,
+        Chest
     }
 }

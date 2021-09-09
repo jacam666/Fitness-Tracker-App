@@ -42,7 +42,7 @@ namespace Fitness_Tracker_App
         {
             TrainingDay train = new();
             DateTime Today = DateTime.Today;
-            bool Workout = UI.SelectBodyPart();
+            Workout = UI.SelectBodyPart();
 
             return train;
         }
@@ -76,8 +76,6 @@ namespace Fitness_Tracker_App
                 Console.WriteLine(option);
             }
         }
-
-
 
         /// <summary>
         /// list of leg exercises
@@ -242,5 +240,15 @@ namespace Fitness_Tracker_App
             Console.WriteLine("SHOULDER.");
         }
 
+        public static Workout InputSets(int SetsCompleted)
+        {
+            Workout CompletedSets = new();
+            CompletedSets.AmountOfSets = SetsCompleted;
+            Console.WriteLine("Please input the ampount of sets completed for this exercise.");
+            Console.ReadLine();
+            return CompletedSets;
+        }
+
+   
     }
 }

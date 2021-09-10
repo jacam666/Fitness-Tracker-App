@@ -22,7 +22,7 @@ namespace Fitness_Tracker_App
             u.LastName = Console.ReadLine();
             EnterDateOfBirth();
             DateTime today = DateTime.Today;
-            Console.WriteLine($"Hi {u.FirstName} {u.LastName} you are currently {/*string.Format("{0:0.}",*/ u.DOB} years old.");
+            Console.WriteLine($"Hi {u.FirstName} {u.LastName} you are currently {string.Format("{0:0.}", u.DOB)} years old.");
 
             return u;
         }
@@ -50,24 +50,24 @@ namespace Fitness_Tracker_App
         /// list of chest exercises
         /// </summary>
         /// <returns>chestexercises</returns>
-        public static Workout PrintSpecificWorkoutOptions()
-        {
-            Workout ChestExercise = new();
-            List<string> ChestExercises = new();
-            ChestExercises.Add("Barbell Bench Press");
-            ChestExercises.Add("Incline Barbell Bench");
-            ChestExercises.Add("Cable Flyes");
-            ChestExercises.Add("Decline Barbell Bench");
-            ChestExercises.Add("Dumbbell Flyes");
-            ChestExercises.Add("Pec Dec");
-            ChestExercises.Add("Cable Crossover");
-            Console.WriteLine("So these will be the exercises that you complete today :");
-            foreach (var i in ChestExercises)
-            {
-                Console.WriteLine(i);
-            }
-            return ChestExercise;
-        }
+        //public static Workout PrintSpecificWorkoutOptions()
+        //{
+        //    Workout ChestExercise = new();
+        //    List<string> ChestExercises = new();
+        //    ChestExercises.Add("Barbell Bench Press");
+        //    ChestExercises.Add("Incline Barbell Bench");
+        //    ChestExercises.Add("Cable Flyes");
+        //    ChestExercises.Add("Decline Barbell Bench");
+        //    ChestExercises.Add("Dumbbell Flyes");
+        //    ChestExercises.Add("Pec Dec");
+        //    ChestExercises.Add("Cable Crossover");
+        //    Console.WriteLine("So these will be the exercises that you complete today :");
+        //    foreach (var i in ChestExercises)
+        //    {
+        //        Console.WriteLine(i);
+        //    }
+        //    return ChestExercise;
+        //}
 
         public static void PrintSpecificWorkoutOptions(List<string> options)
         {
@@ -177,6 +177,11 @@ namespace Fitness_Tracker_App
         public static BodyPart SelectBodyPart()
         {
             BodyPart bodypart = new();
+            Console.Write($"{BodyPart.Arms} ," );
+            Console.Write($"{BodyPart.Back} ," );
+            Console.Write($"{BodyPart.Chest} ," );
+            Console.Write($"{BodyPart.Legs} ," );
+            Console.WriteLine($"{BodyPart.Shoulders}.");
             //print the list of available bodyparts
             string Choice;
    

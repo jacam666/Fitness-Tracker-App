@@ -10,8 +10,8 @@ namespace Fitness_Tracker_App
 
         static void Main(string[] args)
         {
-            UI.EnterNewUser();
-
+            //UI.EnterNewUser();
+            UI.SelectBodyPart();
 
 
             List<string> ChestExercises = new();

@@ -22,8 +22,8 @@ namespace Fitness_Tracker_App
             u.LastName = Console.ReadLine();
             EnterDateOfBirth();
             DateTime today = DateTime.Today;
-            Console.WriteLine($"Hi {u.FirstName} {u.LastName} you are currently {/*string.Format("{0:0.}",*/ u.DOB} years old and weigh {EnterBodyweight()} Kg's.");
-            //remove the bodywight from here
+            Console.WriteLine($"Hi {u.FirstName} {u.LastName} you are currently {/*string.Format("{0:0.}",*/ u.DOB} years old.");
+
             return u;
         }
         /// <summary>

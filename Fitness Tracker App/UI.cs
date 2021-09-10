@@ -176,12 +176,14 @@ namespace Fitness_Tracker_App
         /// <returns>ExerciseChosen</returns>
         public static BodyPart SelectBodyPart()
         {
+            Console.WriteLine("Please choose from the following bodyparts: ");
             BodyPart bodypart = new();
-            Console.Write($"{BodyPart.Arms} ," );
-            Console.Write($"{BodyPart.Back} ," );
-            Console.Write($"{BodyPart.Chest} ," );
-            Console.Write($"{BodyPart.Legs} ," );
+            Console.Write($"{BodyPart.Arms} ,");
+            Console.Write($"{BodyPart.Back} ,");
+            Console.Write($"{BodyPart.Chest} ,");
+            Console.Write($"{BodyPart.Legs} ,");
             Console.WriteLine($"{BodyPart.Shoulders}.");
+
             //print the list of available bodyparts
             string Choice;
    

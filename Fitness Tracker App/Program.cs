@@ -10,6 +10,10 @@ namespace Fitness_Tracker_App
 
         static void Main(string[] args)
         {
+            UI.EnterNewUser();
+
+
+
             List<string> ChestExercises = new();
             ChestExercises.Add("Barbell Bench Press");
             ChestExercises.Add("Incline Barbell Bench");
@@ -65,14 +69,14 @@ namespace Fitness_Tracker_App
             {
 
                 UI.PrintSpecificWorkoutOptions(ChestExercises);
-                 SpecificExercise = UI.InputSpecificExercise();
+                 //SpecificExercise = UI.InputSpecificExercise();
 
             }
             //get sets and reps
             var ex = new Workout();
             ex.ExerciseName = SpecificExercise;
-            ex.AmountOfSets = UI.InputSets();
-            ex.AmountOfReps = UI.InputReps();
+            //ex.AmountOfSets = UI.InputSets();
+            //ex.AmountOfReps = UI.InputReps();
 
             //is it still the same day?
             var td = new TrainingDay();
@@ -89,7 +93,7 @@ namespace Fitness_Tracker_App
             UI.EnterNewUser();
             UI.UsersBodyPartChoice();
             UI.TodaysSessionDetails();
-            UI.RepsSetsCompleted();
+            //UI.RepsSetsCompleted();
         }
         public static void TraingDay()
         {
@@ -100,7 +104,7 @@ namespace Fitness_Tracker_App
         public static void Exercise()
         {
             UI.UsersBodyPartChoice();
-            bool BodyPart = UI.SelectBodyPart();
+            //bool BodyPart = UI.SelectBodyPart();
         }
         public static void User()
         {

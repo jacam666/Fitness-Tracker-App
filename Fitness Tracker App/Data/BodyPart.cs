@@ -9,9 +9,10 @@ namespace Fitness_Tracker_App.Data
     public enum BodyPart
     {
         UNDEFINED,
-        Leg,
-        Shoulder,
-        Arm,
-        Chest
+        Legs,
+        Shoulders,
+        Arms,
+        Chest,
+        Back,
     }
 }

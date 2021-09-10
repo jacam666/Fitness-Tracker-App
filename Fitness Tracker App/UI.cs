@@ -20,9 +20,9 @@ namespace Fitness_Tracker_App
             u.FirstName = Console.ReadLine();
             Console.WriteLine("Please Enter your last name :");
             u.LastName = Console.ReadLine();
-            u.DOB = EnterDateOfBirth();
+            EnterDateOfBirth();
             DateTime today = DateTime.Today;
-            Console.WriteLine($"Hi {u.FirstName} {u.LastName} you are currently {string.Format("{0:0.}", u.DOB)} years old and weigh {EnterBodyweight()} Kg's.");
+            Console.WriteLine($"Hi {u.FirstName} {u.LastName} you are currently {/*string.Format("{0:0.}",*/ u.DOB} years old and weigh {EnterBodyweight()} Kg's.");
             //remove the bodywight from here
             return u;
         }
@@ -42,7 +42,7 @@ namespace Fitness_Tracker_App
         {
             TrainingDay train = new();
             DateTime Today = DateTime.Today;
-            Workout = UI.SelectBodyPart();
+            //Workout = UI.SelectBodyPart();
 
             return train;
         }
@@ -176,6 +176,7 @@ namespace Fitness_Tracker_App
         /// <returns>ExerciseChosen</returns>
         public static BodyPart SelectBodyPart()
         {
+            BodyPart bodypart = new();
             //print the list of available bodyparts
             string Choice;
    
@@ -186,25 +187,21 @@ namespace Fitness_Tracker_App
             }
             if (Choice == "LEGS")
             {
-                Console.WriteLine(LegExercise());
-                Console.WriteLine("Enjoy your workout.");
+                return BodyPart.Legs;
             }
             if (Choice == "BACK")
             {
-                Console.WriteLine(BackExercise());
-                Console.WriteLine("Enjoy your workout.");
+                return BodyPart.Back;
             }
             if (Choice == "ARM")
             {
-                Console.WriteLine(ArmExercise());
-                Console.WriteLine("Enjoy your workout.");
+                return BodyPart.Arms;
             }
             if (Choice == "SHOULDER")
             {
-                Console.WriteLine(ShoulderExercise());
-                Console.WriteLine("Enjoy your workout.");
+                return BodyPart.Shoulders;
             }
-            return ExerciseChosen;
+            return bodypart;
         }
         /// <summary>
         /// user inputs amount of reps and sets completed
@@ -256,6 +253,10 @@ namespace Fitness_Tracker_App
             Console.WriteLine("Please input the ampount of reps completed for this exercise.");
             Console.ReadLine();
             return CompletedReps;
+        }
+        public static void InputSpecificExercise()
+        {
+
         }
     }
 }

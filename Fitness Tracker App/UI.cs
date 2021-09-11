@@ -46,28 +46,7 @@ namespace Fitness_Tracker_App
 
             return train;
         }
-        /// <summary>
-        /// list of chest exercises
-        /// </summary>
-        /// <returns>chestexercises</returns>
-        //public static Workout PrintSpecificWorkoutOptions()
-        //{
-        //    Workout ChestExercise = new();
-        //    List<string> ChestExercises = new();
-        //    ChestExercises.Add("Barbell Bench Press");
-        //    ChestExercises.Add("Incline Barbell Bench");
-        //    ChestExercises.Add("Cable Flyes");
-        //    ChestExercises.Add("Decline Barbell Bench");
-        //    ChestExercises.Add("Dumbbell Flyes");
-        //    ChestExercises.Add("Pec Dec");
-        //    ChestExercises.Add("Cable Crossover");
-        //    Console.WriteLine("So these will be the exercises that you complete today :");
-        //    foreach (var i in ChestExercises)
-        //    {
-        //        Console.WriteLine(i);
-        //    }
-        //    return ChestExercise;
-        //}
+     
 
         public static void PrintSpecificWorkoutOptions(List<string> options)
         {

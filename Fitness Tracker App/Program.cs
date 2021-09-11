@@ -10,9 +10,6 @@ namespace Fitness_Tracker_App
 
         static void Main(string[] args)
         {
-            UI.EnterNewUser();
-
-
             List<string> ChestExercises = new();
             ChestExercises.Add("Barbell Bench Press");
             ChestExercises.Add("Incline Barbell Bench");
@@ -60,7 +57,7 @@ namespace Fitness_Tracker_App
             ArmExercises.Add("Single arm cable pushdowns");
 
             User currentUser = new User();
-
+            UI.EnterNewUser();
             BodyPart SelectedBodyPart = UI.SelectBodyPart();
             string SpecificExercise="";
 
@@ -90,24 +87,24 @@ namespace Fitness_Tracker_App
                 //SpecificExercise = UI.InputSpecificExercise();
             }
             //get sets and reps
-            var ex = new Workout();
-            ex.ExerciseName = SpecificExercise;
+            //var ex = new Workout();
+            //ex.ExerciseName = SpecificExercise;
             //ex.AmountOfSets = UI.InputSets();
             //ex.AmountOfReps = UI.InputReps();
 
-            //is it still the same day?
-            var td = new TrainingDay();
-            td.TodaysDate = DateTime.Now;
-            td.Workouts.Add(ex);
+            //is it still the same day?#
+            //var td = new TrainingDay();
+            //td.TodaysDate = DateTime.Now;
+            //td.Workouts.Add(ex);
 
             //last question:
-            td.BodyWeight = UI.EnterBodyweight();
+            //td.BodyWeight = UI.EnterBodyweight();
 
-            currentUser.TrainingDays.Add(td);
+            //currentUser.TrainingDays.Add(td);
 
             //xml serialize the currentUser object to a file
 
-            UI.EnterNewUser();
+            //UI.EnterNewUser();
             UI.UsersBodyPartChoice();
             UI.TodaysSessionDetails();
             //UI.RepsSetsCompleted();

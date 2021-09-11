@@ -84,6 +84,11 @@ namespace Fitness_Tracker_App
                 UI.PrintSpecificWorkoutOptions(LegExercises);
                 //SpecificExercise = UI.InputSpecificExercise();
             }
+            if (SelectedBodyPart == BodyPart.Shoulders)
+            {
+                UI.PrintSpecificWorkoutOptions(ShoulderExercises);
+                //SpecificExercise = UI.InputSpecificExercise();
+            }
             //get sets and reps
             var ex = new Workout();
             ex.ExerciseName = SpecificExercise;

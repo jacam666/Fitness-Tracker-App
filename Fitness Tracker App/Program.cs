@@ -10,8 +10,7 @@ namespace Fitness_Tracker_App
 
         static void Main(string[] args)
         {
-            //UI.EnterNewUser();
-            UI.SelectBodyPart();
+            UI.EnterNewUser();
 
 
             List<string> ChestExercises = new();
@@ -67,11 +66,15 @@ namespace Fitness_Tracker_App
 
             if (SelectedBodyPart == BodyPart.Chest)
             {
-
                 UI.PrintSpecificWorkoutOptions(ChestExercises);
                  //SpecificExercise = UI.InputSpecificExercise();
-
             }
+            if (SelectedBodyPart == BodyPart.Arms)
+            {
+                UI.PrintSpecificWorkoutOptions(ArmExercises);
+                //SpecificExercise = UI.InputSpecificExercise();
+            }
+
             //get sets and reps
             var ex = new Workout();
             ex.ExerciseName = SpecificExercise;

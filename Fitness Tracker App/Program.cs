@@ -51,6 +51,14 @@ namespace Fitness_Tracker_App
             BackExercises.Add("Single Arm Dumbbell row");
             BackExercises.Add("Machine Back extension");
             BackExercises.Add("Seated Cable row");
+            foreach (var i in BackExercises)
+            {
+                Console.WriteLine(i);
+                Console.WriteLine("Please enter the reps :");
+                Console.ReadLine();
+                Console.WriteLine("Please enter the sets :");
+                Console.ReadLine();
+            }
 
             List<string> ShoulderExercises = new();
             ShoulderExercises.Add("Barbell Press");

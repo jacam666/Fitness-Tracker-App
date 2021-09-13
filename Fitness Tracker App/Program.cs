@@ -68,6 +68,14 @@ namespace Fitness_Tracker_App
             ShoulderExercises.Add("Reverse Pec Dec");
             ShoulderExercises.Add("Barbell Shrugs");
             ShoulderExercises.Add("Cable Upright Rows");
+            foreach (var i in ShoulderExercises)
+            {
+                Console.WriteLine(i);
+                Console.WriteLine("Please enter the reps :");
+                Console.ReadLine();
+                Console.WriteLine("Please enter the sets :");
+                Console.ReadLine();
+            }
 
             List<string> ArmExercises = new();
             ArmExercises.Add("Barbell Curls");

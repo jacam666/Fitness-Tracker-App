@@ -66,13 +66,10 @@ namespace Fitness_Tracker_App
             foreach (var i in ShoulderExercises)
             {
                 Console.WriteLine(i);
-                Console.WriteLine("Please enter the reps :");
-                Console.ReadLine();
-                Console.WriteLine("Please enter the sets :");
-                Console.ReadLine();
-            }
+                UI.InputReps();
+                UI.InputSets();
 
-            List<string> ArmExercises = new();
+                List<string> ArmExercises = new();
             ArmExercises.Add("Barbell Curls");
             ArmExercises.Add("Cable Rope curls");
             ArmExercises.Add("Seated machine curls");

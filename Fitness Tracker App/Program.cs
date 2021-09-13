@@ -35,7 +35,14 @@ namespace Fitness_Tracker_App
             LegExercises.Add("Walking Lunges");
             LegExercises.Add("Pec Dec");
             LegExercises.Add("Lying Leg Curl");
-       
+            foreach (var i in LegExercises)
+            {
+                Console.WriteLine(i);
+                Console.WriteLine("Please enter the reps :");
+                Console.ReadLine();
+                Console.WriteLine("Please enter the sets :");
+                Console.ReadLine();
+            }
 
             List<string> BackExercises = new();
             BackExercises.Add("Barbell Row");

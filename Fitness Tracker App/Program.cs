@@ -87,6 +87,14 @@ namespace Fitness_Tracker_App
             ArmExercises.Add("Dumbbell Tricep Extension");
             ArmExercises.Add("Dumbbell Kickbacks");
             ArmExercises.Add("Single arm cable pushdowns");
+            foreach (var i in ArmExercises)
+            {
+                Console.WriteLine(i);
+                Console.WriteLine("Please enter the reps :");
+                Console.ReadLine();
+                Console.WriteLine("Please enter the sets :");
+                Console.ReadLine();
+            }
 
             User currentUser = new User();
             UI.EnterNewUser();

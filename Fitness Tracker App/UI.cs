@@ -135,10 +135,10 @@ namespace Fitness_Tracker_App
             Console.WriteLine("SHOULDER.");
         }
 
-        public static Workout InputSets(int SetsCompleted)
+        public static Workout InputSets()//int SetsCompleted)
         {
             Workout CompletedSets = new();
-            CompletedSets.AmountOfSets = SetsCompleted;
+            //CompletedSets.AmountOfSets = SetsCompleted;
             Console.WriteLine("Please input the ampount of sets completed for this exercise.");
             Console.ReadLine();
             return CompletedSets;

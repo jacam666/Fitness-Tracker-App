@@ -68,6 +68,7 @@ namespace Fitness_Tracker_App
                 Console.WriteLine(i);
                 UI.InputReps();
                 UI.InputSets();
+            }
 
                 List<string> ArmExercises = new();
             ArmExercises.Add("Barbell Curls");
@@ -82,10 +83,8 @@ namespace Fitness_Tracker_App
             foreach (var i in ArmExercises)
             {
                 Console.WriteLine(i);
-                Console.WriteLine("Please enter the reps :");
-                Console.ReadLine();
-                Console.WriteLine("Please enter the sets :");
-                Console.ReadLine();
+                UI.InputReps();
+                UI.InputSets();
             }
 
             User currentUser = new User();

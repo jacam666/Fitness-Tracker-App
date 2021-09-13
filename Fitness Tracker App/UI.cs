@@ -53,6 +53,8 @@ namespace Fitness_Tracker_App
             foreach(string option in options)
             {
                 Console.WriteLine(option);
+                InputReps();
+                InputSets();
             }
         }
 
@@ -149,6 +151,7 @@ namespace Fitness_Tracker_App
             Workout CompletedReps = new();
             //CompletedReps.AmountOfReps = RepsCompleted;
             Console.WriteLine("Please input the ampount of reps completed for this exercise.");
+            
             Console.ReadLine();
             return CompletedReps;
         }

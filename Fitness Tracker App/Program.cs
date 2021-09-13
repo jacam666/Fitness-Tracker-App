@@ -10,6 +10,16 @@ namespace Fitness_Tracker_App
 
         static void Main(string[] args)
         {
+
+            ChestExerciseName chestExerciseName = new();
+
+            //User currentUser = new User();
+            //UI.EnterNewUser();
+            //BodyPart SelectedBodyPart = UI.SelectBodyPart();
+            //string SpecificExercise = "";
+
+
+
             List<string> ChestExercises = new();
             ChestExercises.Add("Barbell Bench Press");
             ChestExercises.Add("Incline Barbell Bench");
@@ -18,12 +28,16 @@ namespace Fitness_Tracker_App
             ChestExercises.Add("Dumbbell Flyes");
             ChestExercises.Add("Pec Dec");
             ChestExercises.Add("Cable Crossover");
-            foreach (var i in ChestExercises)
-            {
-                Console.WriteLine(i);
-                UI.InputReps();
-                UI.InputSets();
-            }
+            System.Xml.Serialization.XmlSerializer x = new System.Xml.Serialization.XmlSerializer(ChestExercises.GetType());
+            x.Serialize(Console.Out, ChestExercises);
+
+
+            //foreach (var i in ChestExercises)
+            //{
+            //    Console.WriteLine(i);
+            //    UI.InputReps();
+            //    UI.InputSets();
+            //}
 
             List<string> LegExercises = new();
             LegExercises.Add("Barbell Squats");
@@ -33,13 +47,13 @@ namespace Fitness_Tracker_App
             LegExercises.Add("Walking Lunges");
             LegExercises.Add("Pec Dec");
             LegExercises.Add("Lying Leg Curl");
-            foreach (var i in LegExercises)
-            {
-                Console.WriteLine(i);
-                UI.InputReps();
-                UI.InputSets();
+            //foreach (var i in LegExercises)
+            //{
+            //    Console.WriteLine(i);
+            //    UI.InputReps();
+            //    UI.InputSets();
 
-            }
+            //}
 
             List<string> BackExercises = new();
             BackExercises.Add("Barbell Row");
@@ -48,12 +62,12 @@ namespace Fitness_Tracker_App
             BackExercises.Add("Single Arm Dumbbell row");
             BackExercises.Add("Machine Back extension");
             BackExercises.Add("Seated Cable row");
-            foreach (var i in BackExercises)
-            {
-                Console.WriteLine(i);
-                UI.InputReps();
-                UI.InputSets();
-            }
+            //foreach (var i in BackExercises)
+            //{
+            //    Console.WriteLine(i);
+            //    UI.InputReps();
+            //    UI.InputSets();
+            //}
 
             List<string> ShoulderExercises = new();
             ShoulderExercises.Add("Barbell Press");
@@ -63,14 +77,14 @@ namespace Fitness_Tracker_App
             ShoulderExercises.Add("Reverse Pec Dec");
             ShoulderExercises.Add("Barbell Shrugs");
             ShoulderExercises.Add("Cable Upright Rows");
-            foreach (var i in ShoulderExercises)
-            {
-                Console.WriteLine(i);
-                UI.InputReps();
-                UI.InputSets();
-            }
+            //foreach (var i in ShoulderExercises)
+            //{
+            //    Console.WriteLine(i);
+            //    UI.InputReps();
+            //    UI.InputSets();
+            //}
 
-                List<string> ArmExercises = new();
+            List<string> ArmExercises = new();
             ArmExercises.Add("Barbell Curls");
             ArmExercises.Add("Cable Rope curls");
             ArmExercises.Add("Seated machine curls");
@@ -80,22 +94,23 @@ namespace Fitness_Tracker_App
             ArmExercises.Add("Dumbbell Tricep Extension");
             ArmExercises.Add("Dumbbell Kickbacks");
             ArmExercises.Add("Single arm cable pushdowns");
-            foreach (var i in ArmExercises)
-            {
-                Console.WriteLine(i);
-                UI.InputReps();
-                UI.InputSets();
-            }
+            //foreach (var i in ArmExercises)
+            //{
+            //    Console.WriteLine(i);
+            //    UI.InputReps();
+            //    UI.InputSets();
+            //}
 
             User currentUser = new User();
             UI.EnterNewUser();
             BodyPart SelectedBodyPart = UI.SelectBodyPart();
-            string SpecificExercise="";
+            string SpecificExercise = "";
 
             if (SelectedBodyPart == BodyPart.Chest)
             {
                 UI.PrintSpecificWorkoutOptions(ChestExercises);
-                 //SpecificExercise = UI.InputSpecificExercise();
+                //SpecificExercise = UI.InputSpecificExercise();
+
             }
             if (SelectedBodyPart == BodyPart.Arms)
             {

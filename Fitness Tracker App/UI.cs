@@ -144,17 +144,18 @@ namespace Fitness_Tracker_App
             return CompletedSets;
         }
 
-        public static Workout InputReps(int RepsCompleted)
+        public static Workout InputReps()//int RepsCompleted)
         {
             Workout CompletedReps = new();
-            CompletedReps.AmountOfReps = RepsCompleted;
+            //CompletedReps.AmountOfReps = RepsCompleted;
             Console.WriteLine("Please input the ampount of reps completed for this exercise.");
             Console.ReadLine();
             return CompletedReps;
         }
-        public static void InputSpecificExercise()
+        public static Exercise InputSpecificExercise()
         {
-
+            Exercise exercise = new();
+            return exercise;
         }
     }
 }

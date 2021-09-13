@@ -18,6 +18,14 @@ namespace Fitness_Tracker_App
             ChestExercises.Add("Dumbbell Flyes");
             ChestExercises.Add("Pec Dec");
             ChestExercises.Add("Cable Crossover");
+            foreach (var i in ChestExercises)
+            {
+                Console.WriteLine(i);
+                Console.WriteLine("Please enter the reps :");
+                Console.ReadLine();
+                Console.WriteLine("Please enter the sets :");
+                Console.ReadLine();
+            }
 
             List<string> LegExercises = new();
             LegExercises.Add("Barbell Squats");
@@ -27,6 +35,7 @@ namespace Fitness_Tracker_App
             LegExercises.Add("Walking Lunges");
             LegExercises.Add("Pec Dec");
             LegExercises.Add("Lying Leg Curl");
+       
 
             List<string> BackExercises = new();
             BackExercises.Add("Barbell Row");
@@ -87,9 +96,10 @@ namespace Fitness_Tracker_App
                 //SpecificExercise = UI.InputSpecificExercise();
             }
             //get sets and reps
-            //var ex = new Workout();
+            var ex = new Workout();
+
             //ex.ExerciseName = SpecificExercise;
-            //ex.AmountOfSets = UI.InputSets();
+            //ex.AmountOfSets = UI.InputSets(int SetsCompleted);
             //ex.AmountOfReps = UI.InputReps();
 
             //is it still the same day?#
@@ -105,7 +115,7 @@ namespace Fitness_Tracker_App
             //xml serialize the currentUser object to a file
 
             //UI.EnterNewUser();
-            UI.UsersBodyPartChoice();
+            //UI.UsersBodyPartChoice();
             UI.TodaysSessionDetails();
             //UI.RepsSetsCompleted();
         }

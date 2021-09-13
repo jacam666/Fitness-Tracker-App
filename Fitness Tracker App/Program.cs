@@ -23,11 +23,6 @@ namespace Fitness_Tracker_App
                 Console.WriteLine(i);
                 UI.InputReps();
                 UI.InputSets();
-                
-                //    Console.WriteLine("Please enter the reps :");
-                //    Console.ReadLine();
-                //    Console.WriteLine("Please enter the sets :");
-                //    Console.ReadLine();
             }
 
             List<string> LegExercises = new();
@@ -41,10 +36,9 @@ namespace Fitness_Tracker_App
             foreach (var i in LegExercises)
             {
                 Console.WriteLine(i);
-                Console.WriteLine("Please enter the reps :");
-                Console.ReadLine();
-                Console.WriteLine("Please enter the sets :");
-                Console.ReadLine();
+                UI.InputReps();
+                UI.InputSets();
+
             }
 
             List<string> BackExercises = new();

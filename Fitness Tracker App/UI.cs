@@ -46,15 +46,20 @@ namespace Fitness_Tracker_App
 
             return train;
         }
-     
+
 
         public static void PrintSpecificWorkoutOptions(List<string> options)
         {
-            foreach(string option in options)
+            List<Workout> Workouts = new(); 
+            foreach (string option in options)
             {
+                var workout = new Workout();
+                workout.ExerciseName = option;
+           
                 Console.WriteLine(option);
-                InputReps();
-                InputSets();
+                workout.AmountOfReps = InputReps();
+            //    workout.AmountOfSets = InputSets();
+                Workouts.Add(workout);
             }
         }
 
@@ -62,7 +67,7 @@ namespace Fitness_Tracker_App
         /// list of leg exercises
         /// </summary>
         /// <returns>leg exercises</returns>
-        
+
         ///// <summary>
         /// User chooses what bodypart they would like to train, program prints out list of exercises for that bodypart
         /// </summary>
@@ -79,8 +84,21 @@ namespace Fitness_Tracker_App
 
             //print the list of available bodyparts
             string Choice;
-   
+
             Choice = Console.ReadLine().ToUpper();
+
+            //switch (Choice)
+            //{
+            //    case "CHEST":
+            //    case "CHESTY":
+            //    case "superchest":
+            //        return BodyPart.Chest;
+            //    case "LEGS":
+            //        return BodyPart.Legs;
+            //    default:
+            //        return BodyPart.UNDEFINED;
+            //}
+
             if (Choice == "CHEST")
             {
                 return BodyPart.Chest;
@@ -146,14 +164,12 @@ namespace Fitness_Tracker_App
             return CompletedSets;
         }
 
-        public static Workout InputReps()//int RepsCompleted)
+        public static int InputReps()//int RepsCompleted)
         {
-            Workout CompletedReps = new();
-            //CompletedReps.AmountOfReps = RepsCompleted;
+
             Console.WriteLine("Please input the ampount of reps completed for this exercise.");
-            
-            Console.ReadLine();
-            return CompletedReps;
+            int reps = 0;//Console.ReadLine();
+            return reps;
         }
         public static Exercise InputSpecificExercise()
         {

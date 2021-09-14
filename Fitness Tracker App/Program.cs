@@ -28,8 +28,8 @@ namespace Fitness_Tracker_App
             ChestExercises.Add("Dumbbell Flyes");
             ChestExercises.Add("Pec Dec");
             ChestExercises.Add("Cable Crossover");
-            System.Xml.Serialization.XmlSerializer x = new System.Xml.Serialization.XmlSerializer(ChestExercises.GetType());
-            x.Serialize(Console.Out, ChestExercises);
+            //System.Xml.Serialization.XmlSerializer x = new System.Xml.Serialization.XmlSerializer(ChestExercises.GetType());
+            //x.Serialize(Console.Out, ChestExercises);
 
 
             //foreach (var i in ChestExercises)
@@ -100,6 +100,15 @@ namespace Fitness_Tracker_App
             //    UI.InputReps();
             //    UI.InputSets();
             //}
+
+            //List<List<String>> AllExercises = new();
+
+            //AllExercises.Add(ArmExercises);
+            //AllExercises.Add(ShoulderExercises);
+            //AllExercises.Add(BackExercises);
+            //System.Xml.Serialization.XmlSerializer x = new System.Xml.Serialization.XmlSerializer(AllExercises.GetType());
+            //x.Serialize(Console.Out, AllExercises);
+
 
             User currentUser = new User();
             UI.EnterNewUser();

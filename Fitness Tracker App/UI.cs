@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace Fitness_Tracker_App
 {
-    class UI
+    public class UI
     {
         /// <summary>
         /// takes users name, dob, and bodyweight info
         /// </summary>
         /// <returns>userdata</returns>
-        internal static User EnterNewUser()
+        public static User EnterNewUser()
         {
             User u = new();
             Console.WriteLine("Please Enter your First name :");

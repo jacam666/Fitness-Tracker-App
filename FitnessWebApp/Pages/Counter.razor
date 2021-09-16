@@ -1,23 +1,31 @@
-﻿@page "/counter"
+﻿@page "/Counter"
 @using Fitness_Tracker_App.Data
-<h1>Counter</h1>
+@using Fitness_Tracker_App
+<h1>New User</h1>
 
-<p>Current count: @currentCount</p>
+@*<p>Current count: @currentCount</p>*@
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+@*<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>*@
 <button class="btn btn-primary" @onclick="CreateUser">Create User</button>
 <input type="date">
+<input type="checkbox">
+<input type="password">
+<input type="submit">
+<input type="color">
+
 @code {
-    private int currentCount = 0;
+    //private int currentCount = 0;
 
-    private void IncrementCount()
+    //private void IncrementCount()
+    //{
+    //    var workout = new Workout();
+    //    currentCount++;
+    //}
+
+    public void CreateUser()
     {
-        var workout = new Workout();
-        currentCount++;
-    }
 
-    private void CreateUser()
-        {
-         
-        }
+        UI.EnterNewUser();
+
+    }
 }

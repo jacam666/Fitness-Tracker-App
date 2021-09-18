@@ -8,14 +8,8 @@
 @*<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>*@
 <button class="btn btn-primary" @onclick="CreateUser">Create User</button>
 <input type="Date" @bind="Date">
-@*<input type="checkbox">
-<input type="password">
-<input type="submit">*@
+@*
 
-<h1> "Please Enter your First name" </h1>
-<h1> "Please Enter your Last name" </h1>
-
-<input type="color">
 
 @code {
     public DateTime _Date = DateTime.Now;
@@ -30,17 +24,8 @@
     {
         var u = new User();
         u.DOB = Date;
-        //<h1> "Please Enter your First name" </h1>
-        u.FirstName = Console.ReadLine();
-        Console.WriteLine("Please Enter your Last name :");
-        u.LastName = Console.ReadLine();
     }
-    //public FirstName firstName = new();
-
-    //public FirstName GetFirstName
-    //    {
-
-    //    }
+  
 
 
 

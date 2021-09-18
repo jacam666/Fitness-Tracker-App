@@ -1,14 +1,29 @@
 ﻿@page "/"
+{
+    <div class="card" style="width:22rem">
+        <div class="card-body">
+            <h3 class="card-title">@Title</h3>
+            <p class="card-text">@ChildContent</p>
+            <button @onclick="OnYes">Yes!</button>
+        </div>
+    </div>
 
-<h1>Fitness Tracker App</h1>
+    @code {
+        [Parameter]
+        public RenderFragment ChildContent { get; set; }
 
-<h1>Welcome to your new app.</h1>
+        [Parameter]
+        public string Title { get; set; }
 
-
-<h1>Your Fitness Journey Starts Now.</h1>
-<Counter />
-<FetchData />
-<Component />
+        private void OnYes()
+        {
+            Console.WriteLine("Write to the console in C#! 'Yes' button selected.");
+        }
+    }
+}
+@*<Counter />
+    <FetchData />
+    <Component />*@
 
 
 @*<SurveyPrompt Title="How is Blazor working for you?" />*@

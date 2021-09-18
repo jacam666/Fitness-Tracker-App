@@ -1,6 +1,27 @@
 ﻿@page "/newpage"
+@using Fitness_Tracker_App.Data
+@using Fitness_Tracker_App
 <h3>MyPracticePage</h3>
+<h1>This page is for practising all my code</h1>
+
+
 
 @code {
+    public DateTime _Date = DateTime.Now;
 
+    public DateTime Date
+    {
+        get { return _Date; }
+        set { _Date = value; }
+    }
+
+    public void CreateUser()
+    {
+        var u = new User();
+        u.DOB = Date;
+        //<h1> "Please Enter your First name" </h1>
+        u.FirstName = Console.ReadLine();
+        Console.WriteLine("Please Enter your Last name :");
+        u.LastName = Console.ReadLine();
+    }
 }

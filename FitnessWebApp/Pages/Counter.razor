@@ -7,25 +7,45 @@
 
 @*<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>*@
 <button class="btn btn-primary" @onclick="CreateUser">Create User</button>
-<input type="date">
-<input type="checkbox">
+<input type="Date" @bind="Date">
+@*<input type="checkbox">
 <input type="password">
-<input type="submit">
+<input type="submit">*@
+
+<h1> "Please Enter your First name" </h1>
+<h1> "Please Enter your Last name" </h1>
+
 <input type="color">
 
 @code {
-    //private int currentCount = 0;
+    public DateTime _Date = DateTime.Now;
 
-    //private void IncrementCount()
-    //{
-    //    var workout = new Workout();
-    //    currentCount++;
-    //}
+    public DateTime Date
+    {
+        get { return _Date; }
+        set { _Date = value; }
+    }
 
     public void CreateUser()
     {
-
-        UI.EnterNewUser();
-
+        var u = new User();
+        u.DOB = Date;
+        //<h1> "Please Enter your First name" </h1>
+        u.FirstName = Console.ReadLine();
+        Console.WriteLine("Please Enter your Last name :");
+        u.LastName = Console.ReadLine();
     }
+    //public FirstName firstName = new();
+
+    //public FirstName GetFirstName
+    //    {
+
+    //    }
+
+
+
+
+
+
+
 }

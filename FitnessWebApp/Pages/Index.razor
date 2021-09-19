@@ -1,4 +1,16 @@
 ﻿@page "/"
+
+<style>
+    body {
+        background-color: rebeccapurple;
+    }
+</style>
+
+
+
+@code {
+
+}
 <h1>Hello, world!</h1>
 
 <p>
@@ -6,13 +18,14 @@
 </p>
 
 @*<Dialog Title ="Learn More">
-    Do you want to
-    <i>learn more</i> about Blazor?
-</Dialog>*@
+        Do you want to
+        <i>learn more</i> about Blazor?
+    </Dialog>*@
+
 
 
 <div class="card" style="width:22rem">
-    <div class="card-body">
+    <div class="card-body"> 
         <h3 class="card-title">@Title</h3>
         <p class="card-text">@ChildContent</p>
         <button @onclick="OnYes">Yes!</button>

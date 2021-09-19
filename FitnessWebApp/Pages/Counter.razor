@@ -1,36 +1,16 @@
-﻿@page "/Counter"
-@using Fitness_Tracker_App.Data
-@using Fitness_Tracker_App
-<h1>New User</h1>
+﻿@page "/counter"
 
-@*<p>Current count: @currentCount</p>*@
+<h1>Counter</h1>
 
-@*<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>*@
-<button class="btn btn-primary" @onclick="CreateUser">Create User</button>
-<input type="Date" @bind="Date">
-@*
+<p>Current count: @currentCount</p>
 
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
 @code {
-    public DateTime _Date = DateTime.Now;
+    private int currentCount = 0;
 
-    public DateTime Date
+    private void IncrementCount()
     {
-        get { return _Date; }
-        set { _Date = value; }
+        currentCount++;
     }
-
-    public void CreateUser()
-    {
-        var u = new User();
-        u.DOB = Date;
-    }
-  
-
-
-
-
-
-
-
 }

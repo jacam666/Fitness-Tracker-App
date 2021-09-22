@@ -6,4 +6,8 @@
     <RootNamespace>Fitness_Tracker_App</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Syncfusion.Blazor" Version="19.2.0.62" />
+  </ItemGroup>
+
 </Project>

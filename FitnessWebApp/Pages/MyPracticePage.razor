@@ -2,6 +2,7 @@
 @using Fitness_Tracker_App.Data
 @using Fitness_Tracker_App
 @inject Data.DataService Data
+
 <h1>MyPracticePage</h1>
 <h3>We have @Data.Users.Count People in the List</h3>
 <h2>This page is for practising all my code</h2>
@@ -25,8 +26,34 @@ Hello @_firstName please choose a _ChestExerciseName:
 <SurveyPrompt Title="This is another title! =)"></SurveyPrompt>
 
 
+<SfDropDownList TItem="ChestExerciseName" TValue="string" DataSource="chestExercises"></SfDropDownList>
+
+<DropDownListFieldSettings Text="Name"></DropDownListFieldSettings>
+
+
 
 @code {
+
+    public class ChestExerciseName
+    {
+        public string Name { get; set; }
+    }
+    List<ChestExerciseName> chestExercises = new List<ChestExerciseName>
+    {
+    new ChestExerciseName() { Name = "Barbell Bench Press"},
+    new ChestExerciseName() { Name = "InclineBarbellBench"},
+    new ChestExerciseName() { Name = "CableFlyes"},
+    new ChestExerciseName() { Name = "DeclineBarbellBench"},
+    new ChestExerciseName() { Name = "DumbbellFlyes"},
+    new ChestExerciseName() { Name = "PecDec"},
+    new ChestExerciseName() { Name = "CableCrossover"},
+  
+    };
+
+
+
+
+
     private DateTime _Date = DateTime.Now;
 
     public DateTime Date

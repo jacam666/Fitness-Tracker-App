@@ -1,14 +1,28 @@
 ﻿@page "/newpage"
 @using Fitness_Tracker_App.Data
 @using Fitness_Tracker_App
+@inject Data.DataService Data
 <h1>MyPracticePage</h1>
+<h3>We have @Data.Users.Count People in the List</h3>
 <h2>This page is for practising all my code</h2>
+Today is @_Date
+<br />
+Hello @_firstName please choose a _ChestExerciseName:
+<input @bind="_firstName" />
+<input type="Date" @bind="_Date" />
+
 <button class="btn btn-primary" @onclick="CreateUser">Create User</button>
+
+<input @bind="_ChestExerciseName" />
+<button class="btn btn-primary" @onclick="ChestExercises">Choose Chest Exercise</button>
+
+<SurveyPrompt Title="This is a cool title"></SurveyPrompt>
+<SurveyPrompt Title="This is another title! =)"></SurveyPrompt>
 
 
 
 @code {
-    public DateTime _Date = DateTime.Now;
+    private DateTime _Date = DateTime.Now;
 
     public DateTime Date
     {
@@ -16,13 +30,26 @@
         set { _Date = value; }
     }
 
+    private string _firstName = "John";
+
     public void CreateUser()
     {
         var u = new User();
         u.DOB = Date;
-        //<h1> "Please Enter your First name" </h1>
-        u.FirstName = Console.ReadLine();
-        Console.WriteLine("Please Enter your Last name :");
-        u.LastName = Console.ReadLine();
+        u.FirstName = _firstName;
+
+        Data.AddUser(u);
+    }
+    private string _ChestExerciseName = "";
+
+    public void ChestExercises()
+    {
+        var chest = new ChestExerciseName();
+
+        chest. = _ChestExerciseName;
+
+        Data.AddChestExercise(chest);
+
+
     }
 }

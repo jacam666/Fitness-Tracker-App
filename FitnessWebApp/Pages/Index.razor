@@ -1,49 +1,85 @@
 ﻿@page "/"
+@using Fitness_Tracker_App
+@using Fitness_Tracker_App.Data
+@inject Data.DataService Data
+@*<style>
+        body {
+            background-color: rebeccapurple;
+        }
+    </style>*@
 
-<style>
-    body {
-        background-color: rebeccapurple;
-    }
-</style>
 
+@*<SfDropDownList TItem="ChestExerciseName" TValue="string" DataSource="chestExercises"></SfDropDownList>
 
-
-@code {
-
-}
-<h1>Hello, world!</h1>
-
-<p>
-    Welcome to your new app.
-</p>
-
-@*<Dialog Title ="Learn More">
-        Do you want to
-        <i>learn more</i> about Blazor?
-    </Dialog>*@
+    <DropDownListFieldSettings Text="Name"></DropDownListFieldSettings>*@
+<input @bind="_selectedName" />
+<button class="btn btn-primary" @onclick="ChestExerciseName">Choose Chest Exercise</button>
 
 
 
-<div class="card" style="width:11rem">
-    <div class="card-body"> 
-        <h5>Would you like to learn more?</h5>
-        <h3 class="card-title">@Title</h3>
-        <p class="card-text">@ChildContent</p>
-        <button @onclick="OnYes">Yes!</button>
-    </div>
-</div>
-
-@code {
-    [Parameter]
-    public RenderFragment ChildContent { get; set; }
-
-    [Parameter]
-    public string Title { get; set; }
-
-    private void OnYes()
+<select @bind="SelectedName">
+    @foreach (var exercise in Data.chestExerciseNames)
     {
-        Console.WriteLine("Write to the console in C#! 'Yes' button selected.");
+        <option value=@exercise>@exercise</option>
     }
+</select>
+
+@_selectedName
+
+
+@code {
+
+    private string _selectedName;
+
+    public class ChestExerciseName
+    {
+        //public string Name { get; set; }
+
+        public List<string> ChestExerciseNames
+        {
+            get
+            {
+                List<string> ce = new();
+                ce.Add("Barbell Bench Press");
+                ce.Add("Barbell Incline Bench");
+                return ce;
+            }
+        }
+
+        //public class ChestExerciseName
+        //{
+        //    public string Name { get; set; }
+        //}
+        //List<ChestExerciseName> chestExercises = new List<ChestExerciseName>
+        //{
+        //    new ChestExerciseName() { Name = "Barbell Bench Press"},
+        //    new ChestExerciseName() { Name = "InclineBarbellBench"},
+        //    new ChestExerciseName() { Name = "CableFlyes"},
+        //    new ChestExerciseName() { Name = "DeclineBarbellBench"},
+        //    new ChestExerciseName() { Name = "DumbbellFlyes"},
+        //    new ChestExerciseName() { Name = "PecDec"},
+        //    new ChestExerciseName() { Name = "CableCrossover"},
+
+    }
+
+
+
+    @*@code {
+
+        }*@
+    @*<h1>Hello, world!</h1>
+
+        <p>
+            Welcome to your new app.
+        </p>*@
+
+    @*<Dialog Title ="Learn More">
+            Do you want to
+            <i>learn more</i> about Blazor?
+        </Dialog>*@
+
+
+
 }
 
 @*<Counter />

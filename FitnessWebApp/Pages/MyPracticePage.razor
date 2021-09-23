@@ -18,37 +18,37 @@ Hello @_firstName please choose a _ChestExerciseName:
     <button class="btn btn-primary" @onclick="ChestExercises">Choose Chest Exercise</button>*@
 
 
-<input @bind="_exerciseName" />
-    <button class="btn btn-primary" @onclick="ExerciseChoice">Choose Chest Exercise</button>
+@*<input @bind="_exerciseName" />
+    <button class="btn btn-primary" @onclick="ExerciseChoice">Choose Chest Exercise</button>*@
 
 
 <SurveyPrompt Title="This is a cool title"></SurveyPrompt>
 <SurveyPrompt Title="This is another title! =)"></SurveyPrompt>
 
 
-<SfDropDownList TItem="ChestExerciseName" TValue="string" DataSource="chestExercises"></SfDropDownList>
+@*<SfDropDownList TItem="ChestExerciseName" TValue="string" DataSource="chestExercises"></SfDropDownList>
 
-<DropDownListFieldSettings Text="Name"></DropDownListFieldSettings>
+<DropDownListFieldSettings Text="Name"></DropDownListFieldSettings>*@
 
 
 
 @code {
 
-    public class ChestExerciseName
-    {
-        public string Name { get; set; }
-    }
-    List<ChestExerciseName> chestExercises = new List<ChestExerciseName>
-    {
-    new ChestExerciseName() { Name = "Barbell Bench Press"},
-    new ChestExerciseName() { Name = "InclineBarbellBench"},
-    new ChestExerciseName() { Name = "CableFlyes"},
-    new ChestExerciseName() { Name = "DeclineBarbellBench"},
-    new ChestExerciseName() { Name = "DumbbellFlyes"},
-    new ChestExerciseName() { Name = "PecDec"},
-    new ChestExerciseName() { Name = "CableCrossover"},
-  
-    };
+    //public class ChestExerciseName
+    //{
+    //    public string Name { get; set; }
+    //}
+    //List<ChestExerciseName> chestExercises = new List<ChestExerciseName>
+    //{
+    //new ChestExerciseName() { Name = "Barbell Bench Press"},
+    //new ChestExerciseName() { Name = "InclineBarbellBench"},
+    //new ChestExerciseName() { Name = "CableFlyes"},
+    //new ChestExerciseName() { Name = "DeclineBarbellBench"},
+    //new ChestExerciseName() { Name = "DumbbellFlyes"},
+    //new ChestExerciseName() { Name = "PecDec"},
+    //new ChestExerciseName() { Name = "CableCrossover"},
+
+    //};
 
 
 

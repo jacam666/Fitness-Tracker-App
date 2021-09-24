@@ -48,7 +48,7 @@ Hello @_firstName please choose a _ChestExerciseName:
 
 @for (var i = 0; i < movies.Count; i++)
 {
-    <div>
+    <div style="background-color: @(i % 2 == 0 ? "blue" : "red")">
         <p>@(i+1))Title: <b>@movies[i].Title</b></p>
         <p>Release Date: <b>@movies[i].ReleaseDate.ToString("dd MMM yyyy")</b></p>
     </div>

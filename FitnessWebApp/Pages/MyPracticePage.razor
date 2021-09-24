@@ -56,6 +56,21 @@ Hello @_firstName please choose a _ChestExerciseName:
         Console.WriteLine("i've been clicked (from method)");
     }
 
+    List<Movie> Movies;
+
+    protected override void OnInitialized()
+    {
+        Movies = new List<Movie>()
+        {
+            new Movie(){Title = "Spider-man: far from home", ReleaseDate = new DateTime(2019, 7, 2)},
+            new Movie(){Title = "Moana", ReleaseDate = new DateTime(2016, 11 ,23)},
+            new Movie(){Title = "Inception", ReleaseDate = new DateTime(2010, 7 ,16)},
+        };
+    }
+
+
+
+
     Movie spiderman = new()
     {
         Title = "Spider-Man: Far from Home",

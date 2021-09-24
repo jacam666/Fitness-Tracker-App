@@ -29,8 +29,8 @@ Hello @_firstName please choose a _ChestExerciseName:
     <button class="btn btn-primary" @onclick="ExerciseChoice">Choose Chest Exercise</button>*@
 
 
-<SurveyPrompt Title="This is a cool title"></SurveyPrompt>
-<SurveyPrompt Title="This is another title! =)"></SurveyPrompt>
+@*<SurveyPrompt Title="This is a cool title"></SurveyPrompt>
+<SurveyPrompt Title="This is another title! =)"></SurveyPrompt>*@
 
 
 @*<SfDropDownList TItem="ChestExerciseName" TValue="string" DataSource="chestExercises"></SfDropDownList>
@@ -46,13 +46,12 @@ Hello @_firstName please choose a _ChestExerciseName:
         }
     </div>*@
 
-@for (var i = 0; i < movies.Count; i++)
-{
-    <div style="background-color: @(i % 2 == 0 ? "blue" : "red")">
-        <p>@(i+1))Title: <b>@movies[i].Title</b></p>
-        <p>Release Date: <b>@movies[i].ReleaseDate.ToString("dd MMM yyyy")</b></p>
-    </div>
-}
+<div>
+    <h3>Movies:</h3>
+    <MoviesList/>
+</div>
+
+
 
 
 
@@ -66,26 +65,11 @@ Hello @_firstName please choose a _ChestExerciseName:
         Console.WriteLine("i've been clicked (from method)");
     }
 
-    List<Movie> movies;
-
-    protected override void OnInitialized()
-    {
-        movies = new List<Movie>()
-    {
-            new Movie(){Title = "Spider-man: far from home", ReleaseDate = new DateTime(2019, 7, 2)},
-            new Movie(){Title = "Moana", ReleaseDate = new DateTime(2016, 11 ,23)},
-            new Movie(){Title = "Inception", ReleaseDate = new DateTime(2010, 7 ,16)},
-        };
-    }
+  
 
 
 
 
-    Movie spiderman = new()
-    {
-        Title = "Spider-Man: Far from Home",
-        ReleaseDate = new DateTime(2019, 7, 2),
-    };
 
     //public class ChestExerciseName
     //{

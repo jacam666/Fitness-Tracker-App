@@ -1,6 +1,6 @@
 ﻿@for (var i = 0; i < movies.Count; i++)
 {
-    <div style="background-color: @(i % 2 == 0 ? "blue" : "red")">
+    <div> @*style="background-color: @(i % 2 == 0 ? "blue" : "red")">*@
         <p>@(i+1))Title: <b>@movies[i].Title</b></p>
         <p>Release Date: <b>@movies[i].ReleaseDate.ToString("dd MMM yyyy")</b></p>
     </div>

@@ -1,5 +1,23 @@
-﻿<h3>MoviesList</h3>
+﻿@for (var i = 0; i < movies.Count; i++)
+{
+    <div style="background-color: @(i % 2 == 0 ? "blue" : "red")">
+        <p>@(i+1))Title: <b>@movies[i].Title</b></p>
+        <p>Release Date: <b>@movies[i].ReleaseDate.ToString("dd MMM yyyy")</b></p>
+    </div>
+}
+
 
 @code {
+    List<Movie> movies;
+
+    protected override void OnInitialized()
+    {
+        movies = new List<Movie>()
+    {
+            new Movie(){Title = "Spider-man: far from home", ReleaseDate = new DateTime(2019, 7, 2)},
+            new Movie(){Title = "Moana", ReleaseDate = new DateTime(2016, 11 ,23)},
+            new Movie(){Title = "Inception", ReleaseDate = new DateTime(2010, 7 ,16)},
+        };
+    }
 
 }

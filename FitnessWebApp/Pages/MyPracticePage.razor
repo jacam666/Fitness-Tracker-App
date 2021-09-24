@@ -38,13 +38,13 @@ Hello @_firstName please choose a _ChestExerciseName:
     <DropDownListFieldSettings Text="Name"></DropDownListFieldSettings>*@
 
 @*<div>
-    <h3>Movie</h3>
-    @foreach (var movie in movies)
-    {
-        <p>Title: <b>@movie.Title</b></p>
-        <p>Release Date: <b>@movie.ReleaseDate.ToString("dd MMM yyyy")</b></p>
-    }
-</div>*@
+        <h3>Movie</h3>
+        @foreach (var movie in movies)
+        {
+            <p>Title: <b>@movie.Title</b></p>
+            <p>Release Date: <b>@movie.ReleaseDate.ToString("dd MMM yyyy")</b></p>
+        }
+    </div>*@
 
 @for (var i = 0; i < movies.Count; i++)
 {
@@ -71,7 +71,7 @@ Hello @_firstName please choose a _ChestExerciseName:
     protected override void OnInitialized()
     {
         movies = new List<Movie>()
-{
+    {
             new Movie(){Title = "Spider-man: far from home", ReleaseDate = new DateTime(2019, 7, 2)},
             new Movie(){Title = "Moana", ReleaseDate = new DateTime(2016, 11 ,23)},
             new Movie(){Title = "Inception", ReleaseDate = new DateTime(2010, 7 ,16)},

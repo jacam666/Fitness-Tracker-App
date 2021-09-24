@@ -2,7 +2,7 @@
 @using Fitness_Tracker_App.Data
 @using Fitness_Tracker_App
 @inject Data.DataService Data
-@using FitnessWebApp.Pages.entities 
+@using FitnessWebApp.Pages.entities
 
 <h1>MyPracticePage</h1>
 <h3>We have @Data.Users.Count People in the List</h3>
@@ -35,13 +35,15 @@ Hello @_firstName please choose a _ChestExerciseName:
 
 @*<SfDropDownList TItem="ChestExerciseName" TValue="string" DataSource="chestExercises"></SfDropDownList>
 
-<DropDownListFieldSettings Text="Name"></DropDownListFieldSettings>*@
+    <DropDownListFieldSettings Text="Name"></DropDownListFieldSettings>*@
 
 <div>
     <h3>Movie</h3>
-    <p>Title: <b>@spiderman.Title</b></p>
-    <p>Release Date: <b>@spiderman.ReleaseDate.ToString("dd MMM yyyy")</b></p>
-
+    @foreach (var movie in movies)
+    {
+        <p>Title: <b>@movie.Title</b></p>
+        <p>Release Date: <b>@movie.ReleaseDate.ToString("dd MMM yyyy")</b></p>
+    }
 </div>
 
 
@@ -56,12 +58,12 @@ Hello @_firstName please choose a _ChestExerciseName:
         Console.WriteLine("i've been clicked (from method)");
     }
 
-    List<Movie> Movies;
+    List<Movie> movies;
 
     protected override void OnInitialized()
     {
-        Movies = new List<Movie>()
-        {
+        movies = new List<Movie>()
+    {
             new Movie(){Title = "Spider-man: far from home", ReleaseDate = new DateTime(2019, 7, 2)},
             new Movie(){Title = "Moana", ReleaseDate = new DateTime(2016, 11 ,23)},
             new Movie(){Title = "Inception", ReleaseDate = new DateTime(2010, 7 ,16)},

@@ -2,6 +2,7 @@
 @using Fitness_Tracker_App.Data
 @using Fitness_Tracker_App
 @inject Data.DataService Data
+@using FitnessWebApp.Pages.entities 
 
 <h1>MyPracticePage</h1>
 <h3>We have @Data.Users.Count People in the List</h3>
@@ -13,10 +14,16 @@ Hello @_firstName please choose a _ChestExerciseName:
 <input type="Date" @bind="_Date" />
 
 <button class="btn btn-primary" @onclick="CreateUser">Create User</button>
+<p>hello, @name.ToUpper()</p>
+<p>lets add 2 + 2 = @(2 + 2 )</p>
+
+<button @onclick="@(() => Console.WriteLine("i've been clicked!"))">click me</button>
+// or
+
+<button @onclick="@WriteInlog">click me </button>
 
 @*<input @bind="_ChestExerciseName" />
     <button class="btn btn-primary" @onclick="ChestExercises">Choose Chest Exercise</button>*@
-
 
 @*<input @bind="_exerciseName" />
     <button class="btn btn-primary" @onclick="ExerciseChoice">Choose Chest Exercise</button>*@
@@ -30,9 +37,30 @@ Hello @_firstName please choose a _ChestExerciseName:
 
 <DropDownListFieldSettings Text="Name"></DropDownListFieldSettings>*@
 
+<div>
+    <h3>Movie</h3>
+    <p>Title: <b>@spiderman.Title</b></p>
+    <p>Release Date: <b>@spiderman.ReleaseDate.ToString("dd MMM yyyy")</b></p>
+
+</div>
+
+
+
 
 
 @code {
+    string name = "ja cameron";
+
+    void WriteInlog()
+    {
+        Console.WriteLine("i've been clicked (from method)");
+    }
+
+    Movie spiderman = new()
+    {
+        Title = "Spider-Man: Far from Home",
+        ReleaseDate = new DateTime(2019, 7, 2),
+    };
 
     //public class ChestExerciseName
     //{

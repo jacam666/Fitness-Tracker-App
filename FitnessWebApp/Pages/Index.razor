@@ -12,8 +12,8 @@
 @*<SfDropDownList TItem="ChestExerciseName" TValue="string" DataSource="chestExercises"></SfDropDownList>
 
     <DropDownListFieldSettings Text="Name"></DropDownListFieldSettings>*@
-<input @bind="_selectedName" />
-<button class="btn btn-primary" @onclick="ChestExerciseName">Choose Chest Exercise</button>
+@*<input @bind="_selectedName" />
+<button class="btn btn-primary" @onclick=" ">Choose Chest Exercise</button>
 
 
 
@@ -22,7 +22,7 @@
     {
         <option value=@exercise>@exercise</option>
     }
-</select>
+</select>*@
 
 @_selectedName
 
@@ -31,8 +31,7 @@
 
     private string _selectedName;
 
-    public class ChestExerciseName
-    {
+ 
         //public string Name { get; set; }
 
         public List<string> ChestExerciseNames
@@ -60,7 +59,7 @@
         //    new ChestExerciseName() { Name = "PecDec"},
         //    new ChestExerciseName() { Name = "CableCrossover"},
 
-    }
+    
 
 
 

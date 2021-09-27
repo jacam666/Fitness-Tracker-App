@@ -9,12 +9,12 @@
     </style>*@
 
 
-<SfDropDownList TItem="ChestExerciseName" TValue="string" DataSource="Data.chestExerciseNames"></SfDropDownList>
+@*<SfDropDownList TItem="ChestExerciseName" TValue="string" DataSource="Data.chestExerciseNames"></SfDropDownList>
 
-    <DropDownListFieldSettings Text="Name"></DropDownListFieldSettings>
+    <DropDownListFieldSettings Text="Name"></DropDownListFieldSettings>*@
 <input @bind="_selectedName" />
-<button class="btn btn-primary" @onclick="">Choose Chest Exercise</button>
-<button type="button" class="btn btn-primary">Primary</button>
+<button class="btn btn-primary" @onclick="ce">Choose Chest Exercise</button>
+
 
 
 
@@ -29,6 +29,12 @@
 
 
 @code {
+    private void ce()
+    {
+        @ChestExerciseNames;
+    }
+
+
 
     private string _selectedName;
 

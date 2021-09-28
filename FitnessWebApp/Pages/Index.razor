@@ -18,26 +18,14 @@ Reps: <input type="number" @bind="_numberReps"/>
 <br />
 Here's the _selecteName varaible: @_selectedName
 
-@*<select @bind="_selectedName">
-    @foreach (var exercise in Data.chestExerciseNames)
-    {
-        <option value=@exercise>@exercise</option>
-    }
-</select>*@
-
-@*<p>@Data.chestExerciseNames</p>*@
 
 
 @code {
 
-    private string _selectedValue;
 
     private string _selectedName;
 
     private int _numberReps;
-
-    private string _fristString = "hello";
-    private string _secondString = "this is the second string";
 
     private void ce()
     {
@@ -45,7 +33,7 @@ Here's the _selecteName varaible: @_selectedName
         aWorkout.ExerciseName = _selectedName;
         aWorkout.AmountOfReps = _numberReps;
 
-        Data.Workouts.Add(aWorkout);
+
 
     }
 

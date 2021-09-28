@@ -11,7 +11,7 @@ namespace Fitness_Tracker_App
         static void Main(string[] args)
         {
 
-            ChestExerciseName chestExerciseName = new();
+          
 
             //User currentUser = new User();
             //UI.EnterNewUser();

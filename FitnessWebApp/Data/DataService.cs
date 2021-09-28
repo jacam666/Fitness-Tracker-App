@@ -16,6 +16,23 @@ namespace FitnessWebApp.Data
             set { _users = value; }
         }
 
+        private List<String> _chestExerciseNames = new()
+        {
+            "Barbell Bench Press",
+            "Incline Barbell Bench",
+            "Cable Flyes",
+            "Decline Barbell Bench",
+            "Dumbbell Flyes",
+            "Pec Dec",
+            "Cable Crossover"
+        };
+
+        public List<String> ChestExerciseNames
+        {
+            get { return _chestExerciseNames; }
+            set { _chestExerciseNames = value; }
+        }
+
 
         public void AddUser(User u)
         {
@@ -23,16 +40,7 @@ namespace FitnessWebApp.Data
             //store (maybe xml, maybe database)
         }
 
-        private List<ChestExerciseName> _chestExerciseNames = new();
 
-        public List<ChestExerciseName> chestExerciseNames
-        {
-            get { return _chestExerciseNames; }
-            set { _chestExerciseNames = value; }
-        }
-        public void AddChestExercise(ChestExerciseName chest)
-        {
-            _chestExerciseNames.Add(chest);
-        }
+
     }
 }

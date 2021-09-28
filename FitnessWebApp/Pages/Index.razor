@@ -2,41 +2,52 @@
 @using Fitness_Tracker_App
 @using Fitness_Tracker_App.Data
 @inject Data.DataService Data
-@*<style>
-        body {
-            background-color: rebeccapurple;
-        }
-    </style>*@
 
 
-@*<SfDropDownList TItem="ChestExerciseName" TValue="string" DataSource="Data.chestExerciseNames"></SfDropDownList>
-
-    <DropDownListFieldSettings Text="Name"></DropDownListFieldSettings>*@
-<input @bind="_selectedName" />
-<button class="btn btn-primary" @onclick="ce">Choose Chest Exercise</button>
-
-
-
-
+<br />
 <select @bind="_selectedName">
+
+    @foreach(var exerciseName in Data.ChestExerciseNames)
+                {
+                    <option>@exerciseName</option>
+                }
+</select>
+Reps: <input type="number" @bind="_numberReps"/>
+<br />
+<button class="btn btn-primary" @onclick="ce">Choose Chest Exercise</button>
+<br />
+Here's the _selecteName varaible: @_selectedName
+
+@*<select @bind="_selectedName">
     @foreach (var exercise in Data.chestExerciseNames)
     {
         <option value=@exercise>@exercise</option>
     }
-</select>
+</select>*@
 
 @*<p>@Data.chestExerciseNames</p>*@
 
 
 @code {
-    private void ce()
-    {
-        @ChestExerciseNames;
-    }
 
-
+    private string _selectedValue;
 
     private string _selectedName;
+
+    private int _numberReps;
+
+    private string _fristString = "hello";
+    private string _secondString = "this is the second string";
+
+    private void ce()
+    {
+        var aWorkout = new Workout();
+        aWorkout.ExerciseName = _selectedName;
+        aWorkout.AmountOfReps = _numberReps;
+
+        Data.Workouts.Add(aWorkout);
+
+    }
 
 
     public string Name { get; set; }

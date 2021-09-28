@@ -31,12 +31,9 @@ Hello @_firstName please choose a Chest Exercise:
 
 
 @*<SurveyPrompt Title="This is a cool title"></SurveyPrompt>
-<SurveyPrompt Title="This is another title! =)"></SurveyPrompt>*@
+    <SurveyPrompt Title="This is another title! =)"></SurveyPrompt>*@
 
 
-@*<SfDropDownList TItem="ChestExerciseName" TValue="string" DataSource="chestExercises"></SfDropDownList>
-
-    <DropDownListFieldSettings Text="Name"></DropDownListFieldSettings>*@
 
 @*<div>
         <h3>Movie</h3>
@@ -49,7 +46,7 @@ Hello @_firstName please choose a Chest Exercise:
 
 <div>
     <h3>Movies:</h3>
-    <MoviesList Movies="movies"/>
+    <MoviesList Movies="movies" />
 </div>
 
 
@@ -63,7 +60,7 @@ Hello @_firstName please choose a Chest Exercise:
     protected override void OnInitialized()
     {
         movies = new List<Movie>()
-    {
+{
             new Movie(){Title = "Spider-man: far from home", ReleaseDate = new DateTime(2019, 7, 2)},
             new Movie(){Title = "Moana", ReleaseDate = new DateTime(2016, 11 ,23)},
             new Movie(){Title = "Inception", ReleaseDate = new DateTime(2010, 7 ,16)},
@@ -88,7 +85,7 @@ Hello @_firstName please choose a Chest Exercise:
     }
     //public void ChestExerciseName();
     List<ChestExerciseName> chestExercises = new List<ChestExerciseName>
-    {
+{
     new ChestExerciseName() { Name = "Barbell Bench Press"},
     new ChestExerciseName() { Name = "InclineBarbellBench"},
     new ChestExerciseName() { Name = "CableFlyes"},
@@ -140,7 +137,6 @@ Hello @_firstName please choose a Chest Exercise:
         var ec = new Exercise();
         ec.ExerciseName = _exerciseName;
 
-        Data.chestExerciseNames.Count();
     }
 
 

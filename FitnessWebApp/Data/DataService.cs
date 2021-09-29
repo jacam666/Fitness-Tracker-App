@@ -50,6 +50,21 @@ namespace FitnessWebApp.Data
             set { _LegExerciseNames = value; }
         }
 
+        private List<String> _BackExerciseNames = new()
+        {
+            "Barbell Row",
+            "Cable Lat Pulldown",
+            "Close grip Cable Pulldown",
+            "Single Arm Dumbbell row",
+            "Machine Back extension",
+            "Seated Cable row",
+            "Rack Pulls"
+        };
+        public List<String> BackExerciseNames
+        {
+            get { return _BackExerciseNames; }
+            set { _BackExerciseNames = value; }
+        }
 
 
 

@@ -61,6 +61,23 @@ Reps:
 </select>
 Reps:
 <input type="number" @bind="_numberReps" />
+<br />
+
+<br />
+
+<button class="btn btn-primary" @onclick="ArmExercises">Choose Arm Exercise</button>
+<br />
+
+<select @bind="_selectedName">
+
+    @foreach (var exerciseName in Data.ArmExerciseNames)
+    {
+        <option>@exerciseName</option>
+    }
+</select>
+
+
+
 
 
 
@@ -102,6 +119,16 @@ Reps:
         aWorkout.ExerciseName = _selectedName;
         aWorkout.AmountOfReps = _numberReps;
     }
+
+    public void ArmExercises()
+    {
+        var aWorkout = new Workout();
+        aWorkout.ExerciseName = _selectedName;
+        aWorkout.AmountOfReps = _numberReps;
+    }
+
+
+
 
     //public List<string> ChestExerciseNames
     //{

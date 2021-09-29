@@ -14,9 +14,18 @@
 </select>
 Reps: <input type="number" @bind="_numberReps"/>
 <br />
-<button class="btn btn-primary" @onclick="ce">Choose Chest Exercise</button>
+<button class="btn btn-primary" @onclick="ChestExercises">Choose Chest Exercise</button>
 <br />
 Here's the _selecteName varaible: @_selectedName
+
+<button class="btn btn-primary" @onclick="LegExercises">Choose Leg Exercise</button>
+<select @bind="_selectedName">
+
+    @foreach (var exerciseName in Data.LegExerciseNames)
+    {
+        <option>@exerciseName</option>
+    }
+</select>
 
 
 
@@ -27,29 +36,33 @@ Here's the _selecteName varaible: @_selectedName
 
     private int _numberReps;
 
-    private void ce()
+    private void ChestExercises()
     {
         var aWorkout = new Workout();
         aWorkout.ExerciseName = _selectedName;
         aWorkout.AmountOfReps = _numberReps;
-
-
-
     }
 
 
     public string Name { get; set; }
 
-    public List<string> ChestExerciseNames
+    private void LegExercises()
     {
-        get
-        {
-            List<string> ce = new();
-            ce.Add("Barbell Bench Press");
-            ce.Add("Barbell Incline Bench");
-            return ce;
-        }
+        var aWorkout = new Workout();
+        aWorkout.ExerciseName = _selectedName;
+        aWorkout.AmountOfReps = _numberReps;
     }
+
+    //public List<string> ChestExerciseNames
+    //{
+    //    get
+    //    {
+    //        List<string> ChestExercises = new();
+    //        ChestExercises.Add("Barbell Bench Press");
+    //        ChestExercises.Add("Barbell Incline Bench");
+    //        return ChestExercises;
+    //    }
+    //}
 
     //public class ChestExerciseName
     //{

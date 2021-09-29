@@ -20,8 +20,7 @@ Reps:
 
 <br />
 <button class="btn btn-primary" @onclick="LegExercises">Choose Leg Exercise</button>
-<b />
-<b />
+<br />
 <select @bind="_selectedName">
 
     @foreach (var exerciseName in Data.LegExerciseNames)
@@ -29,13 +28,13 @@ Reps:
         <option>@exerciseName</option>
     }
 </select>
-Reps: <input type="number" @bind="_numberReps" />
-<b />
+Reps:
+<input type="number" @bind="_numberReps" />
+<br />
 
-
+<br />
 <button class="btn btn-primary" @onclick="BackExercises">Choose Back Exercise</button>
-<b />
-<b />
+<br />
 
 <select @bind="_selectedName">
 
@@ -44,7 +43,8 @@ Reps: <input type="number" @bind="_numberReps" />
         <option>@exerciseName</option>
     }
 </select>
-Reps: <input type="number" @bind="_numberReps" />
+Reps:
+<input type="number" @bind="_numberReps" />
 
 
 

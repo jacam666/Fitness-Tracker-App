@@ -5,23 +5,41 @@
 
 
 <br />
-<select @bind="_selectedName">
-
-    @foreach(var exerciseName in Data.ChestExerciseNames)
-                {
-                    <option>@exerciseName</option>
-                }
-</select>
-Reps: <input type="number" @bind="_numberReps"/>
-<br />
 <button class="btn btn-primary" @onclick="ChestExercises">Choose Chest Exercise</button>
 <br />
-Here's the _selecteName varaible: @_selectedName
+<select @bind="_selectedName">
 
+    @foreach (var exerciseName in Data.ChestExerciseNames)
+    {
+        <option>@exerciseName</option>
+    }
+</select>
+Reps:
+<input type="number" @bind="_numberReps" />
+<br />
+
+<br />
 <button class="btn btn-primary" @onclick="LegExercises">Choose Leg Exercise</button>
+<b />
+<b />
 <select @bind="_selectedName">
 
     @foreach (var exerciseName in Data.LegExerciseNames)
+    {
+        <option>@exerciseName</option>
+    }
+</select>
+Reps: <input type="number" @bind="_numberReps" />
+<b />
+
+
+<button class="btn btn-primary" @onclick="BackExercises">Choose Back Exercise</button>
+<b />
+<b />
+
+<select @bind="_selectedName">
+
+    @foreach (var exerciseName in Data.BackExerciseNames)
     {
         <option>@exerciseName</option>
     }
@@ -47,6 +65,13 @@ Here's the _selecteName varaible: @_selectedName
     public string Name { get; set; }
 
     private void LegExercises()
+    {
+        var aWorkout = new Workout();
+        aWorkout.ExerciseName = _selectedName;
+        aWorkout.AmountOfReps = _numberReps;
+    }
+
+    private void BackExercises()
     {
         var aWorkout = new Workout();
         aWorkout.ExerciseName = _selectedName;

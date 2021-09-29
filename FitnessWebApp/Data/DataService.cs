@@ -66,6 +66,22 @@ namespace FitnessWebApp.Data
             set { _BackExerciseNames = value; }
         }
 
+        private List<String> _ShoulderExerciseNames = new()
+        {
+            "Barbell Press",
+            "Dumbbell Press",
+            "Dumbbell side raises",
+            "Dumbbell Front raises",
+            "Reverse Pec Dec",
+            "Barbell Shrugs",
+            "Cable Upright Rows"
+        };
+
+        public List<String> ShoulderExerciseNames
+        {
+            get { return _ShoulderExerciseNames; }
+            set { _ShoulderExerciseNames = value; }
+        }
 
 
         public void AddUser(User u)

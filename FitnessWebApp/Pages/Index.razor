@@ -77,6 +77,8 @@ Reps:
 </select>
 Reps:
 <input type="number" @bind="_numberReps" />
+Sets:
+<input type="number" @bind="_numberSets" />
 
 
 
@@ -90,6 +92,8 @@ Reps:
     private string _selectedName;
 
     private int _numberReps;
+
+    private int _numberSets;
 
     private void ChestExercises()
     {
@@ -127,6 +131,7 @@ Reps:
         var aWorkout = new Workout();
         aWorkout.ExerciseName = _selectedName;
         aWorkout.AmountOfReps = _numberReps;
+        aWorkout.AmountOfSets = _numberSets;
     }
 
 

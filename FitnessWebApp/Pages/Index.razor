@@ -58,6 +58,9 @@ Reps:
 Sets:
 <input type="number" @bind="_numberSets" />
 <br />
+Weight in kg's:
+<input type="number" @bind="_weights" />
+<br />
 
 <br />
 
@@ -139,6 +142,7 @@ Sets:
         aWorkout.ExerciseName = _selectedName;
         aWorkout.AmountOfReps = _numberReps;
         aWorkout.AmountOfSets = _numberSets;
+        aWorkout.Weight = _weights;
     }
 
     private void ShoulderExercises()

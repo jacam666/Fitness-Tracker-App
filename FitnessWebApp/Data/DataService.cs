@@ -33,6 +33,25 @@ namespace FitnessWebApp.Data
             set { _chestExerciseNames = value; }
         }
 
+        private List<String> _LegExerciseNames = new()
+        {
+            "Barbell Squats",
+            "Leg Press",
+            "Leg extensions",
+            "Hack Squats",
+            "Walking Lunges",
+            "Seated leg curl",
+            "Lying Leg Curl"
+        };
+
+        public List<String> LegExerciseNames
+        {
+            get { return _LegExerciseNames; }
+            set { _LegExerciseNames = value; }
+        }
+
+
+
 
         public void AddUser(User u)
         {

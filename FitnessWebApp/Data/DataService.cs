@@ -83,6 +83,24 @@ namespace FitnessWebApp.Data
             set { _ShoulderExerciseNames = value; }
         }
 
+        private List<String> _ArmExerciseNames = new()
+        {
+            "Barbell Curls",
+            "Cable Rope curls",
+            "Seated machine curls",
+            "Dumbbell Concertration curls",
+            "Close grip Bench press",
+            "Rope cable Pushdown",
+            "Dumbbell Tricep Extension",
+            "Dumbbell Kickbacks",
+            "Single arm cable pushdowns"
+        };
+
+        public List<String> ArmExerciseNames
+        {
+            get { return _ArmExerciseNames; }
+            set { _ArmExerciseNames = value; }
+        }
 
         public void AddUser(User u)
         {

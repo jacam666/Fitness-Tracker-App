@@ -17,10 +17,10 @@
 Reps:
 <input type="number" @bind="_chestnumberReps" />
 Sets: 
-<input type="number" @bind="_numberSets" />
+<input type="number" @bind="_chestnumberSets" />
 <br />
 Weight in kg's:
-<input type="number" @bind="_weights" />
+<input type="number" @bind="_chestweights" />
 <br />
 
 <br />
@@ -36,10 +36,10 @@ Weight in kg's:
 Reps:
 <input type="number" @bind="_legsnumberReps" />
 Sets:
-<input type="number" @bind="_numberSets" />
+<input type="number" @bind="_legsnumberSets" />
 <br />
 Weight in kg's:
-<input type="number" @bind="_weights" />
+<input type="number" @bind="_legsweights" />
 <br />
 
 <br />
@@ -56,14 +56,12 @@ Weight in kg's:
 Reps:
 <input type="number" @bind="_backnumberReps" />
 Sets:
-<input type="number" @bind="_numberSets" />
+<input type="number" @bind="_backnumberSets" />
 <br />
 Weight in kg's:
-<input type="number" @bind="_weights" />
+<input type="number" @bind="_backweights" />
 <br />
-
 <br />
-
 <button class="btn btn-primary" @onclick="ShoulderExercises">Choose Shoulder Exercise</button>
 <br />
 
@@ -77,14 +75,12 @@ Weight in kg's:
 Reps:
 <input type="number" @bind="_shouldernumberReps" />
 Sets:
-<input type="number" @bind="_numberSets" />
+<input type="number" @bind="_shouldernumberSets" />
 <br />
 Weight in kg's:
-<input type="number" @bind="_weights" />
+<input type="number" @bind="_shoulderweights" />
 <br />
-
 <br />
-
 <button class="btn btn-primary" @onclick="ArmExercises">Choose Arm Exercise</button>
 <br />
 
@@ -96,16 +92,13 @@ Weight in kg's:
     }
 </select>
 Reps:
-<input type="number" @bind="_chestnumberReps" />
 <input type="number" @bind="_armnumberReps" />
-<input type="number" @bind="_shouldernumberReps" />
-<input type="number" @bind="_backnumberReps" />
-<input type="number" @bind="_legsnumberReps" />
+
 Sets:
-<input type="number" @bind="_numberSets" />
+<input type="number" @bind="_armnumberSets" />
 <br />
 Weight in kg's:
-<input type="number" @bind="_weights" />
+<input type="number" @bind="_armweights" />
 
 
 
@@ -115,7 +108,6 @@ Weight in kg's:
 
 @code {
 
-
     private string _selectedName;
 
     private int _chestnumberReps;
@@ -124,7 +116,19 @@ Weight in kg's:
     private int _backnumberReps;
     private int _shouldernumberReps;
 
-    private int _numberSets;
+    private int _chestnumberSets;
+    private int _legsnumberSets;
+    private int _armnumberSets;
+    private int _backnumberSets;
+    private int _shouldernumberSets;
+
+    private int _chestweights;
+    private int _legsweights;
+    private int _armweights;
+    private int _backweights;
+    private int _shoulderweights;
+
+ 
 
     private double _weights;
 
@@ -133,9 +137,8 @@ Weight in kg's:
         var aWorkout = new Workout();
         aWorkout.ExerciseName = _selectedName;
         aWorkout.AmountOfReps = _chestnumberReps;
-        aWorkout.AmountOfSets = _numberSets;
-        aWorkout.Weight = _weights;
-
+        aWorkout.AmountOfSets = _chestnumberSets;
+        aWorkout.Weight = _chestweights;
     }
 
 
@@ -146,8 +149,8 @@ Weight in kg's:
         var aWorkout = new Workout();
         aWorkout.ExerciseName = _selectedName;
         aWorkout.AmountOfReps = _legsnumberReps;
-        aWorkout.AmountOfSets = _numberSets;
-        aWorkout.Weight = _weights;
+        aWorkout.AmountOfSets = _legsnumberSets;
+        aWorkout.Weight = _legsweights;
     }
 
     private void BackExercises()
@@ -155,8 +158,8 @@ Weight in kg's:
         var aWorkout = new Workout();
         aWorkout.ExerciseName = _selectedName;
         aWorkout.AmountOfReps = _backnumberReps;
-        aWorkout.AmountOfSets = _numberSets;
-        aWorkout.Weight = _weights;
+        aWorkout.AmountOfSets = _backnumberSets;
+        aWorkout.Weight = _backweights;
     }
 
     private void ShoulderExercises()
@@ -164,8 +167,8 @@ Weight in kg's:
         var aWorkout = new Workout();
         aWorkout.ExerciseName = _selectedName;
         aWorkout.AmountOfReps = _shouldernumberReps;
-        aWorkout.AmountOfSets = _numberSets;
-        aWorkout.Weight = _weights;
+        aWorkout.AmountOfSets = _shouldernumberSets;
+        aWorkout.Weight = _shoulderweights;
     }
 
     public void ArmExercises()
@@ -173,8 +176,8 @@ Weight in kg's:
         var aWorkout = new Workout();
         aWorkout.ExerciseName = _selectedName;
         aWorkout.AmountOfReps = _armnumberReps;
-        aWorkout.AmountOfSets = _numberSets;
-        aWorkout.Weight = _weights;
+        aWorkout.AmountOfSets = _armnumberSets;
+        aWorkout.Weight = _armweights;
     }
 
 

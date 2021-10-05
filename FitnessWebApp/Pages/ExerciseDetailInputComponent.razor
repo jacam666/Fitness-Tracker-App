@@ -1,0 +1,42 @@
+﻿@inject Data.DataService Data
+@using Fitness_Tracker_App.Data
+
+<h3>@BodyPart</h3>
+
+<button class="btn btn-primary" @onclick="AddExercise">Choose @BodyPart Exercise</button>
+<select @bind="_selectedName">
+
+    @foreach (var exerciseName in ExerciseNames)
+    {
+        <option>@exerciseName</option>
+    }
+</select>
+Reps:
+<input type="number" @bind="_numberReps" />
+
+Sets:
+<input type="number" @bind="_numberSets" />
+<br />
+Weight in kg's:
+<input type="number" @bind="_weights" />
+
+@code {
+    [Parameter]
+    public String BodyPart { get; set; }
+    [Parameter]
+    public List<String> ExerciseNames { get; set; }
+
+    private string _selectedName;
+    private int _numberReps;
+    private int _numberSets;
+    private int _weights;
+
+    public void AddExercise()
+    {
+        var aWorkout = new Workout();
+        aWorkout.ExerciseName = _selectedName;
+        aWorkout.AmountOfReps = _numberReps;
+        aWorkout.AmountOfSets = _numberSets;
+        aWorkout.Weight = _weights;
+    }
+}

@@ -3,11 +3,15 @@
 @using Fitness_Tracker_App.Data
 @inject Data.DataService Data
 
-
-<br />
+<ExerciseDetailInputComponent BodyPart="Chest" ExerciseNames="@Data.ChestExerciseNames"></ExerciseDetailInputComponent>
+<ExerciseDetailInputComponent BodyPart="Legs" ExerciseNames="@Data.LegExerciseNames"></ExerciseDetailInputComponent>
+<ExerciseDetailInputComponent BodyPart="Back" ExerciseNames="@Data.BackExerciseNames"></ExerciseDetailInputComponent>
+<ExerciseDetailInputComponent BodyPart="Shoulders" ExerciseNames="@Data.ShoulderExerciseNames"></ExerciseDetailInputComponent>
+<ExerciseDetailInputComponent BodyPart="Arms" ExerciseNames="@Data.ArmExerciseNames"></ExerciseDetailInputComponent>
+@*<br />
 <button class="btn btn-primary" @onclick="ChestExercises">Choose Chest Exercise</button>
-<br />
-<select @bind="_selectedName">
+<br />*@
+@*<select @bind="_selectedName">
 
     @foreach (var exerciseName in Data.ChestExerciseNames)
     {
@@ -98,7 +102,7 @@ Sets:
 <input type="number" @bind="_armnumberSets" />
 <br />
 Weight in kg's:
-<input type="number" @bind="_armweights" />
+<input type="number" @bind="_armweights" />*@
 
 
 
@@ -108,77 +112,77 @@ Weight in kg's:
 
 @code {
 
-    private string _selectedName;
+    //private string _selectedName;
 
-    private int _chestnumberReps;
-    private int _legsnumberReps;
-    private int _armnumberReps;
-    private int _backnumberReps;
-    private int _shouldernumberReps;
+    //private int _chestnumberReps;
+    //private int _legsnumberReps;
+    //private int _armnumberReps;
+    //private int _backnumberReps;
+    //private int _shouldernumberReps;
 
-    private int _chestnumberSets;
-    private int _legsnumberSets;
-    private int _armnumberSets;
-    private int _backnumberSets;
-    private int _shouldernumberSets;
+    //private int _chestnumberSets;
+    //private int _legsnumberSets;
+    //private int _armnumberSets;
+    //private int _backnumberSets;
+    //private int _shouldernumberSets;
 
-    private int _chestweights;
-    private int _legsweights;
-    private int _armweights;
-    private int _backweights;
-    private int _shoulderweights;
-
- 
-
-    private double _weights;
-
-    private void ChestExercises()
-    {
-        var aWorkout = new Workout();
-        aWorkout.ExerciseName = _selectedName;
-        aWorkout.AmountOfReps = _chestnumberReps;
-        aWorkout.AmountOfSets = _chestnumberSets;
-        aWorkout.Weight = _chestweights;
-    }
+    //private int _chestweights;
+    //private int _legsweights;
+    //private int _armweights;
+    //private int _backweights;
+    //private int _shoulderweights;
 
 
-    public string Name { get; set; }
 
-    private void LegExercises()
-    {
-        var aWorkout = new Workout();
-        aWorkout.ExerciseName = _selectedName;
-        aWorkout.AmountOfReps = _legsnumberReps;
-        aWorkout.AmountOfSets = _legsnumberSets;
-        aWorkout.Weight = _legsweights;
-    }
+    //private double _weights;
 
-    private void BackExercises()
-    {
-        var aWorkout = new Workout();
-        aWorkout.ExerciseName = _selectedName;
-        aWorkout.AmountOfReps = _backnumberReps;
-        aWorkout.AmountOfSets = _backnumberSets;
-        aWorkout.Weight = _backweights;
-    }
+    //private void ChestExercises()
+    //{
+    //    var aWorkout = new Workout();
+    //    aWorkout.ExerciseName = _selectedName;
+    //    aWorkout.AmountOfReps = _chestnumberReps;
+    //    aWorkout.AmountOfSets = _chestnumberSets;
+    //    aWorkout.Weight = _chestweights;
+    //}
 
-    private void ShoulderExercises()
-    {
-        var aWorkout = new Workout();
-        aWorkout.ExerciseName = _selectedName;
-        aWorkout.AmountOfReps = _shouldernumberReps;
-        aWorkout.AmountOfSets = _shouldernumberSets;
-        aWorkout.Weight = _shoulderweights;
-    }
 
-    public void ArmExercises()
-    {
-        var aWorkout = new Workout();
-        aWorkout.ExerciseName = _selectedName;
-        aWorkout.AmountOfReps = _armnumberReps;
-        aWorkout.AmountOfSets = _armnumberSets;
-        aWorkout.Weight = _armweights;
-    }
+    //public string Name { get; set; }
+
+    //private void LegExercises()
+    //{
+    //    var aWorkout = new Workout();
+    //    aWorkout.ExerciseName = _selectedName;
+    //    aWorkout.AmountOfReps = _legsnumberReps;
+    //    aWorkout.AmountOfSets = _legsnumberSets;
+    //    aWorkout.Weight = _legsweights;
+    //}
+
+    //private void BackExercises()
+    //{
+    //    var aWorkout = new Workout();
+    //    aWorkout.ExerciseName = _selectedName;
+    //    aWorkout.AmountOfReps = _backnumberReps;
+    //    aWorkout.AmountOfSets = _backnumberSets;
+    //    aWorkout.Weight = _backweights;
+    //}
+
+    //private void ShoulderExercises()
+    //{
+    //    var aWorkout = new Workout();
+    //    aWorkout.ExerciseName = _selectedName;
+    //    aWorkout.AmountOfReps = _shouldernumberReps;
+    //    aWorkout.AmountOfSets = _shouldernumberSets;
+    //    aWorkout.Weight = _shoulderweights;
+    //}
+
+    //public void ArmExercises()
+    //{
+    //    var aWorkout = new Workout();
+    //    aWorkout.ExerciseName = _selectedName;
+    //    aWorkout.AmountOfReps = _armnumberReps;
+    //    aWorkout.AmountOfSets = _armnumberSets;
+    //    aWorkout.Weight = _armweights;
+    //}
 
 
 

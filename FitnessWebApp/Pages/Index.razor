@@ -2,120 +2,107 @@
 @using Fitness_Tracker_App
 @using Fitness_Tracker_App.Data
 @inject Data.DataService Data
-@using Radzen.Blazor
-@using Radzen 
 
 <ExerciseDetailInputComponent BodyPart="Chest" ExerciseNames="@Data.ChestExerciseNames"></ExerciseDetailInputComponent>
 <ExerciseDetailInputComponent BodyPart="Legs" ExerciseNames="@Data.LegExerciseNames"></ExerciseDetailInputComponent>
 <ExerciseDetailInputComponent BodyPart="Back" ExerciseNames="@Data.BackExerciseNames"></ExerciseDetailInputComponent>
 <ExerciseDetailInputComponent BodyPart="Shoulders" ExerciseNames="@Data.ShoulderExerciseNames"></ExerciseDetailInputComponent>
 <ExerciseDetailInputComponent BodyPart="Arms" ExerciseNames="@Data.ArmExerciseNames"></ExerciseDetailInputComponent>
-
-
-
-    
-    
-    
-    @*<Form Model=""
-             Columns="2" ColumnSpacing="25px">
-</Form>*@
-
-
 @*<br />
-    <button class="btn btn-primary" @onclick="ChestExercises">Choose Chest Exercise</button>
-    <br />*@
+<button class="btn btn-primary" @onclick="ChestExercises">Choose Chest Exercise</button>
+<br />*@
 @*<select @bind="_selectedName">
 
-        @foreach (var exerciseName in Data.ChestExerciseNames)
-        {
-            <option>@exerciseName</option>
-        }
-    </select>
-    Reps:
-    <input type="number" @bind="_chestnumberReps" />
-    Sets:
-    <input type="number" @bind="_chestnumberSets" />
-    <br />
-    Weight in kg's:
-    <input type="number" @bind="_chestweights" />
-    <br />
+    @foreach (var exerciseName in Data.ChestExerciseNames)
+    {
+        <option>@exerciseName</option>
+    }
+</select>
+Reps:
+<input type="number" @bind="_chestnumberReps" />
+Sets: 
+<input type="number" @bind="_chestnumberSets" />
+<br />
+Weight in kg's:
+<input type="number" @bind="_chestweights" />
+<br />
 
-    <br />
-    <button class="btn btn-primary" @onclick="LegExercises">Choose Leg Exercise</button>
-    <br />
-    <select @bind="_selectedName">
+<br />
+<button class="btn btn-primary" @onclick="LegExercises">Choose Leg Exercise</button>
+<br />
+<select @bind="_selectedName">
 
-        @foreach (var exerciseName in Data.LegExerciseNames)
-        {
-            <option>@exerciseName</option>
-        }
-    </select>
-    Reps:
-    <input type="number" @bind="_legsnumberReps" />
-    Sets:
-    <input type="number" @bind="_legsnumberSets" />
-    <br />
-    Weight in kg's:
-    <input type="number" @bind="_legsweights" />
-    <br />
+    @foreach (var exerciseName in Data.LegExerciseNames)
+    {
+        <option>@exerciseName</option>
+    }
+</select>
+Reps:
+<input type="number" @bind="_legsnumberReps" />
+Sets:
+<input type="number" @bind="_legsnumberSets" />
+<br />
+Weight in kg's:
+<input type="number" @bind="_legsweights" />
+<br />
 
-    <br />
-    <button class="btn btn-primary" @onclick="BackExercises">Choose Back Exercise</button>
-    <br />
+<br />
+<button class="btn btn-primary" @onclick="BackExercises">Choose Back Exercise</button>
+<br />
 
-    <select @bind="_selectedName">
+<select @bind="_selectedName">
 
-        @foreach (var exerciseName in Data.BackExerciseNames)
-        {
-            <option>@exerciseName</option>
-        }
-    </select>
-    Reps:
-    <input type="number" @bind="_backnumberReps" />
-    Sets:
-    <input type="number" @bind="_backnumberSets" />
-    <br />
-    Weight in kg's:
-    <input type="number" @bind="_backweights" />
-    <br />
-    <br />
-    <button class="btn btn-primary" @onclick="ShoulderExercises">Choose Shoulder Exercise</button>
-    <br />
+    @foreach (var exerciseName in Data.BackExerciseNames)
+    {
+        <option>@exerciseName</option>
+    }
+</select>
+Reps:
+<input type="number" @bind="_backnumberReps" />
+Sets:
+<input type="number" @bind="_backnumberSets" />
+<br />
+Weight in kg's:
+<input type="number" @bind="_backweights" />
+<br />
+<br />
+<button class="btn btn-primary" @onclick="ShoulderExercises">Choose Shoulder Exercise</button>
+<br />
 
-    <select @bind="_selectedName">
+<select @bind="_selectedName">
 
-        @foreach (var exerciseName in Data.ShoulderExerciseNames)
-        {
-            <option>@exerciseName</option>
-        }
-    </select>
-    Reps:
-    <input type="number" @bind="_shouldernumberReps" />
-    Sets:
-    <input type="number" @bind="_shouldernumberSets" />
-    <br />
-    Weight in kg's:
-    <input type="number" @bind="_shoulderweights" />
-    <br />
-    <br />
-    <button class="btn btn-primary" @onclick="ArmExercises">Choose Arm Exercise</button>
-    <br />
+    @foreach (var exerciseName in Data.ShoulderExerciseNames)
+    {
+        <option>@exerciseName</option>
+    }
+</select>
+Reps:
+<input type="number" @bind="_shouldernumberReps" />
+Sets:
+<input type="number" @bind="_shouldernumberSets" />
+<br />
+Weight in kg's:
+<input type="number" @bind="_shoulderweights" />
+<br />
+<br />
+<button class="btn btn-primary" @onclick="ArmExercises">Choose Arm Exercise</button>
+<br />
 
-    <select @bind="_selectedName">
+<select @bind="_selectedName">
 
-        @foreach (var exerciseName in Data.ArmExerciseNames)
-        {
-            <option>@exerciseName</option>
-        }
-    </select>
-    Reps:
-    <input type="number" @bind="_armnumberReps" />
+    @foreach (var exerciseName in Data.ArmExerciseNames)
+    {
+        <option>@exerciseName</option>
+    }
+</select>
+Reps:
+<input type="number" @bind="_armnumberReps" />
 
-    Sets:
-    <input type="number" @bind="_armnumberSets" />
-    <br />
-    Weight in kg's:
-    <input type="number" @bind="_armweights" />*@
+Sets:
+<input type="number" @bind="_armnumberSets" />
+<br />
+Weight in kg's:
+<input type="number" @bind="_armweights" />*@
 
 
 
@@ -124,7 +111,7 @@
 
 
 @code {
-    
+
     //private string _selectedName;
 
     //private int _chestnumberReps;
@@ -226,7 +213,6 @@
     //    new ChestExerciseName() { Name = "CableCrossover"},
 
 
-    }
 
 
 

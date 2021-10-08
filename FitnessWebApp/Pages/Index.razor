@@ -3,241 +3,39 @@
 @using Fitness_Tracker_App.Data
 @inject Data.DataService Data
 
-<ExerciseDetailInputComponent BodyPart="Chest" ExerciseNames="@Data.ChestExerciseNames"></ExerciseDetailInputComponent>
+@*<ExerciseDetailInputComponent BodyPart="Chest" ExerciseNames="@Data.ChestExerciseNames"></ExerciseDetailInputComponent>
 <ExerciseDetailInputComponent BodyPart="Legs" ExerciseNames="@Data.LegExerciseNames"></ExerciseDetailInputComponent>
 <ExerciseDetailInputComponent BodyPart="Back" ExerciseNames="@Data.BackExerciseNames"></ExerciseDetailInputComponent>
 <ExerciseDetailInputComponent BodyPart="Shoulders" ExerciseNames="@Data.ShoulderExerciseNames"></ExerciseDetailInputComponent>
-<ExerciseDetailInputComponent BodyPart="Arms" ExerciseNames="@Data.ArmExerciseNames"></ExerciseDetailInputComponent>
-@*<br />
-<button class="btn btn-primary" @onclick="ChestExercises">Choose Chest Exercise</button>
-<br />*@
-@*<select @bind="_selectedName">
+<ExerciseDetailInputComponent BodyPart="Arms" ExerciseNames="@Data.ArmExerciseNames"></ExerciseDetailInputComponent>*@
 
-    @foreach (var exerciseName in Data.ChestExerciseNames)
-    {
-        <option>@exerciseName</option>
+<tbody>
+        <tr>
+            <td>
+                <ExerciseDetailInputComponent BodyPart="Chest" ExerciseNames="@Data.ChestExerciseNames"></ExerciseDetailInputComponent>
+            </td>
+            <td>
+                <ExerciseDetailInputComponent BodyPart="Legs" ExerciseNames="@Data.LegExerciseNames"></ExerciseDetailInputComponent>
+            </td>
+            <td>
+                <ExerciseDetailInputComponent BodyPart="Back" ExerciseNames="@Data.BackExerciseNames"></ExerciseDetailInputComponent>
+            </td>
+            <td>
+                <ExerciseDetailInputComponent BodyPart="Shoulders" ExerciseNames="@Data.ShoulderExerciseNames"></ExerciseDetailInputComponent>
+            </td>
+            <td>
+                <ExerciseDetailInputComponent BodyPart="Arms" ExerciseNames="@Data.ArmExerciseNames"></ExerciseDetailInputComponent>
+            </td>
+       
+        </tr>
+    
+</tbody>
+
+
+    @*<button @onclick="GetEmployees"> Refresh Employee List</button>*@
+
+
+    @code {
+     
     }
-</select>
-Reps:
-<input type="number" @bind="_chestnumberReps" />
-Sets: 
-<input type="number" @bind="_chestnumberSets" />
-<br />
-Weight in kg's:
-<input type="number" @bind="_chestweights" />
-<br />
 
-<br />
-<button class="btn btn-primary" @onclick="LegExercises">Choose Leg Exercise</button>
-<br />
-<select @bind="_selectedName">
-
-    @foreach (var exerciseName in Data.LegExerciseNames)
-    {
-        <option>@exerciseName</option>
-    }
-</select>
-Reps:
-<input type="number" @bind="_legsnumberReps" />
-Sets:
-<input type="number" @bind="_legsnumberSets" />
-<br />
-Weight in kg's:
-<input type="number" @bind="_legsweights" />
-<br />
-
-<br />
-<button class="btn btn-primary" @onclick="BackExercises">Choose Back Exercise</button>
-<br />
-
-<select @bind="_selectedName">
-
-    @foreach (var exerciseName in Data.BackExerciseNames)
-    {
-        <option>@exerciseName</option>
-    }
-</select>
-Reps:
-<input type="number" @bind="_backnumberReps" />
-Sets:
-<input type="number" @bind="_backnumberSets" />
-<br />
-Weight in kg's:
-<input type="number" @bind="_backweights" />
-<br />
-<br />
-<button class="btn btn-primary" @onclick="ShoulderExercises">Choose Shoulder Exercise</button>
-<br />
-
-<select @bind="_selectedName">
-
-    @foreach (var exerciseName in Data.ShoulderExerciseNames)
-    {
-        <option>@exerciseName</option>
-    }
-</select>
-Reps:
-<input type="number" @bind="_shouldernumberReps" />
-Sets:
-<input type="number" @bind="_shouldernumberSets" />
-<br />
-Weight in kg's:
-<input type="number" @bind="_shoulderweights" />
-<br />
-<br />
-<button class="btn btn-primary" @onclick="ArmExercises">Choose Arm Exercise</button>
-<br />
-
-<select @bind="_selectedName">
-
-    @foreach (var exerciseName in Data.ArmExerciseNames)
-    {
-        <option>@exerciseName</option>
-    }
-</select>
-Reps:
-<input type="number" @bind="_armnumberReps" />
-
-Sets:
-<input type="number" @bind="_armnumberSets" />
-<br />
-Weight in kg's:
-<input type="number" @bind="_armweights" />*@
-
-
-
-
-
-
-
-@code {
-
-    //private string _selectedName;
-
-    //private int _chestnumberReps;
-    //private int _legsnumberReps;
-    //private int _armnumberReps;
-    //private int _backnumberReps;
-    //private int _shouldernumberReps;
-
-    //private int _chestnumberSets;
-    //private int _legsnumberSets;
-    //private int _armnumberSets;
-    //private int _backnumberSets;
-    //private int _shouldernumberSets;
-
-    //private int _chestweights;
-    //private int _legsweights;
-    //private int _armweights;
-    //private int _backweights;
-    //private int _shoulderweights;
-
-
-
-    //private double _weights;
-
-    //private void ChestExercises()
-    //{
-    //    var aWorkout = new Workout();
-    //    aWorkout.ExerciseName = _selectedName;
-    //    aWorkout.AmountOfReps = _chestnumberReps;
-    //    aWorkout.AmountOfSets = _chestnumberSets;
-    //    aWorkout.Weight = _chestweights;
-    //}
-
-
-    //public string Name { get; set; }
-
-    //private void LegExercises()
-    //{
-    //    var aWorkout = new Workout();
-    //    aWorkout.ExerciseName = _selectedName;
-    //    aWorkout.AmountOfReps = _legsnumberReps;
-    //    aWorkout.AmountOfSets = _legsnumberSets;
-    //    aWorkout.Weight = _legsweights;
-    //}
-
-    //private void BackExercises()
-    //{
-    //    var aWorkout = new Workout();
-    //    aWorkout.ExerciseName = _selectedName;
-    //    aWorkout.AmountOfReps = _backnumberReps;
-    //    aWorkout.AmountOfSets = _backnumberSets;
-    //    aWorkout.Weight = _backweights;
-    //}
-
-    //private void ShoulderExercises()
-    //{
-    //    var aWorkout = new Workout();
-    //    aWorkout.ExerciseName = _selectedName;
-    //    aWorkout.AmountOfReps = _shouldernumberReps;
-    //    aWorkout.AmountOfSets = _shouldernumberSets;
-    //    aWorkout.Weight = _shoulderweights;
-    //}
-
-    //public void ArmExercises()
-    //{
-    //    var aWorkout = new Workout();
-    //    aWorkout.ExerciseName = _selectedName;
-    //    aWorkout.AmountOfReps = _armnumberReps;
-    //    aWorkout.AmountOfSets = _armnumberSets;
-    //    aWorkout.Weight = _armweights;
-    //}
-
-
-
-
-    //public List<string> ChestExerciseNames
-    //{
-    //    get
-    //    {
-    //        List<string> ChestExercises = new();
-    //        ChestExercises.Add("Barbell Bench Press");
-    //        ChestExercises.Add("Barbell Incline Bench");
-    //        return ChestExercises;
-    //    }
-    //}
-
-    //public class ChestExerciseName
-    //{
-    //    public string Name { get; set; }
-    //}
-    //List<ChestExerciseName> chestExercises = new List<ChestExerciseName>
-    //{
-    //    new ChestExerciseName() { Name = "Barbell Bench Press"},
-    //    new ChestExerciseName() { Name = "InclineBarbellBench"},
-    //    new ChestExerciseName() { Name = "CableFlyes"},
-    //    new ChestExerciseName() { Name = "DeclineBarbellBench"},
-    //    new ChestExerciseName() { Name = "DumbbellFlyes"},
-    //    new ChestExerciseName() { Name = "PecDec"},
-    //    new ChestExerciseName() { Name = "CableCrossover"},
-
-
-
-
-
-    @*@code {
-
-        }*@
-    @*<h1>Hello, world!</h1>
-
-        <p>
-            Welcome to your new app.
-        </p>*@
-
-    @*<Dialog Title ="Learn More">
-            Do you want to
-            <i>learn more</i> about Blazor?
-        </Dialog>*@
-
-
-
-}
-
-@*<Counter />
-    <FetchData />
-    <Component />*@
-
-
-@*<SurveyPrompt Title="How is Blazor working for you?" />*@
-@*<SurveyPrompt Title="This is anotehr text as parameter for this component" />*@

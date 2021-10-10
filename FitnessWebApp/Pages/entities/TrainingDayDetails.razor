@@ -1,1 +1,31 @@
-﻿
+﻿@inject Data.DataService Data
+@using Fitness_Tracker_App.Data
+
+
+<h3>TrainingDayDetails</h3>
+
+<button class="btn btn-primary" @onclick="TrainingDay"></button>
+Date:
+<input type="number" @bind="_DateTime" />
+<br />
+Body Weight:
+<input type="number" @bind="_BodyWeight" />
+<br />
+
+@code {
+    public DateTime DateTime { get; set; }
+    public List<String> Workouts { get; set; }
+    public double BodyWeight { get; set; }
+
+    private DateTime _DateTime;
+    private double _BodyWeight;
+
+
+    public void TrainingDay()
+    {
+        var aTrainingDay = new TrainingDay();
+        aTrainingDay.BodyWeight = _BodyWeight;
+        aTrainingDay.TodaysDate = _DateTime;
+
+    }
+}

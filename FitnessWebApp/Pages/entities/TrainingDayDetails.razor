@@ -4,7 +4,7 @@
 
 <h3>Training Day Details</h3>
 
-<button class="btn btn-primary" @onclick="TrainingDay"></button>
+<button class="btn btn-primary" @onclick="AddTrainingDay"></button>
 Date:
 <input type="date" @bind="_DateTime" />
 <br />
@@ -21,7 +21,7 @@ Body Weight in kg's':
     private double _BodyWeight;
 
 
-    public void TrainingDay()
+    public void AddTrainingDay()
     {
         var aTrainingDay = new TrainingDay();
         aTrainingDay.BodyWeight = _BodyWeight;

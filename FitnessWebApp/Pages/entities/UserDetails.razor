@@ -1,9 +1,15 @@
 ﻿@inject Data.DataService Data
 @using Fitness_Tracker_App.Data
 
-
 <h3>UserDetails</h3>
 
-@code {
+Please enter your name:
+<input type="text" @bind="_UsersName" /> 
 
-}
+ @code {
+     public string UsersName { get; set; }
+
+     private string _UsersName;
+
+  
+         }

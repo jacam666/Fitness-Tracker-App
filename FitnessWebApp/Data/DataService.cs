@@ -9,7 +9,7 @@ namespace FitnessWebApp.Data
     public class DataService
     {
         private List<User> _users = new List<User>();
-
+        [Obsolete("For now we just use the CurrentUser Property")]
         public List<User> Users
         {
             get { return _users; }
@@ -104,10 +104,11 @@ namespace FitnessWebApp.Data
 
         public void AddUser(User u)
         {
-            _users.Add(u);
-            //store (maybe xml, maybe database)
+            CurrentUser = u;
+            //store (maybe xml, maybe database) => for now definitely XML! =)
         }
 
+        public User CurrentUser { get; set; }
         
         
         

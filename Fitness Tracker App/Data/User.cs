@@ -11,6 +11,6 @@ namespace Fitness_Tracker_App.Data
         public String FirstName;
         public String LastName;
         public DateTime DOB;
-        public List<TrainingDay> TrainingDays;
+        public List<TrainingDay> TrainingDays = new();
     }
 }

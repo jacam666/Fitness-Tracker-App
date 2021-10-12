@@ -1,15 +1,38 @@
 ﻿@inject Data.DataService Data
 @using Fitness_Tracker_App.Data
 
+
 <h3>UserDetails</h3>
+@if (Data.CurrentUser == null)
+{
+    <p>Please enter your first name:</p>
+    <input type="text" @bind="_UsersFirstName" />
+    <p>Please enter your last name:</p>
 
-Please enter your name:
-<input type="text" @bind="_UsersName" /> 
+    <input type="text" @bind="_UsersLastName" />
+    @*date input here*@
+    <button @onclick="AddUser">Add User</button>
+}
+else
+{
+    <p>Hello @Data.CurrentUser.FirstName!</p>
+}
 
- @code {
-     public string UsersName { get; set; }
+@code {
 
-     private string _UsersName;
 
-  
-         }
+    private string _UsersFirstName;
+    private string _UsersLastName;
+
+    public void AddUser()
+    {
+        var u = new User();
+        u.FirstName = _UsersFirstName;
+        u.LastName = _UsersLastName;
+        //add the dob
+        Data.Users.Add(u);
+        Data.AddUser(u);
+    }
+
+
+}

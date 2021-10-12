@@ -3,19 +3,23 @@
 
 
 <h3>Training Day Details</h3>
-
-<button class="btn btn-primary" @onclick="AddTrainingDay"></button>
-Date:
-<input type="date" @bind="_DateTime" />
-<br />
-Body Weight in kg's':
-<input type="number" @bind="_BodyWeight" />
-<br />
+@if (Data.CurrentUser == null)
+{
+    <p>Please Create a User first!</p>
+}
+else
+{
+    <button class="btn btn-primary" @onclick="AddTrainingDay">Todays Date</button>
+    <p>Date:</p>
+    <input type="date" @bind="_DateTime" />
+    
+    <br />
+    <p>Body Weight in kg's':</p>
+    <input type="number" @bind="_BodyWeight" />
+    <br />
+}
 
 @code {
-    public DateTime DateTime { get; set; }
-    public List<String> Workouts { get; set; }
-    public double BodyWeight { get; set; }
 
     private DateTime _DateTime;
     private double _BodyWeight;
@@ -27,5 +31,6 @@ Body Weight in kg's':
         aTrainingDay.BodyWeight = _BodyWeight;
         aTrainingDay.TodaysDate = _DateTime;
 
+        Data.CurrentUser.TrainingDays.Add(aTrainingDay);
     }
 }

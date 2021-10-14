@@ -33,4 +33,31 @@ else
 
         Data.CurrentUser.TrainingDays.Add(aTrainingDay);
     }
+    public class XMLWrite
+    {
+
+        //static void Main(string[] args) // had to comment out as can only have one main entry point
+        //{
+        //    WriteXML();
+        //}
+
+        public class TrainingDay
+        {
+            public String SaveTrainingDay;
+        }
+
+        public static void WriteXML()
+        {
+            TrainingDay overview = new TrainingDay();
+            overview.SaveTrainingDay = "Serialization Overview";
+            System.Xml.Serialization.XmlSerializer writer =
+                new System.Xml.Serialization.XmlSerializer(typeof(TrainingDay));
+
+            var path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "//SerializationOverview.xml";
+            System.IO.FileStream file = System.IO.File.Create(path);
+
+            writer.Serialize(file, overview);
+            file.Close();
+        }
+    }
 }

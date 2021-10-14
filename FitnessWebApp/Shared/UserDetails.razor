@@ -23,12 +23,16 @@ else
 
     private string _UsersFirstName;
     private string _UsersLastName;
+    private DateTime _DOB;
+   
 
     public void AddUser()
     {
         var u = new User();
         u.FirstName = _UsersFirstName;
         u.LastName = _UsersLastName;
+        u.DOB = _DOB;
+        
         //add the dob
         Data.Users.Add(u);
         Data.AddUser(u);

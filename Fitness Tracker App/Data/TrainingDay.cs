@@ -11,5 +11,6 @@ namespace Fitness_Tracker_App.Data
         public DateTime TodaysDate;
         public List<Workout> Workouts;
         public double BodyWeight;
+        public string SaveTrainingDay;
     }
 }

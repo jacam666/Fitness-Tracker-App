@@ -111,7 +111,19 @@ namespace FitnessWebApp.Data
         public User CurrentUser { get; set; }
         
         
-        
+          public static void WriteXML()
+        {
+            TrainingDay overview = new TrainingDay();
+            overview.SaveTrainingDay = "Serialization Overview";
+            System.Xml.Serialization.XmlSerializer writer =
+                new System.Xml.Serialization.XmlSerializer(typeof(TrainingDay));
+
+            var path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "//SerializationOverview.xml";
+            System.IO.FileStream file = System.IO.File.Create(path);
+
+            writer.Serialize(file, overview);
+            file.Close();
+        }
         
 
 

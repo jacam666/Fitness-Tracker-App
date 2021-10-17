@@ -33,14 +33,19 @@ else
     private DateTime _DateTime;
     private double _BodyWeight;
     private string _SaveTrainingDay;
+
+
     public void AddTrainingDay()
-        
     {
         var aTrainingDay = new TrainingDay();
-    aTrainingDay.BodyWeight = _BodyWeight;
+        aTrainingDay.BodyWeight = _BodyWeight;
         aTrainingDay.TodaysDate = _DateTime;
         Data.CurrentUser.TrainingDays.Add(aTrainingDay);
         aTrainingDay.SaveTrainingDay = _SaveTrainingDay;
+
+        Data.TrainingDay.Add(aTrainingDay);
+        Data.AddUser(aTrainingDay);
+
     }
 }
 

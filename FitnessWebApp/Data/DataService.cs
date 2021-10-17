@@ -109,12 +109,12 @@ namespace FitnessWebApp.Data
         }
 
         public User CurrentUser { get; set; }
-        
-        
-          public static void WriteXML()
+
+
+        public static void WriteXML()
         {
             TrainingDay overview = new TrainingDay();
-            overview.SaveTrainingDay = "Serialization Overview";
+            //overview.SaveTrainingDay = "Serialization Overview";
             System.Xml.Serialization.XmlSerializer writer =
                 new System.Xml.Serialization.XmlSerializer(typeof(TrainingDay));
 
@@ -124,7 +124,7 @@ namespace FitnessWebApp.Data
             writer.Serialize(file, overview);
             file.Close();
         }
-        
+
 
 
 

@@ -111,7 +111,7 @@ namespace FitnessWebApp.Data
         public User CurrentUser { get; set; }
 
 
-        public static void WriteXML()
+        public void WriteXML()
         {
             TrainingDay overview = new TrainingDay();
             //overview.SaveTrainingDay = "Serialization Overview";

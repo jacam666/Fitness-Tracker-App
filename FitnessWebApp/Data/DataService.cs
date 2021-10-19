@@ -1,8 +1,10 @@
 ﻿using Fitness_Tracker_App.Data;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace FitnessWebApp.Data
 {
@@ -113,15 +115,13 @@ namespace FitnessWebApp.Data
 
         public void WriteXML()
         {
-            TrainingDay overview = new TrainingDay();
-            //overview.SaveTrainingDay = "Serialization Overview";
-            System.Xml.Serialization.XmlSerializer writer =
-                new System.Xml.Serialization.XmlSerializer(typeof(TrainingDay));
+
+            XmlSerializer writer = new XmlSerializer(typeof(TrainingDay));
 
             var path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "//SerializationOverview.xml";
-            System.IO.FileStream file = System.IO.File.Create(path);
+            FileStream file = File.Create(path);
 
-            writer.Serialize(file, overview);
+            writer.Serialize(file, CurrentUser);
             file.Close();
         }
 

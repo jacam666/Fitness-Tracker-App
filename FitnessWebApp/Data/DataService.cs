@@ -116,7 +116,7 @@ namespace FitnessWebApp.Data
         public void WriteXML()
         {
 
-            XmlSerializer writer = new XmlSerializer(typeof(TrainingDay));
+            XmlSerializer writer = new XmlSerializer(typeof(User));
 
             var path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "//SerializationOverview.xml";
             FileStream file = File.Create(path);
@@ -125,6 +125,12 @@ namespace FitnessWebApp.Data
             file.Close();
         }
 
+        //TODO: keep me in the loop so i dont get pissy <= !
+
+        //TODO: Create a LoadXML method that loads this data back into CurrentUser variable.
+        //TODO: Check if it works! (maybe put a testload button in some component
+
+        //TODO: with the constructor video, make the dataservice load this data automatically at startup
 
 
 

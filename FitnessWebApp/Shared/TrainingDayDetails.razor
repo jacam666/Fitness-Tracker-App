@@ -2,6 +2,7 @@
 @using Fitness_Tracker_App.Data
 
 
+
 <h3>Training Day Details</h3>
 @if (Data.CurrentUser == null)
 {
@@ -25,11 +26,17 @@ else
 
 @code {
 
-  
+
 
     private DateTime _DateTime;
     private double _BodyWeight;
-    
+
+
+    public void LoadTrainingDay()
+    {
+        Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+        
+    }
 
 
     public void AddTrainingDay()
@@ -41,7 +48,7 @@ else
         Data.CurrentUser.TrainingDays.Add(aTrainingDay);
         Data.WriteXML();
 
-        
+
 
     }
 }

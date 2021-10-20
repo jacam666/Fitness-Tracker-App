@@ -125,6 +125,18 @@ namespace FitnessWebApp.Data
             file.Close();
         }
 
+     
+
+        public void ReadXML()
+        {
+            XmlSerializer reader = new XmlSerializer(typeof(User));
+
+            System.IO.StreamReader file = new System.IO.StreamReader(@"//SerializationOverview.xml");
+            reader.Serialize(file, CurrentUser);
+            file.Close();
+        }
+
+
         //TODO: keep me in the loop so i dont get pissy <= !
 
         //TODO: Create a LoadXML method that loads this data back into CurrentUser variable.

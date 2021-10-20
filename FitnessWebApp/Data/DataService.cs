@@ -125,28 +125,51 @@ namespace FitnessWebApp.Data
             file.Close();
         }
 
-     
+
+
+        //public void ReadXML()
+        //{
+        //    XmlSerializer reader = new XmlSerializer(typeof(User));
+
+        //    System.IO.StreamReader file = new System.IO.StreamReader(@"//SerializationOverview.xml");
+        //    reader.Serialize(file, CurrentUser);
+        //    file.Close();
+        //}
+
+        public class LoadUserDetails
+
+        {
+            public String SavedUserDetails;
+        }
 
         public void ReadXML()
         {
-            XmlSerializer reader = new XmlSerializer(typeof(User));
+            
+            XmlSerializer reader = new XmlSerializer(typeof(LoadUserDetails));
 
             System.IO.StreamReader file = new System.IO.StreamReader(@"//SerializationOverview.xml");
-            reader.Serialize(file, CurrentUser);
+
+            LoadUserDetails overview = (LoadUserDetails)reader.Deserialize(file);
             file.Close();
+
+            Console.WriteLine(overview.SavedUserDetails);
+
         }
+      
+
+      
 
 
-        //TODO: keep me in the loop so i dont get pissy <= !
+            //TODO: keep me in the loop so i dont get pissy <= !
 
-        //TODO: Create a LoadXML method that loads this data back into CurrentUser variable.
-        //TODO: Check if it works! (maybe put a testload button in some component
+            //TODO: Create a LoadXML method that loads this data back into CurrentUser variable.
+            //TODO: Check if it works! (maybe put a testload button in some component
 
-        //TODO: with the constructor video, make the dataservice load this data automatically at startup
-
-
+            //TODO: with the constructor video, make the dataservice load this data automatically at startup
 
 
 
-    }
+
+
+        }
 }

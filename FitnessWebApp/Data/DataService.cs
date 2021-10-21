@@ -125,10 +125,8 @@ namespace FitnessWebApp.Data
             file.Close();
         }
 
-        public User LoadUserDetails { get; set; }
-
-        
-            public String SavedUserDetails;
+        public User LoadUserDetails { get; set; }   
+           
         public void ReadXML()
         {
             XmlSerializer reader = new XmlSerializer(typeof(User));
@@ -138,7 +136,6 @@ namespace FitnessWebApp.Data
             User overview = (User)reader.Deserialize(file);
             file.Close();
 
-            //Console.WriteLine(overview.SavedUserDetails);
 
         }
     }

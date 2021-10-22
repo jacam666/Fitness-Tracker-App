@@ -115,7 +115,6 @@ namespace FitnessWebApp.Data
 
         public void WriteXML()
         {
-
             XmlSerializer writer = new XmlSerializer(typeof(User));
 
             var path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "//SerializationOverview.xml";
@@ -125,7 +124,7 @@ namespace FitnessWebApp.Data
             file.Close();
         }
 
-        public User LoadUserDetails { get; set; }   
+        ////public User LoadUserDetails { get; set; }   
            
         public void ReadXML()
         {
@@ -133,10 +132,8 @@ namespace FitnessWebApp.Data
 
             System.IO.StreamReader file = new System.IO.StreamReader(@"//SerializationOverview.xml");
 
-            User overview = (User)reader.Deserialize(file);
+            reader.Deserialize(file);
             file.Close();
-
-
         }
     }
 

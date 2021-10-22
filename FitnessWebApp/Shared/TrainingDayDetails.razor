@@ -3,6 +3,7 @@
 
 
 
+
 <h3>Training Day Details</h3>
 @if (Data.CurrentUser == null)
 {
@@ -32,8 +33,8 @@ else
     private double _BodyWeight;
 
 
-    @*@Data.DataService.LoadUserDetails*@
     
+
 
 
 
@@ -45,6 +46,8 @@ else
 
         Data.CurrentUser.TrainingDays.Add(aTrainingDay);
         Data.WriteXML();
+        Data.ReadXML();
+
 
 
 

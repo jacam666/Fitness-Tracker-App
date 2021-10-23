@@ -6,6 +6,7 @@
 
 <UserDetails />
 <TrainingDayDetails />
+<button class="btn btn-primary" @onclick="ReadXml">Load User Details</button>
 
 
 
@@ -38,6 +39,11 @@
 
 
 @code {
+    public void ReadXml()
+    {
+        Data.ReadXML();
+    }
 
+    
 }
 

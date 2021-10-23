@@ -27,13 +27,11 @@ else
 
 @code {
 
-
-
     private DateTime _DateTime;
     private double _BodyWeight;
 
 
-    
+
 
 
 
@@ -45,11 +43,8 @@ else
         aTrainingDay.TodaysDate = _DateTime;
 
         Data.CurrentUser.TrainingDays.Add(aTrainingDay);
-        Data.WriteXML();
-        Data.ReadXML();
-
-
-
+        //Data.WriteXML();
+        //Data.ReadXML();
 
     }
 }

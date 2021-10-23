@@ -129,10 +129,11 @@ namespace FitnessWebApp.Data
         public void ReadXML()
         {
             XmlSerializer reader = new XmlSerializer(typeof(User));
+            var path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "//SerializationOverview.xml";
+            FileStream file = File.OpenRead(path);
+            //System.IO.StreamReader file = new StreamReader."C:\Users\ja6ca\OneDrive\Documents\SerializationOverview.xml";
 
-            System.IO.StreamReader file = new System.IO.StreamReader(@"//SerializationOverview.xml");
-
-            reader.Deserialize(file);
+            CurrentUser = reader.Deserialize(file) as User;
             file.Close();
         }
     }

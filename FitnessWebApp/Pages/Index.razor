@@ -6,6 +6,7 @@
 
 <UserDetails />
 <TrainingDayDetails />
+<button class="btn btn-primary" @onclick="WriteXML">Save User Details</button>
 <button class="btn btn-primary" @onclick="ReadXml">Load User Details</button>
 
 
@@ -39,11 +40,16 @@
 
 
 @code {
+    public void WriteXML()
+    {
+        Data.WriteXML();
+    }
+
     public void ReadXml()
     {
         Data.ReadXML();
     }
 
-    
+
 }
 

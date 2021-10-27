@@ -16,6 +16,8 @@
 else
 {
     <p>Hello @Data.CurrentUser.FirstName!</p>
+    <p>There are @Data.CurrentUser.TrainingDays.Count saved Trainingdays:</p>
+    <p>Your last entry was on @Data.CurrentUser.TrainingDays.OrderBy(o => o.TodaysDate).First().TodaysDate</p>
 }
 
 @code {
@@ -24,6 +26,11 @@ else
     private string _UsersFirstName;
     private string _UsersLastName;
     private DateTime _DOB;
+   
+
+
+
+
 
 
     public void AddUser()
@@ -34,7 +41,7 @@ else
         u.DOB = _DOB;
 
         //add the dob
-        Data.Users.Add(u);
+       // Data.Users.Add(u);
         Data.AddUser(u);
     }
 

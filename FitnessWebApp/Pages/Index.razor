@@ -3,10 +3,12 @@
 @using Fitness_Tracker_App.Data
 @inject Data.DataService Data
 
-
 <UserDetails />
 <TrainingDayDetails />
+
+<br />
 <button class="btn btn-primary" @onclick="WriteXML">Save User Details</button>
+<br />
 <button class="btn btn-primary" @onclick="ReadXml">Load User Details</button>
 
 

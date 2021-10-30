@@ -7,11 +7,16 @@
 {
     <p>Please enter your first name:</p>
     <input type="text" @bind="_UsersFirstName" />
+    <br />
     <p>Please enter your last name:</p>
-
     <input type="text" @bind="_UsersLastName" />
+    <br />
     @*date input here*@
     <button @onclick="AddUser">Add User</button>
+
+    <p>Please Enter Your Date Of Birth</p>
+    
+    <input type="Date" @bind="_DOB" />
 }
 else
 {
@@ -21,10 +26,10 @@ else
     {
         <p>Your last entry was on @Data.CurrentUser.TrainingDays.OrderBy(o => o.TodaysDate).First().TodaysDate</p>
     }
-                else
-                {
-                    <p>You have no recorded training days</p>
-                }
+    else
+    {
+        <p>You have no recorded training days</p>
+    }
 
 
 }

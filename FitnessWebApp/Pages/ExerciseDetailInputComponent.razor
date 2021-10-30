@@ -4,22 +4,25 @@
 <h3>@BodyPart</h3>
 
 
-@*<select @bind="_selectedName">
+<select @bind="_selectedName">
 
     @foreach (var exerciseName in ExerciseNames)
     {
         <option>@exerciseName</option>
     }
-</select>*@
+</select>
 <br />
 Reps:
 <input type="number" @bind="_numberReps" />
+<button @onclick="IncreaseReps">Increase Reps.</button>
 <br />
 Sets:
 <input type="number" @bind="_numberSets" />
+<button @onclick="IncreaseSets">Increase Sets</button>
 <br />
 Weight in kg's:
 <input type="number" @bind="_weights" />
+<button @onclick="IncreaseWeights">Increase Weight</button>
 
 @code {
     [Parameter]
@@ -28,7 +31,7 @@ Weight in kg's:
     public List<String> ExerciseNames { get; set; }
 
     private string _selectedName;
-    private int _numberReps;
+    private int _numberReps = 0;
     private int _numberSets;
     private int _weights;
 
@@ -39,20 +42,22 @@ Weight in kg's:
         aWorkout.AmountOfReps = _numberReps;
         aWorkout.AmountOfSets = _numberSets;
         aWorkout.Weight = _weights;
-        int AmountOfReps = Convert.ToInt32(Console.ReadLine());
-        int AmountOfSets = Convert.ToInt32(Console.ReadLine());
-        int Weight = Convert.ToInt32(Console.ReadLine());
-        
 
     }
 
-    //public int AddExerciseNumbers()
 
-    //{
-    //    var addExerciseNumbers = new AddExerciseNumbers();
-    //    int AmountOfReps = Convert.ToInt32(Console.ReadLine());
-    //    int AmountOfSets = Convert.ToInt32(Console.ReadLine());
-    //    int Weight = Convert.ToInt32(Console.ReadLine());
-    //}
+    private void IncreaseReps()
+    {
+        _numberReps++;
+    }
 
+    public void IncreaseSets()
+    {
+        _numberSets++;
+    }
+
+    public void IncreaseWeights()
+    {
+        _weights++;
+    }
 }

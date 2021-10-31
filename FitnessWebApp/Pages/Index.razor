@@ -3,8 +3,10 @@
 @using Fitness_Tracker_App.Data
 @inject Data.DataService Data
 
-<UserDetails />
+    <UserDetails />
 <TrainingDayDetails />
+
+@*<TrainingDayDetails />*@
 
 <br />
 <button class="btn btn-primary" @onclick="WriteXML">Save User Details</button>
@@ -17,20 +19,20 @@
 
     <tr>
         @*<th>
-            <ExerciseDetailInputComponent BodyPart="Chest" ExerciseNames="@Data.ChestExerciseNames"></ExerciseDetailInputComponent>
-        </th>*@
+                <ExerciseDetailInputComponent BodyPart="Chest" ExerciseNames="@Data.ChestExerciseNames"></ExerciseDetailInputComponent>
+            </th>*@
         @*<th>
-            <ExerciseDetailInputComponent BodyPart="Legs" ExerciseNames="@Data.LegExerciseNames"></ExerciseDetailInputComponent>
-        </th>
-        <th>
-            <ExerciseDetailInputComponent BodyPart="Back" ExerciseNames="@Data.BackExerciseNames"></ExerciseDetailInputComponent>
-        </th>
-        <th>
-            <ExerciseDetailInputComponent BodyPart="Shoulders" ExerciseNames="@Data.ShoulderExerciseNames"></ExerciseDetailInputComponent>
-        </th>
-        <th>
-            <ExerciseDetailInputComponent BodyPart="Arms" ExerciseNames="@Data.ArmExerciseNames"></ExerciseDetailInputComponent>
-        </th>*@
+                <ExerciseDetailInputComponent BodyPart="Legs" ExerciseNames="@Data.LegExerciseNames"></ExerciseDetailInputComponent>
+            </th>
+            <th>
+                <ExerciseDetailInputComponent BodyPart="Back" ExerciseNames="@Data.BackExerciseNames"></ExerciseDetailInputComponent>
+            </th>
+            <th>
+                <ExerciseDetailInputComponent BodyPart="Shoulders" ExerciseNames="@Data.ShoulderExerciseNames"></ExerciseDetailInputComponent>
+            </th>
+            <th>
+                <ExerciseDetailInputComponent BodyPart="Arms" ExerciseNames="@Data.ArmExerciseNames"></ExerciseDetailInputComponent>
+            </th>*@
 
     </tr>
 

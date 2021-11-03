@@ -111,9 +111,9 @@ namespace FitnessWebApp.Data
 
         
 
-        public void NewWorkout(User aWorkout)
+        public void NewWorkout(Workout aWorkout)
         {
-            CurrentUser = aWorkout;
+            aWorkout = CurrentWorkout;
         }
 
         public User CurrentUser { get; set; }
@@ -129,6 +129,8 @@ namespace FitnessWebApp.Data
             FileStream file = File.Create(path);
 
             writer.Serialize(file, CurrentUser);
+             
+            writer.Serialize(file, CurrentWorkout);
             file.Close();
         }
         ////public User LoadUserDetails { get; set; }           
@@ -140,6 +142,7 @@ namespace FitnessWebApp.Data
             //System.IO.StreamReader file = new StreamReader."C:\Users\ja6ca\OneDrive\Documents\SerializationOverview.xml";
 
             CurrentUser = reader.Deserialize(file) as User;
+            CurrentWorkout = reader.Deserialize(file) as Workout;
             file.Close();
         }
     }

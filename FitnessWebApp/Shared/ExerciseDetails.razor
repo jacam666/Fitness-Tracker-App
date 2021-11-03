@@ -1,0 +1,83 @@
+﻿@inject Data.DataService Data
+@using Fitness_Tracker_App.Data
+@inject UserDetails User
+<!-- Gets the details (reps/sets/etc) specific to one exercise (i.e. bench press)-->
+<div style="border: thin solid black; margin: 5px">
+    <h3>@BodyPart</h3>
+
+
+    <select @bind="_selectedName">
+
+        @foreach (var exerciseName in ExerciseNames)
+        {
+            <option>@exerciseName</option>
+        }
+    </select>
+    <br />
+    Reps:
+    <input type="number" @bind="_numberReps" />
+    <button @onclick="IncreaseReps">Increase Reps.</button>
+    <br />
+    Sets:
+    <input type="number" @bind="_numberSets" />
+    <button @onclick="IncreaseSets">Increase Sets</button>
+    <br />
+    Weight in kg's:
+    <input type="number" @bind="_weights" />
+    <button @onclick="IncreaseWeights">Increase Weight</button>
+</div>
+@code {
+    [Parameter]
+    public String BodyPart { get; set; }
+    [Parameter]
+    public List<String> ExerciseNames { get; set; }
+
+    private string _selectedName;
+    private int _numberReps;
+    private int _numberSets;
+    private int _weights;
+
+    public void AddWorkout()
+    {
+        var aWorkout = new Workout();
+        aWorkout.ExerciseName = _selectedName;
+        aWorkout.AmountOfReps = _numberReps;
+        aWorkout.AmountOfSets = _numberSets;
+        aWorkout.Weight = _weights;
+
+        Data.NewWorkout(aWorkout);
+    }
+
+
+    private void IncreaseReps()
+    {
+        _numberReps++;
+    }
+
+    public void IncreaseSets()
+    {
+        _numberSets++;
+    }
+
+    public void IncreaseWeights()
+    {
+        _weights++;
+    }
+
+    private string _UsersFirstName;
+    private string _UsersLastName;
+    private DateTime _DOB;
+
+    public void Add()
+    {
+        var newUser = new User();
+        newUser.FirstName = _UsersFirstName;
+        newUser.LastName = _UsersLastName;
+        newUser.DOB = _DOB;
+
+        Data.AddUser(newUser);
+    }
+
+
+
+}

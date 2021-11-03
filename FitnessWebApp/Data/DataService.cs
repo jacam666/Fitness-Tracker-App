@@ -106,11 +106,19 @@ namespace FitnessWebApp.Data
 
         public void AddUser(User u)
         {
-            CurrentUser = u;
-            //store (maybe xml, maybe database) => for now definitely XML! =)
+            CurrentUser = u;           
+        }
+
+        
+
+        public void NewWorkout(User aWorkout)
+        {
+            CurrentUser = aWorkout;
         }
 
         public User CurrentUser { get; set; }
+
+        public Workout CurrentWorkout { get; set; }
 
 
         public void WriteXML()
@@ -123,9 +131,7 @@ namespace FitnessWebApp.Data
             writer.Serialize(file, CurrentUser);
             file.Close();
         }
-
-        ////public User LoadUserDetails { get; set; }   
-           
+        ////public User LoadUserDetails { get; set; }           
         public void ReadXML()
         {
             XmlSerializer reader = new XmlSerializer(typeof(User));

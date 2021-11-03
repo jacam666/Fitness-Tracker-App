@@ -2,68 +2,70 @@
 @using Fitness_Tracker_App.Data
 @using Fitness_Tracker_App
 
+<!-- Get information about a day where training happend, and what exercises were done on this particular day-->
 
 
-
-
-<h3>Training Day Details</h3>
-@if (Data.CurrentUser == null)
-{
-    <p>Please Create a User first!</p>
-}
-else
-{
-    @*<p>Date:</p>
-        <input type="date" @bind="_DateTime" />*@
-
-    <br />
-    <p>Body Weight in kg's':</p>
-    <input type="number" @bind="_BodyWeight" />
-    <br />
-    <button class="btn btn-primary" @onclick="AddTrainingDay">Add Day</button>
-}
-@*Reps:
-    <input type="number" @bind="_numberReps" />
-    <button @onclick="IncreaseReps">Increase Reps.</button>
-    <br />*@
-
-@*Sets:
-    <input tupe="number" @bind="_numberSets" />
-    <button @onclick="IncreaseSets">Increase Sets</button>*@
-
-@*<button class="btn btn-primary" @onclick="WriteXML">Save Training Day</button>*@
-@*<input type="submit" @bind="_SaveTrainingDay" />*@
-
-<FitnessWebApp.Pages.ExerciseDetailInputComponent BodyPart="Chest" ExerciseNames="@Data.ChestExerciseNames"></FitnessWebApp.Pages.ExerciseDetailInputComponent>
-<FitnessWebApp.Pages.ExerciseDetailInputComponent BodyPart="Back" ExerciseNames="@Data.BackExerciseNames"></FitnessWebApp.Pages.ExerciseDetailInputComponent>
-<FitnessWebApp.Pages.ExerciseDetailInputComponent BodyPart="Legs" ExerciseNames="@Data.LegExerciseNames"></FitnessWebApp.Pages.ExerciseDetailInputComponent>
-<FitnessWebApp.Pages.ExerciseDetailInputComponent BodyPart="Shoulders" ExerciseNames="@Data.ShoulderExerciseNames"></FitnessWebApp.Pages.ExerciseDetailInputComponent>
-<FitnessWebApp.Pages.ExerciseDetailInputComponent BodyPart="Arms" ExerciseNames="@Data.ArmExerciseNames"></FitnessWebApp.Pages.ExerciseDetailInputComponent>
-
-
-
-@code {
-
-    private DateTime _DateTime;
-    private double _BodyWeight;
-    private string _ChestExercises;
-    private int _numberReps = 0;
-    private int _numberSets = 0;
-
-
-
-
-
-    public void AddTrainingDay()
+<div style="border: thin solid black; margin: 5px">
+    <h3>Training Day Details</h3>
+    @if (Data.CurrentUser == null)
     {
-        var aTrainingDay = new TrainingDay();
-        aTrainingDay.BodyWeight = _BodyWeight;
-        aTrainingDay.TodaysDate = _DateTime;
-
-        Data.CurrentUser.TrainingDays.Add(aTrainingDay);
-        //Data.WriteXML();
-        //Data.ReadXML();
-
+        <p>Please Create a User first!</p>
     }
-}
+    else
+    {
+        @*<p>Date:</p>
+            <input type="date" @bind="_DateTime" />*@
+
+        <br />
+        <p>Body Weight in kg's':</p>
+        <input type="number" @bind="_BodyWeight" />
+        <br />
+        <button class="btn btn-primary" @onclick="AddTrainingDay">Add Day</button>
+    }
+    @*Reps:
+        <input type="number" @bind="_numberReps" />
+        <button @onclick="IncreaseReps">Increase Reps.</button>
+        <br />*@
+
+    @*Sets:
+        <input tupe="number" @bind="_numberSets" />
+        <button @onclick="IncreaseSets">Increase Sets</button>*@
+
+    @*<button class="btn btn-primary" @onclick="WriteXML">Save Training Day</button>*@
+    @*<input type="submit" @bind="_SaveTrainingDay" />*@
+
+    <FitnessWebApp.Shared.ExerciseDetails BodyPart="Chest" ExerciseNames="@Data.ChestExerciseNames">         </FitnessWebApp.Shared.ExerciseDetails>
+    <FitnessWebApp.Shared.ExerciseDetails BodyPart="Back" ExerciseNames="@Data.BackExerciseNames">           </FitnessWebApp.Shared.ExerciseDetails>
+    <FitnessWebApp.Shared.ExerciseDetails BodyPart="Legs" ExerciseNames="@Data.LegExerciseNames">            </FitnessWebApp.Shared.ExerciseDetails>
+    <FitnessWebApp.Shared.ExerciseDetails BodyPart="Shoulders" ExerciseNames="@Data.ShoulderExerciseNames">  </FitnessWebApp.Shared.ExerciseDetails>
+    <FitnessWebApp.Shared.ExerciseDetails BodyPart="Arms" ExerciseNames="@Data.ArmExerciseNames">            </FitnessWebApp.Shared.ExerciseDetails>
+
+</div>
+
+    @code {
+
+        private DateTime _DateTime;
+        private double _BodyWeight;
+        private string _ChestExercises;
+        private int _numberReps = 0;
+        private int _numberSets = 0;
+        private Workout _selectedChestWorkout;
+        private Workout _selectedBackWorkout;
+
+
+
+
+
+        public void AddTrainingDay()
+        {
+            var aTrainingDay = new TrainingDay();
+            aTrainingDay.BodyWeight = _BodyWeight;
+            aTrainingDay.TodaysDate = _DateTime;
+
+            Data.CurrentUser.TrainingDays.Add(aTrainingDay);
+            //Data.WriteXML();
+            //Data.ReadXML();
+
+        }
+    }
 

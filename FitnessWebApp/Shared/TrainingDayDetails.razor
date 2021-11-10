@@ -9,18 +9,18 @@
     <h3>Training Day Details</h3>
     @if (Data.CurrentUser == null)
     {
-    <p>Please Create a User first!</p>
+        <p>Please Create a User first!</p>
     }
     else
     {
-    @*<p>Date:</p>
-        <input type="date" @bind="_DateTime" />*@
+        @*<p>Date:</p>
+            <input type="date" @bind="_DateTime" />*@
 
-    <br />
-    <p>Body Weight in kg's':</p>
-    <input type="number" @bind="_BodyWeight" />
-    <br />
-    <button class="btn btn-primary" @onclick="AddTrainingDay">Add Day</button>
+        <br />
+        <p>Body Weight in kg's':</p>
+        <input type="number" @bind="_BodyWeight" />
+        <br />
+        <button class="btn btn-primary" @onclick="AddTrainingDay">Add Day</button>
     }
     @*Reps:
         <input type="number" @bind="_numberReps" />
@@ -35,9 +35,14 @@
     @*<input type="submit" @bind="_SaveTrainingDay" />*@
 
     <ExerciseDetails BodyPart="Chest" ExerciseNames="@Data.ChestExerciseNames">         </ExerciseDetails>
+    <div class="container">
+        <img src="/ExerciseImages/chest.png" />
+    </div>
+    <ExerciseDetails BodyPart="Shoulders" ExerciseNames="@Data.ShoulderExerciseNames">  </ExerciseDetails>
+   
     <ExerciseDetails BodyPart="Back" ExerciseNames="@Data.BackExerciseNames">           </ExerciseDetails>
     <ExerciseDetails BodyPart="Legs" ExerciseNames="@Data.LegExerciseNames">            </ExerciseDetails>
-    <ExerciseDetails BodyPart="Shoulders" ExerciseNames="@Data.ShoulderExerciseNames">  </ExerciseDetails>
+
     <ExerciseDetails BodyPart="Arms" ExerciseNames="@Data.ArmExerciseNames">            </ExerciseDetails>
 
 </div>

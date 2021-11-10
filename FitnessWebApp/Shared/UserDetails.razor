@@ -16,7 +16,7 @@
         <p>Please Enter Your Date Of Birth</p>
         <input type="Date" @bind="_DOB" />
         <br />
-        <button @onclick="Add">Add User</button>
+        <button @onclick="AddUser">Add User</button>
     }
     else
     {
@@ -41,7 +41,7 @@
     private string _UsersLastName;
     private DateTime _DOB;
 
-    public void Add()
+    public void AddUser()
     {
         var newUser = new User();
         newUser.FirstName = _UsersFirstName;

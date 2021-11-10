@@ -3,9 +3,18 @@
 @using Fitness_Tracker_App.Data
 @inject Data.DataService Data
 
-    <UserDetails />
-@*<TrainingDayDetails />*@
+@*<div>
+        <img src="/ExerciseImages/chest.png"/>
+    </div>*@
 
+@*<button class="btn btn-primary " @onclick="<img src="/ExerciseImages/chest.png"/>"></button>*@
+<div class="container">
+    <img src="/ExerciseImages/chest.png" />
+    <button class="btn">CHEST</button>
+</div>
+@*<button class="btn btn-primary" @onclick src="/ExerciseImages/chest.png">Add Day</button>*@
+
+<UserDetails />
 <TrainingDayDetails />
 
 <br />

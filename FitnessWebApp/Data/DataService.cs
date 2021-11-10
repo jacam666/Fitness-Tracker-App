@@ -20,6 +20,7 @@ namespace FitnessWebApp.Data
 
         private List<String> _chestExerciseNames = new()
         {
+            "Please Select:",
             "Barbell Bench Press",
             "Incline Barbell Bench",
             "Cable Flyes",
@@ -37,6 +38,7 @@ namespace FitnessWebApp.Data
 
         private List<String> _LegExerciseNames = new()
         {
+            "Please Select:",
             "Barbell Squats",
             "Leg Press",
             "Leg extensions",
@@ -54,6 +56,7 @@ namespace FitnessWebApp.Data
 
         private List<String> _BackExerciseNames = new()
         {
+            "Please Select:",
             "Barbell Row",
             "Cable Lat Pulldown",
             "Close grip Cable Pulldown",
@@ -70,6 +73,7 @@ namespace FitnessWebApp.Data
 
         private List<String> _ShoulderExerciseNames = new()
         {
+            "Please Select:",
             "Barbell Press",
             "Dumbbell Press",
             "Dumbbell side raises",
@@ -87,6 +91,7 @@ namespace FitnessWebApp.Data
 
         private List<String> _ArmExerciseNames = new()
         {
+            "Please Select:",
             "Barbell Curls",
             "Cable Rope curls",
             "Seated machine curls",
@@ -108,17 +113,15 @@ namespace FitnessWebApp.Data
         {
             CurrentUser = u;           
         }
+    
 
-        
-
-        //public void NewWorkout(Workout aWorkout)
-        //{
-        //    CurrentWorkout = aWorkout;
-        //}
+        public void AddNewWorkout(Workout aWorkout)
+        {
+            CurrentUser.TrainingDays.Last().Workouts.Add(aWorkout);
+        }
 
         public User CurrentUser { get; set; }
 
-        //public Workout CurrentWorkout { get; set; }
 
 
         public void WriteXML()
@@ -130,7 +133,6 @@ namespace FitnessWebApp.Data
 
             writer.Serialize(file, CurrentUser);
              
-            //writer.Serialize(file, CurrentWorkout);
             file.Close();
         }
         ////public User LoadUserDetails { get; set; }           
@@ -139,20 +141,14 @@ namespace FitnessWebApp.Data
             XmlSerializer reader = new XmlSerializer(typeof(User));
             var path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "//SerializationOverview.xml";
             FileStream file = File.OpenRead(path);
-            //System.IO.StreamReader file = new StreamReader."C:\Users\ja6ca\OneDrive\Documents\SerializationOverview.xml";
 
             CurrentUser = reader.Deserialize(file) as User;
-            //CurrentWorkout = reader.Deserialize(file) as Workout;
+           
             file.Close();
         }
     }
 
- 
-
-
-
-
-
+     
     //TODO: keep me in the loop so i dont get pissy <= !
 
     //TODO: Create a LoadXML method that loads this data back into CurrentUser variable.

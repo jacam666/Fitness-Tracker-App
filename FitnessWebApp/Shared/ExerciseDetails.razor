@@ -8,6 +8,7 @@
 
     <select input typeof="string" @bind="_selectedName">
          
+        <option value="null">Please Select</option>
         @foreach (var exerciseName in ExerciseNames)
         {
             <option>@exerciseName</option>

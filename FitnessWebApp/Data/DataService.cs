@@ -20,7 +20,7 @@ namespace FitnessWebApp.Data
 
         private List<String> _chestExerciseNames = new()
         {
-            "Please Select:",
+            
             "Barbell Bench Press",
             "Incline Barbell Bench",
             "Cable Flyes",
@@ -38,7 +38,6 @@ namespace FitnessWebApp.Data
 
         private List<String> _LegExerciseNames = new()
         {
-            "Please Select:",
             "Barbell Squats",
             "Leg Press",
             "Leg extensions",
@@ -56,7 +55,6 @@ namespace FitnessWebApp.Data
 
         private List<String> _BackExerciseNames = new()
         {
-            "Please Select:",
             "Barbell Row",
             "Cable Lat Pulldown",
             "Close grip Cable Pulldown",
@@ -73,7 +71,6 @@ namespace FitnessWebApp.Data
 
         private List<String> _ShoulderExerciseNames = new()
         {
-            "Please Select:",
             "Barbell Press",
             "Dumbbell Press",
             "Dumbbell side raises",
@@ -91,7 +88,6 @@ namespace FitnessWebApp.Data
 
         private List<String> _ArmExerciseNames = new()
         {
-            "Please Select:",
             "Barbell Curls",
             "Cable Rope curls",
             "Seated machine curls",

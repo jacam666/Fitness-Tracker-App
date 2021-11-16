@@ -26,6 +26,8 @@
     <input type="number" @bind="_weights" />
     <div class="container">
         <img src="@ImagePath" width="500" height="200" />
+        <img src="@ImagePath2" width="500" height="200" />
+        
     </div>
     <button @onclick="AddWorkout">Add Workout</button>
 </div>
@@ -38,6 +40,8 @@
     public string ImagePath { get; set; }
     [Parameter]
     public Workout SelectedWorkout { get; set; }
+    [Parameter]
+    public string ImagePath2 { get; set; }
 
 
     private string _selectedName;

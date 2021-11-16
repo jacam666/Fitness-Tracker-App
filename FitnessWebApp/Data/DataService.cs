@@ -116,7 +116,8 @@ namespace FitnessWebApp.Data
             ["incline dumbbell flyes"] = "/ExerciseImages/Chest - incline dumbell flyes Screenshot 2021-11-10 173123.png",
             ["Pec Dec"] = "/ExerciseImages/Chest - Pec Dec Screenshot 2021-11-10 173441.png",
             ["Pushups"] = "/ExerciseImages/Chest - Pushups Screenshot 2021-11-10 175828.png",
-            ["Decline Barbell press"] = "/ExerciseImages/Decline-Barbell-press.png",
+            ["Decline Barbell press"] = "/ExerciseImages/Chest-Decline Barbell press.png",
+            ["incline dumbbell press"] = "/ExerciseImages/Chest - incline dumbbell press chest Screenshot.png",
 
         };
 
@@ -129,6 +130,10 @@ namespace FitnessWebApp.Data
         {
             ["Barbell Row"] = "/ExerciseImages/Back exercise deadlift Screenshot 2021-11-10 154854.png",
             ["Single Arm Dumbbell Row"] = "/ExerciseImages/Back - Dumbbell bench Row Screenshot 2021-11-10 155659.png",
+            ["LatPulldown machine"] = "/ExerciseImages/Back - Lat Pulldown Screenshot 2021-11-10 155518.png",
+            ["Bodyweight Pullups"] = "/ExerciseImages/Back - Pullups Screenshot 2021-11-10 155831.png",
+            ["Seated Cable Row"] = "/ExerciseImages/Back - Seated Cable Row Screenshot 2021-11-10 155742.png",
+            ["T-Bar Row"] = "/ExerciseImages/Back - T-Bar Row Screenshot 2021-11-10 155900.png",
         };
 
 

@@ -27,8 +27,9 @@
     <div class="container">
         <img src="@ImagePath" width="500" height="200" />
         <img src="@ImagePath2" width="500" height="200" />
-        
+
     </div>
+    
     <button @onclick="AddWorkout">Add Workout</button>
 </div>
 @code {
@@ -59,7 +60,6 @@
         aWorkout.Weight = _weights;
 
         Data.AddNewWorkout(aWorkout);
-
 
 
     }

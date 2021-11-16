@@ -34,47 +34,50 @@
     @*<button class="btn btn-primary" @onclick="WriteXML">Save Training Day</button>*@
     @*<input type="submit" @bind="_SaveTrainingDay" />*@
 
-    <ExerciseDetails BodyPart="Chest" 
-                     ExerciseNames="@Data.ChestExerciseNames" 
-                     ImagePath="/ExerciseImages/chest - display.png" >
+    <ExerciseDetails BodyPart="Chest"
+                     ExerciseNames="@Data.ChestExerciseNames"
+                     ImagePath="/ExerciseImages/chest - display.png">
     </ExerciseDetails>
 
-    <ExerciseDetails BodyPart="Shoulders" 
-                     ExerciseNames="@Data.ShoulderExerciseNames" 
+    <ExerciseDetails BodyPart="Shoulders"
+                     ExerciseNames="@Data.ShoulderExerciseNames"
                      ImagePath="/ExerciseImages/shoulder - display.jpg">
-        
+
     </ExerciseDetails>
 
     <ExerciseDetails BodyPart="Back"
                      ExerciseNames="@Data.BackExerciseNames"
-                     ImagePath="/ExerciseImages/Back - upperBack.jpg" 
+                     ImagePath="/ExerciseImages/Back - upperBack.jpg"
                      ImagePath2="/ExerciseImages/lowerback display.jpg">
-        
-                     
+
+       
+
+
     </ExerciseDetails>
-
+    
     @*<div class="container">
-        <img src="/ExerciseImages/upperBack.jpg"width="500" height="200" />
-        <img src="/ExerciseImages/lowerback display.jpg"width="500" height="200" />
-    </div>*@
+            <img src="/ExerciseImages/upperBack.jpg"width="500" height="200" />
+            <img src="/ExerciseImages/lowerback display.jpg"width="500" height="200" />
+        </div>*@
 
-    <ExerciseDetails BodyPart="Arms" 
+    <ExerciseDetails BodyPart="Arms"
                      ExerciseNames="@Data.ArmExerciseNames"
                      ImagePath="/ExerciseImages/Bicep display image.jpg"
-                     ImagePath2="\ExerciseImages\Arms - tricep display.jpg">
-    
+                     ImagePath2="/ExerciseImages/Arms - tricep display.jpg">
+
     </ExerciseDetails>
 
 
     <ExerciseDetails BodyPart="Legs"
                      ExerciseNames="@Data.LegExerciseNames"
                      ImagePath="/ExerciseImages/legs display.jpg">
-        
+
+
 
     </ExerciseDetails>
     @*<div class="container">
-        <img src="/ExerciseImages/legs display.jpg"width="500" height="200" />
-    </div>*@
+            <img src="/ExerciseImages/legs display.jpg"width="500" height="200" />
+        </div>*@
 
 
 

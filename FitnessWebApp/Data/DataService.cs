@@ -125,6 +125,17 @@ namespace FitnessWebApp.Data
             get { return _chestExercisePicturePaths; }
         }
 
+        private Dictionary<string, string> _backExercisePicturePaths = new()
+        {
+            ["Barbell Row"] = "/ExerciseImages/Back exercise deadlift Screenshot 2021-11-10 154854.png",
+            ["Single Arm Dumbbell Row"] = "/ExerciseImages/Back - Dumbbell bench Row Screenshot 2021-11-10 155659.png",
+        };
+
+
+        public Dictionary<string,string> BackExercisePicturePaths
+        {
+            get { return _backExercisePicturePaths; }
+        }
 
         public void AddUser(User u)
         {

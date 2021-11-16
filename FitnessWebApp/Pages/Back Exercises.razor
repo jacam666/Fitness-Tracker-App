@@ -1,14 +1,15 @@
 ﻿@page "/Back Exercises"
+@inject Data.DataService Data
 <h1>Back Exercises</h1>
 
 
 <div class="container">
     <p>Barbell Row:</p>
-    <img src="/ExerciseImages/back exercise deadlift Screenshot 2021-11-10 154854.png" />"
+    <img src="@Data.BackExercisePicturePaths["Barbell Row"]" />
     <br />
-    
+
     <p>Single Arm Dumbbell Row:</p>
-    <img src="/ExerciseImages/Dumbbell bench Row Screenshot 2021-11-10 155659.png" />
+    <img src="@Data.BackExercisePicturePaths["Single Arm Dumbbell Row"]" />
     <br />
 
     <p>LatPulldown machine:</p>

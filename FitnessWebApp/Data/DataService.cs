@@ -106,7 +106,18 @@ namespace FitnessWebApp.Data
 
         private Dictionary<string, string> _chestExercisePicturePaths = new()
         {
-            ["Incline Barbell Bench Press"] = "/ExerciseImages/Chest-Barbell-Incline.png",
+            ["Incline Barbell Press"] = "/ExerciseImages/Chest - incline barbell press Screenshot 2021-11-10 173214.png",
+            ["cable crossover"] = "/ExerciseImages/Chest - cable crossover Screenshot 2021-11-10 173300.png",
+            ["decline dumbbell flyes"] = "/ExerciseImages/Chest - decline dumbbell flyes Screenshot 2021-11-10 172917.png",
+            ["Dips"] = "/ExerciseImages/Chest - Dips Screenshot 2021-11-10 180040.png",
+            ["Dumbbell pullover"] = "/ExerciseImages/Chest - Dumbbell pullover Screenshot 2021-11-10 175952.png",
+            ["flat dumbbell flyes"] = "/ExerciseImages/flat-dumbbell-flyes.png",
+            ["incline dumbbell press"] = "/ExerciseImages/incline-dumbbell-press.png",
+            ["incline dumbbell flyes"] = "/ExerciseImages/Chest - incline dumbell flyes Screenshot 2021-11-10 173123.png",
+            ["Pec Dec"] = "/ExerciseImages/Chest - Pec Dec Screenshot 2021-11-10 173441.png",
+            ["Pushups"] = "/ExerciseImages/Chest - Pushups Screenshot 2021-11-10 175828.png",
+            ["Decline Barbell press"] = "/ExerciseImages/Decline-Barbell-press.png",
+
         };
 
         public Dictionary<string,string> ChestExercisePicturePaths

@@ -33,7 +33,7 @@ namespace FitnessWebApp.Data
         public List<String> ChestExerciseNames
         {
             get { return _chestExerciseNames; }
-            set { _chestExerciseNames = value; }
+          
         }
 
         private List<String> _LegExerciseNames = new()
@@ -98,12 +98,22 @@ namespace FitnessWebApp.Data
             "Dumbbell Kickbacks",
             "Single arm cable pushdowns"
         };
-
         public List<String> ArmExerciseNames
         {
             get { return _ArmExerciseNames; }
             set { _ArmExerciseNames = value; }
         }
+
+        private Dictionary<string, string> _chestExercisePicturePaths = new()
+        {
+            ["Incline Barbell Bench Press"] = "/ExerciseImages/Chest-Barbell-Incline.png",
+        };
+
+        public Dictionary<string,string> ChestExercisePicturePaths
+        {
+            get { return _chestExercisePicturePaths; }
+        }
+
 
         public void AddUser(User u)
         {

@@ -34,26 +34,27 @@
     @*<button class="btn btn-primary" @onclick="WriteXML">Save Training Day</button>*@
     @*<input type="submit" @bind="_SaveTrainingDay" />*@
 
-    <ExerciseDetails BodyPart="Chest" ExerciseNames="@Data.ChestExerciseNames">         </ExerciseDetails>
-    <div class="container">
-        <img src="/ExerciseImages/chest.png" width="500" height="200" />
-    </div>
-    <ExerciseDetails BodyPart="Shoulders" ExerciseNames="@Data.ShoulderExerciseNames">  </ExerciseDetails>
-    <div class="container">
-        <img src="/ExerciseImages/shoulder.jpg" width="500" height="200" />
-    </div>
+    <ExerciseDetails BodyPart="Chest" 
+                     ExerciseNames="@Data.ChestExerciseNames" 
+                     ImagePath="/ExerciseImages/chest.png" >
+    </ExerciseDetails>
+
+    <ExerciseDetails BodyPart="Shoulders" ExerciseNames="@Data.ShoulderExerciseNames" ImagePath="/ExerciseImages/shoulder.jpg">  </ExerciseDetails>
+
     <ExerciseDetails BodyPart="Back" ExerciseNames="@Data.BackExerciseNames">           </ExerciseDetails>
 
     <div class="container">
-        <img src="/ExerciseImages/upperBack.jpg"width="500" height="200" /><img src="/ExerciseImages/lowerback display.jpg"width="500" height="200" />
+        <img src="/ExerciseImages/upperBack.jpg"width="500" height="200" />
+        <img src="/ExerciseImages/lowerback display.jpg"width="500" height="200" />
     </div>
 
     <ExerciseDetails BodyPart="Arms" ExerciseNames="@Data.ArmExerciseNames">            </ExerciseDetails>
     <div class="container">
-        <img src="/ExerciseImages/bicep display image.jpg" width="500" height="200"/><img src="/ExerciseImages/tricep display.jpg" width="500" height="200" />
+        <img src="/ExerciseImages/bicep display image.jpg" width="500" height="200"/>
+        <img src="/ExerciseImages/tricep display.jpg" width="500" height="200" />
     </div>
 
-    <ExerciseDetails BodyPart="Legs" ExerciseNames="@Data.LegExerciseNames">            </ExerciseDetails>
+    <ExerciseDetails BodyPart="Legs" ExerciseNames="@Data.LegExerciseNames" >            </ExerciseDetails>
     <div class="container">
         <img src="/ExerciseImages/legs display.jpg"width="500" height="200" />
     </div>
@@ -64,28 +65,28 @@
 
 @code {
 
-        private DateTime _DateTime;
-        private double _BodyWeight;
-        private string _ChestExercises;
-        private int _numberReps = 0;
-        private int _numberSets = 0;
-        private Workout _selectedChestWorkout;
-        private Workout _selectedBackWorkout;
+    private DateTime _DateTime;
+    private double _BodyWeight;
+    private string _ChestExercises;
+    private int _numberReps = 0;
+    private int _numberSets = 0;
+    private Workout _selectedChestWorkout;
+    private Workout _selectedBackWorkout;
 
 
 
 
 
-        public void AddTrainingDay()
-        {
-            var aTrainingDay = new TrainingDay();
-            aTrainingDay.BodyWeight = _BodyWeight;
-            aTrainingDay.TodaysDate = _DateTime;
+    public void AddTrainingDay()
+    {
+        var aTrainingDay = new TrainingDay();
+        aTrainingDay.BodyWeight = _BodyWeight;
+        aTrainingDay.TodaysDate = _DateTime;
+        aTrainingDay.Workouts.Add(_selectedChestWorkout);
+        Data.CurrentUser.TrainingDays.Add(aTrainingDay);
+        //Data.WriteXML();
+        //Data.ReadXML();
 
-            Data.CurrentUser.TrainingDays.Add(aTrainingDay);
-            //Data.WriteXML();
-            //Data.ReadXML();
-
-        }
+    }
 }
 

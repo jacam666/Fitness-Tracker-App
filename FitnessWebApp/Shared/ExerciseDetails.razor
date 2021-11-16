@@ -7,23 +7,26 @@
 
 
     <select input typeof="string" @bind="_selectedName">
-         
+
         <option value="null">Please Select</option>
         @foreach (var exerciseName in ExerciseNames)
         {
             <option>@exerciseName</option>
-            
+
         }
     </select>
     <br />
     Reps:
-    <input type="number" @bind="_numberReps" />                    
+    <input type="number" @bind="_numberReps" />
     <br />
     Sets:
     <input type="number" @bind="_numberSets" />
     <br />
     Weight in kg's:
     <input type="number" @bind="_weights" />
+    <div class="container">
+        <img src="@ImagePath" width="500" height="200" />
+    </div>
     <button @onclick="AddWorkout">Add Workout</button>
 </div>
 @code {
@@ -31,11 +34,17 @@
     public String BodyPart { get; set; }
     [Parameter]
     public List<String> ExerciseNames { get; set; }
+    [Parameter]
+    public string ImagePath { get; set; }
+    [Parameter]
+    public Workout SelectedWorkout { get; set; }
+
 
     private string _selectedName;
     private int _numberReps;
     private int _numberSets;
     private int _weights;
+
 
     public void AddWorkout()
     {
@@ -46,6 +55,9 @@
         aWorkout.Weight = _weights;
 
         Data.AddNewWorkout(aWorkout);
+
+
+
     }
 
 

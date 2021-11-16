@@ -1,9 +1,10 @@
 ﻿@page "/Chest Exercises"
+@inject Data.DataService Data
 <h1>Chest Exercises</h1>
 
 <div class="container">
     <p>Incline Dumbbell Press:</p>
-    <img src="/ExerciseImages/incline dumbbell press chest Screenshot.png" />
+    <img src="@Data.ChestExercisePicturePaths["Incline Barbell Bench Press"]" />
 
     <br />
 

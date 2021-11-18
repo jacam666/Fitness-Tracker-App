@@ -14,6 +14,12 @@
             <option>@exerciseName</option>
 
         }
+
+        @*<option ImagePath2="null"></option>*@
+
+
+
+
     </select>
     <br />
     Reps:
@@ -26,10 +32,14 @@
     <input type="number" @bind="_weights" />
     <div class="container">
         <img src="@ImagePath" width="500" height="200" />
-        <img src="@ImagePath2" width="500" height="200" />
+        @*<img src="@ImagePath2" width="500" height="200" />*@
+        @if (ImagePath2 != null)
+        {
+            <img src="@ImagePath2" width="500" height="200" />
+        }
 
     </div>
-    
+
     <button @onclick="AddWorkout">Add Workout</button>
 </div>
 @code {

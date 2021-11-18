@@ -144,7 +144,12 @@ namespace FitnessWebApp.Data
 
         private readonly Dictionary<string, string> _LegExercisePicturePaths = new()
         {
-
+            ["Dumbbell Squats"] = "/ExerciseImages/LEGS - Dumbbell Squats.png",
+            ["Barbell Lunges"] = "/ExerciseImages/LEGS- Barbell Lunges.png",
+            ["Barbell Squat"] = "/ExerciseImages/LEGS- Barbell Squat.png",
+            ["Dumbbell Lunges"] = "/ExerciseImages/LEGS- Dumbbell Lunges.png",
+            ["Dumbbell Split Squat"] = "/ExerciseImages/LEGS- Dumbbell Split Squat.png",
+            ["Leg Extention"] = "/ExerciseImages/LEGS- Leg Extention.png",
         };
 
         public Dictionary<string, string> LegExercisePicturePaths

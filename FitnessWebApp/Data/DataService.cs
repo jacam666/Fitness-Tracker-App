@@ -160,6 +160,17 @@ namespace FitnessWebApp.Data
             get { return _LegExercisePicturePaths; }
         }
 
+        private readonly Dictionary<string, string> _ShoulderExercisePicturePaths = new()
+        {
+           
+        };
+
+        public Dictionary<string, string> ShoulderExercisePicturePaths
+        {
+            get { return _ShoulderExercisePicturePaths; }
+        }
+
+
         public void AddUser(User u)
         {
             CurrentUser = u;           

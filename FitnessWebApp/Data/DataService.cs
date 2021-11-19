@@ -162,7 +162,10 @@ namespace FitnessWebApp.Data
 
         private readonly Dictionary<string, string> _ShoulderExercisePicturePaths = new()
         {
-           
+            ["Behind neck barbell shoulder press"] = "/ExerciseImages/Shoulder - Behind neck barbell shoulder press.png",
+            ["Machine shoulder Press"] = "/ExerciseImages/Shoulder - Machine shoulder press.png",
+            ["Cable bar front raises"] = "/ExerciseImages/Shoulders - Cable bar front raises.png",
+            ["Cable Shrugs"] = "/ExerciseImages/Shoulders - Cable shrugs.png",
         };
 
         public Dictionary<string, string> ShoulderExercisePicturePaths

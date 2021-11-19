@@ -180,6 +180,24 @@ namespace FitnessWebApp.Data
             get { return _ShoulderExercisePicturePaths; }
         }
 
+        private readonly Dictionary<string, string> _ArmExercisePicturePaths = new()
+        {
+            ["Barbell curl"] = "/ExerciseImages/ARMS - Barbell curl.png",
+            ["Barbell preacher curl"] = "/ExerciseImages/ARMS - Barbell preacher curl.png",
+            ["Dumbbell concentration curl"] = "/ExerciseImages/ARMS - Dumbbell concentration curl.png",
+            ["Dumbbell curls"] = "/ExerciseImages/ARMS - Dumbbell culrs.png",
+            ["Dumbbell Hammer curls"] = "/ExerciseImages/ARMS - Dumbbell Hammer curls.png",
+            ["Dumbbell Kickbacks"] = "/ExerciseImages/ARMS - Dumbbell kickbacks.png",
+            ["Dumbbell single arm tricep extention"] = "/ExerciseImages/ARMS - Dumbbell single arm tricep extention.png",
+            ["Forearm curl"] = "/ExerciseImages/ARMS - Forearm curl.png",
+            ["Incline bench dumbbell curls"] = "/ExerciseImages/ARMS - Incline bench dumbbell curls.png",
+            ["Single arm dumbbell preacher curls"] = "/ExerciseImages/ARMS - single arm dumbbell preacher curl.png",
+        };
+
+        public Dictionary<string, string> ArmExercisePicturePaths
+        {
+            get { return _ArmExercisePicturePaths; }
+        }
 
         public void AddUser(User u)
         {

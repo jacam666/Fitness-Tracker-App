@@ -166,6 +166,13 @@ namespace FitnessWebApp.Data
             ["Machine shoulder Press"] = "/ExerciseImages/Shoulder - Machine shoulder press.png",
             ["Cable bar front raises"] = "/ExerciseImages/Shoulders - Cable bar front raises.png",
             ["Cable Shrugs"] = "/ExerciseImages/Shoulders - Cable shrugs.png",
+            ["Cable side Raises"] = "/ExerciseImages/Shoulders - Cable side raises.png",
+            ["Dumbbell incline bench side raises"] = "/ExerciseImages/Shoulders - Dumbbell  incline bench side raises.png",
+            ["Dumbbell bent over rear delt raises"] = "/ExerciseImages/Shoulders - Dumbbell bent over rear delt raises.png",
+            ["Dumbbell Front raises"] = "/ExerciseImages/Shoulders - Dumbbell Front raises.png",
+            ["Dumbbell incline bench rear delt raise"] = "/ExerciseImages/Shoulders - Dumbbell incline bench rear delt raises.png",
+            ["Dumbbell Shoulder Press"] = "/ExerciseImages/Shoulders - Dumbbell shoulder press.png",
+            ["Dumbbell Side raises"] = "/ExerciseImages/Shoulders - Dumbbell side raises.png",
         };
 
         public Dictionary<string, string> ShoulderExercisePicturePaths

@@ -150,6 +150,9 @@ namespace FitnessWebApp.Data
             ["Dumbbell Lunges"] = "/ExerciseImages/LEGS- Dumbbell Lunges.png",
             ["Dumbbell Split Squat"] = "/ExerciseImages/LEGS- Dumbbell Split Squat.png",
             ["Leg Extention"] = "/ExerciseImages/LEGS- Leg Extention.png",
+            ["Leg Press"] = "/ExerciseImages/LEGS- Leg Press.png",
+            ["Lying Leg Curl"] = "/ExerciseImages/LEGS- Lying Leg Curl.png",
+            ["Seated Leg Curl"] = "/ExerciseImages/LEGS- Seated Leg Curl.png",
         };
 
         public Dictionary<string, string> LegExercisePicturePaths

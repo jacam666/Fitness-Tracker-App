@@ -192,6 +192,9 @@ namespace FitnessWebApp.Data
             ["Forearm curl"] = "/ExerciseImages/ARMS - Forearm curl.png",
             ["Incline bench dumbbell curls"] = "/ExerciseImages/ARMS - Incline bench dumbbell curls.png",
             ["Single arm dumbbell preacher curls"] = "/ExerciseImages/ARMS - single arm dumbbell preacher curl.png",
+            ["Skull crushers"] = "/ExerciseImages/ARMS - Skull crushers.png",
+            ["Seated Dips"] = "/ExerciseImages/ARMS - Seated Dips.png",
+            ["Close Grip Bench"] = "/ExerciseImages/ARMS - close grip bench press.png",
         };
 
         public Dictionary<string, string> ArmExercisePicturePaths

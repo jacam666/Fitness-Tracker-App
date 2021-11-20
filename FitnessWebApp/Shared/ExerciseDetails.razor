@@ -51,7 +51,28 @@
     public Workout SelectedWorkout { get; set; }
     [Parameter]
     public string ImagePath2 { get; set; }
+    [Parameter]
+    public string SelectedName { get; set; } 
+    [Parameter]
+    public string NumberReps { get; set; }
+    [Parameter]
+    public string NumberSets { get; set; } 
+    [Parameter]
+    public string Weights { get; set; }
+    [Parameter]
+    public EventCallback<string> TrainingDayDetailsChanged { get; set; }
+ 
 
+    async Task UpdateTraingDayDetails()
+    {
+        
+        await TrainingDayDetailsChanged.InvokeAsync(SelectedName);
+        await TrainingDayDetailsChanged.InvokeAsync(NumberReps);
+        await TrainingDayDetailsChanged.InvokeAsync(NumberSets);
+        await TrainingDayDetailsChanged.InvokeAsync(Weights);
+    } 
+    
+   
 
     private string _selectedName;
     private int _numberReps;
@@ -67,7 +88,7 @@
         aWorkout.AmountOfSets = _numberSets;
         aWorkout.Weight = _weights;
 
-        Data.AddNewWorkout(aWorkout);
+        //Data.AddNewWorkout(aWorkout);
 
 
     }

@@ -14,7 +14,7 @@
     else
     {
         <p>Date:</p>
-            <input type="date" @bind="_DateTime" />
+        <input type="date" @bind="_DateTime" />
 
         <br />
         <p>Body Weight in kg's':</p>
@@ -22,7 +22,9 @@
         <br />
         <button class="btn btn-primary" @onclick="AddTrainingDay">Add Day</button>
     }
- 
+
+<@UpdateTraingDayDetails/>
+
 
     <ExerciseDetails BodyPart="Chest"
                      ExerciseNames="@Data.ChestExerciseNames"
@@ -74,6 +76,8 @@
 </div>
 
 @code {
+
+
 
     private DateTime _DateTime;
     private double _BodyWeight;

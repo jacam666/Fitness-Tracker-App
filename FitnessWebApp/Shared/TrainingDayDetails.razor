@@ -23,7 +23,7 @@
         <button class="btn btn-primary" @onclick="AddTrainingDay">Add Day</button>
     }
 
-<@UpdateTraingDayDetails/>
+   <ExerciseDetails @bind-SelectedWorkout="_Workout"></ExerciseDetails>
 
 
     <ExerciseDetails BodyPart="Chest"
@@ -86,6 +86,7 @@
     private int _numberSets = 0;
     private Workout _selectedChestWorkout;
     private Workout _selectedBackWorkout;
+    private Workout _Workout;
 
 
 
@@ -102,5 +103,7 @@
         //Data.ReadXML();
 
     }
+
+
 }
 

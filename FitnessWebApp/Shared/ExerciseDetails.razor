@@ -53,27 +53,25 @@
     [Parameter]
     public string ImagePath2 { get; set; }
     [Parameter]
-    public string SelectedName { get; set; } 
+    public string SelectedName { get; set; }
     [Parameter]
     public string NumberReps { get; set; }
     [Parameter]
-    public string NumberSets { get; set; } 
+    public string NumberSets { get; set; }
     [Parameter]
     public string Weights { get; set; }
     [Parameter]
-    public EventCallback<string> TrainingDayDetailsChanged { get; set; }
- 
+    public EventCallback<Workout> SelectedWorkoutChanged { get; set; }
+
 
     async Task UpdateTraingDayDetails()
     {
-        
-        await TrainingDayDetailsChanged.InvokeAsync(SelectedName);
-        await TrainingDayDetailsChanged.InvokeAsync(NumberReps);
-        await TrainingDayDetailsChanged.InvokeAsync(NumberSets);
-        await TrainingDayDetailsChanged.InvokeAsync(Weights);
-    } 
-    
-   
+
+        await SelectedWorkoutChanged.InvokeAsync(SelectedWorkout);
+
+    }
+
+
 
     private string _selectedName;
     private int _numberReps;

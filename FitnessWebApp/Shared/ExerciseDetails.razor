@@ -39,7 +39,7 @@
     </div>
 
     <button @onclick="AddWorkout">Add Workout</button>
-    <button @onclick="UpdateTraingDayDetails">Update Training Day Details</button>
+    <button @onclick="UpdateTrainingDayDetails">Update Training Day Details</button>
 </div>
 @code {
     [Parameter]
@@ -64,7 +64,7 @@
     public EventCallback<Workout> SelectedWorkoutChanged { get; set; }
 
 
-    async Task UpdateTraingDayDetails()
+    async Task UpdateTrainingDayDetails()
     {
 
         await SelectedWorkoutChanged.InvokeAsync(SelectedWorkout);
@@ -77,6 +77,7 @@
     private int _numberReps;
     private int _numberSets;
     private int _weights;
+    private int _ExerciseNames;
 
 
     public void AddWorkout()

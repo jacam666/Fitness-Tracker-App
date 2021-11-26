@@ -24,53 +24,61 @@
     }
 
    @*<ExerciseDetails @bind-SelectedWorkout="_Workout></ExerciseDetails>*@
-    <ExerciseDetails @bind-SelectedWorkout ="_Workout"></ExerciseDetails>
+    @*<ExerciseDetails @bind-SelectedWorkout ="_Workout"></ExerciseDetails>*@
 
 
     <ExerciseDetails BodyPart="Chest"
                      ExerciseNames="@Data.ChestExerciseNames"
-                     ImagePath="/ExerciseImages/chest - display.png">
+                     ImagePath="/ExerciseImages/chest - display.png"
+                     NumberReps="@_ChestExercises"
+                     NumberSets="@_ChestExercises"
+                     Weights="@_ChestExercises"
+                     >
+        
     </ExerciseDetails>
 
     <ExerciseDetails BodyPart="Shoulders"
                      ExerciseNames="@Data.ShoulderExerciseNames"
-                     ImagePath="/ExerciseImages/shoulder - display.jpg">
-
+                     ImagePath="/ExerciseImages/shoulder - display.jpg"
+                     NumberReps="@_ShoulderExercises"
+                     NumberSets="@_ShoulderExercises"
+                     Weights="@_ShoulderExercises"
+                     >
+               
     </ExerciseDetails>
 
     <ExerciseDetails BodyPart="Back"
                      ExerciseNames="@Data.BackExerciseNames"
                      ImagePath="/ExerciseImages/Back - upperBack.jpg"
-                     ImagePath2="/ExerciseImages/lowerback display.jpg">
-
-
-
+                     ImagePath2="/ExerciseImages/lowerback display.jpg"
+                     NumberReps="@_BackExercises"
+                     NumberSets="@_BackExercises"
+                     Weights="@_BackExercises" >
 
     </ExerciseDetails>
-
-    @*<div class="container">
-            <img src="/ExerciseImages/upperBack.jpg"width="500" height="200" />
-            <img src="/ExerciseImages/lowerback display.jpg"width="500" height="200" />
-        </div>*@
 
     <ExerciseDetails BodyPart="Arms"
                      ExerciseNames="@Data.ArmExerciseNames"
                      ImagePath="/ExerciseImages/Bicep display image.jpg"
-                     ImagePath2="/ExerciseImages/Arms - tricep display.jpg">
+                     ImagePath2="/ExerciseImages/Arms - tricep display.jpg"
+                     NumberReps="@_ArmExercises"
+                     NumberSets="@_ArmExercises"
+                     Weights="@_ArmExercises"
+                     >
 
     </ExerciseDetails>
 
 
     <ExerciseDetails BodyPart="Legs"
                      ExerciseNames="@Data.LegExerciseNames"
-                     ImagePath="/ExerciseImages/legs display.jpg">
-
-
-
+                     ImagePath="/ExerciseImages/legs display.jpg"
+                     NumberReps="@_LegExercises"
+                     NumberSets="@_LegExercises"
+                     Weights="@_LegExercises"
+                     
+                     >
     </ExerciseDetails>
-    @*<div class="container">
-            <img src="/ExerciseImages/legs display.jpg"width="500" height="200" />
-        </div>*@
+
 </div>
 
 @code {
@@ -80,6 +88,10 @@
     private DateTime _DateTime;
     private double _BodyWeight;
     private string _ChestExercises;
+    private string _ArmExercises;
+    private string _LegExercises;
+    private string _ShoulderExercises;
+    private string _BackExercises;
     private int _numberReps = 0;
     private int _numberSets = 0;
     private Workout _selectedChestWorkout;

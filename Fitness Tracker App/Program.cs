@@ -1,7 +1,6 @@
 ﻿using Fitness_Tracker_App.Data;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Fitness_Tracker_App
 {
@@ -11,7 +10,7 @@ namespace Fitness_Tracker_App
         static void Main(string[] args)
         {
 
-          
+
 
             //User currentUser = new User();
             //UI.EnterNewUser();

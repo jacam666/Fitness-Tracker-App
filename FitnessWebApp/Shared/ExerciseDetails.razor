@@ -30,7 +30,7 @@
     <input type="number" @bind="_weights" />
     <div class="container">
         <img src="@ImagePath" width="500" height="200" />
-      
+
         @if (ImagePath2 != null)
         {
             <img src="@ImagePath2" width="500" height="200" />
@@ -42,35 +42,35 @@
     <button @onclick="UpdateTrainingDayDetails">Update Training Day Details</button>
 </div>
 @code {
-    [Parameter]
-    public String BodyPart { get; set; }
-    [Parameter]
-    public List<String> ExerciseNames { get; set; }
-    [Parameter]
-    public string ImagePath { get; set; }
-    [Parameter]
-    public Workout SelectedWorkout { get; set; }
-    [Parameter]
-    public string ImagePath2 { get; set; }
-    [Parameter]
-    public string SelectedName { get; set; }
-    [Parameter]
-    public string NumberReps { get; set; }
-    [Parameter]
-    public string NumberSets { get; set; }
-    [Parameter]
-    public string Weights { get; set; }
-    [Parameter]
-    public EventCallback<Workout> SelectedWorkoutChanged { get; set; }
+        [Parameter]
+        public String BodyPart { get; set; }
+        [Parameter]
+        public List<String> ExerciseNames { get; set; }
+        [Parameter]
+        public string ImagePath { get; set; }
+        [Parameter]
+        public Workout SelectedWorkout { get; set; }
+        [Parameter]
+        public string ImagePath2 { get; set; }
+        [Parameter]
+        public string SelectedName { get; set; }
+        [Parameter]
+        public string NumberReps { get; set; }
+        [Parameter]
+        public string NumberSets { get; set; }
+        [Parameter]
+        public string Weights { get; set; }
+        [Parameter]
+        public EventCallback<Workout> SelectedWorkoutChanged { get; set; }
 
 
-    async Task UpdateTrainingDayDetails()
-    {
+        async Task UpdateTrainingDayDetails()
+        {
 
-        await SelectedWorkoutChanged.InvokeAsync(SelectedWorkout);
+            await SelectedWorkoutChanged.InvokeAsync(SelectedWorkout);
 
-    }
 
+        }
 
 
     private string _selectedName;
@@ -84,14 +84,14 @@
     {
         var aWorkout = new Workout();
         aWorkout.ExerciseName = _selectedName;
+
         aWorkout.AmountOfReps = _numberReps;
         aWorkout.AmountOfSets = _numberSets;
         aWorkout.Weight = _weights;
 
         //Data.AddNewWorkout(aWorkout);
-
-
     }
+
 
 
 

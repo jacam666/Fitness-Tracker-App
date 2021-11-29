@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Xml.Serialization;
 
 namespace FitnessWebApp.Data
@@ -20,7 +19,7 @@ namespace FitnessWebApp.Data
 
         private List<String> _chestExerciseNames = new()
         {
-            
+
             "Barbell Bench Press",
             "Incline Barbell Bench",
             "Cable Flyes",
@@ -33,7 +32,7 @@ namespace FitnessWebApp.Data
         public List<String> ChestExerciseNames
         {
             get { return _chestExerciseNames; }
-          
+
         }
 
         private List<String> _LegExerciseNames = new()
@@ -121,7 +120,7 @@ namespace FitnessWebApp.Data
 
         };
 
-        public Dictionary<string,string> ChestExercisePicturePaths
+        public Dictionary<string, string> ChestExercisePicturePaths
         {
             get { return _chestExercisePicturePaths; }
         }
@@ -137,7 +136,7 @@ namespace FitnessWebApp.Data
         };
 
 
-        public Dictionary<string,string> BackExercisePicturePaths
+        public Dictionary<string, string> BackExercisePicturePaths
         {
             get { return _backExercisePicturePaths; }
         }
@@ -204,9 +203,9 @@ namespace FitnessWebApp.Data
 
         public void AddUser(User u)
         {
-            CurrentUser = u;           
+            CurrentUser = u;
         }
-    
+
 
         public void AddNewWorkout(Workout aWorkout)
         {
@@ -225,7 +224,7 @@ namespace FitnessWebApp.Data
             FileStream file = File.Create(path);
 
             writer.Serialize(file, CurrentUser);
-             
+
             file.Close();
         }
         ////public User LoadUserDetails { get; set; }           
@@ -236,12 +235,12 @@ namespace FitnessWebApp.Data
             FileStream file = File.OpenRead(path);
 
             CurrentUser = reader.Deserialize(file) as User;
-           
+
             file.Close();
         }
     }
 
-     
+
     //TODO: keep me in the loop so i dont get pissy <= !
 
     //TODO: Create a LoadXML method that loads this data back into CurrentUser variable.

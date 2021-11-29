@@ -1,9 +1,6 @@
 ﻿using Fitness_Tracker_App.Data;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Fitness_Tracker_App
 {
@@ -50,15 +47,15 @@ namespace Fitness_Tracker_App
 
         public static void PrintSpecificWorkoutOptions(List<string> options)
         {
-            List<Workout> Workouts = new(); 
+            List<Workout> Workouts = new();
             foreach (string option in options)
             {
                 var workout = new Workout();
                 workout.ExerciseName = option;
-           
+
                 Console.WriteLine(option);
                 workout.AmountOfReps = InputReps();
-            //    workout.AmountOfSets = InputSets();
+                //    workout.AmountOfSets = InputSets();
                 Workouts.Add(workout);
             }
         }

@@ -6,6 +6,7 @@
     <h3>@BodyPart</h3>
 
 
+
     <select input typeof="string" @bind="_selectedName">
 
         <option value="null">Please Select</option>
@@ -21,7 +22,7 @@
     </select>
     <br />
     Reps:
-    <input type="number" @bind="_numberReps" />
+    <input type="number" @bind="_numberReps"/>
     <br />
     Sets:
     <input type="number" @bind="_numberSets" />
@@ -42,54 +43,49 @@
     <button @onclick="UpdateTrainingDayDetails">Update Training Day Details</button>
 </div>
 @code {
-        [Parameter]
-        public String BodyPart { get; set; }
-        [Parameter]
-        public List<String> ExerciseNames { get; set; }
-        [Parameter]
-        public string ImagePath { get; set; }
-        [Parameter]
-        public Workout SelectedWorkout { get; set; }
-        [Parameter]
-        public string ImagePath2 { get; set; }
-        [Parameter]
-        public string SelectedName { get; set; }
-        [Parameter]
-        public string NumberReps { get; set; }
-        [Parameter]
-        public string NumberSets { get; set; }
-        [Parameter]
-        public string Weights { get; set; }
-        [Parameter]
-        public EventCallback<Workout> SelectedWorkoutChanged { get; set; }
+    [Parameter]
+    public String BodyPart { get; set; }
+    [Parameter]
+    public List<String> ExerciseNames{ get; set; }
+    [Parameter]
+    public string ImagePath { get; set; }
+    [Parameter]
+    public string ImagePath2 { get; set; }
+    [Parameter]
+    public Workout SelectedWorkout { get; set; }
+    [Parameter]
+    public EventCallback<Workout> SelectedWorkoutChanged { get; set; }
 
 
-        async Task UpdateTrainingDayDetails()
-        {
+    async Task UpdateTrainingDayDetails()
+    {
+        SelectedWorkout = new();
+        SelectedWorkout.ExerciseName = _selectedName;
+        SelectedWorkout.AmountOfReps = _numberReps;
+        SelectedWorkout.AmountOfSets = _numberSets;
+        SelectedWorkout.Weight = _weights;
+        await SelectedWorkoutChanged.InvokeAsync(SelectedWorkout);
 
-            await SelectedWorkoutChanged.InvokeAsync(SelectedWorkout);
+
+    }
 
 
-        }
-
-
-    private string _selectedName;
-    private int _numberReps;
-    private int _numberSets;
-    private int _weights;
-    private int _ExerciseNames;
+    public string _selectedName;
+    public int _numberReps;
+    public int _numberSets;
+    public int _weights;
+    public string _ExerciseNames;
 
 
     public void AddWorkout()
     {
         var aWorkout = new Workout();
         aWorkout.ExerciseName = _selectedName;
-
         aWorkout.AmountOfReps = _numberReps;
         aWorkout.AmountOfSets = _numberSets;
         aWorkout.Weight = _weights;
 
-        //Data.AddNewWorkout(aWorkout);
+        Data.AddNewWorkout(aWorkout);
     }
 
 

@@ -210,6 +210,7 @@ namespace FitnessWebApp.Data
         public void AddNewWorkout(Workout aWorkout)
         {
             CurrentUser.TrainingDays.Last().Workouts.Add(aWorkout);
+           
         }
 
         public User CurrentUser { get; set; }

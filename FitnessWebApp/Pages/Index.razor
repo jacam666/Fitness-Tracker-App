@@ -2,27 +2,27 @@
 @using Fitness_Tracker_App
 @using Fitness_Tracker_App.Data
 @inject Data.DataService Data
-
 @*<div>
         <img src="/ExerciseImages/chest.png"/>
     </div>*@
 
 @*<button class="btn btn-primary " @onclick="<img src="/ExerciseImages/chest.png"/>"></button>*@
 @*<div class="container">
-    <img src="/ExerciseImages/chest.png" />
-    <button class="btn">Chest</button>
-</div>*@
+        <img src="/ExerciseImages/chest.png" />
+        <button class="btn">Chest</button>
+    </div>*@
 @*<button class="btn btn-primary" @onclick src="/ExerciseImages/chest.png">Add Day</button>*@
 
-<UserDetails />
-<TrainingDayDetails />
 
+<UserDetails />
 
 <br />
 <button class="btn btn-primary" @onclick="WriteXML">Save User Details</button>
 <br />
 <button class="btn btn-primary" @onclick="Read">Load User Details</button>
 
+
+<TrainingDayDetails />
 
 
 <tbody>

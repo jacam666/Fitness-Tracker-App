@@ -21,7 +21,7 @@
         <input type="number" @bind="_BodyWeight" />
         <br />
         <button class="btn btn-primary" @onclick="AddTrainingDay">Add Day</button>
-        <button class="btn btn-primary" @onclick="AddWorkoutExercises">Add Exercises</button>
+        @*<button class="btn btn-primary" @onclick="AddWorkoutExercises">Add Exercises</button>*@
 
         
     }
@@ -92,7 +92,7 @@
         var aTrainingDay = new TrainingDay();
         aTrainingDay.BodyWeight = _BodyWeight;
         aTrainingDay.TodaysDate = _DateTime;
-        
+
 
         Data.CurrentUser.TrainingDays.Add(aTrainingDay);
 
@@ -102,22 +102,22 @@
     }
 
 
-    public string _ExerciseNames;
-    //public int _NumberOfReps;
-    //public int _NumberOfSets;
-    //public int _Weights;
+    //public string _ExerciseNames;
+    ////public int _NumberOfReps;
+    ////public int _NumberOfSets;
+    ////public int _Weights;
 
-    public void AddWorkoutExercises()
-    {
-        var exerciseList = new Workout();
-        exerciseList.ExerciseName = _ExerciseNames;
-        //exerciseList.AmountOfReps = _NumberOfReps;
-        //exerciseList.AmountOfSets = _NumberOfSets;
-        //exerciseList.Weight = _Weights;
-        Data.CurrentUser.Workouts.ExerciseName.(exerciseList);
+    //public void AddWorkoutExercises()
+    //{
+    //    var exerciseList = new Workout();
+    //    exerciseList.ExerciseName = _ExerciseNames;
+    //    //exerciseList.AmountOfReps = _NumberOfReps;
+    //    //exerciseList.AmountOfSets = _NumberOfSets;
+    //    //exerciseList.Weight = _Weights;
+    //    Data.AddWorkoutExercises(exerciseList);
 
 
-    }
+    //}
 
 
 }

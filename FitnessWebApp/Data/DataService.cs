@@ -206,6 +206,13 @@ namespace FitnessWebApp.Data
             CurrentUser = u;
         }
 
+        public void AddWorkoutExercises(Workout exerciseList)
+        {
+            CurrentUser.Workouts = exerciseList;    /* = exerciseList;*/
+        }
+
+        public Workout CurrentExercise { get; set; }
+
 
         public void AddNewWorkout(Workout aWorkout)
         {

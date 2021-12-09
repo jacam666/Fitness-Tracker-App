@@ -5,13 +5,14 @@
 @using FitnessWebApp.Pages.entities
 
 <h1>MyPracticePage</h1>
-<h3>We have @Data.Users.Count People in the List</h3>
+<br />
+<!--<h3>We have @Data.Users.Count People in the List</h3>
 <h2>This page is for practising all my code</h2>
 Today is @_Date
 <br />
-Hello @_firstName please choose a Chest Exercise:
+Hello @_firstName please choose a Chest Exercise:-->
 @*<button class="btn btn-primary" @onclick="ChestExerciseName">Chest Exercise</button>*@
-<input @bind="_firstName" />
+<!--<input @bind="_firstName" />
 <input type="Date" @bind="_Date" />
 
 <button class="btn btn-primary" @onclick="CreateUser">Create User</button>
@@ -23,120 +24,135 @@ Hello @_firstName please choose a Chest Exercise:
 
 <button @onclick="@WriteInlog">click me </button>
 
-@*<input @bind="_ChestExerciseName" />
-    <button class="btn btn-primary" @onclick="ChestExercises">Choose Chest Exercise</button>*@
-
-@*<input @bind="_exerciseName" />
-    <button class="btn btn-primary" @onclick="ExerciseChoice">Choose Chest Exercise</button>*@
-
-
-@*<SurveyPrompt Title="This is a cool title"></SurveyPrompt>
-    <SurveyPrompt Title="This is another title! =)"></SurveyPrompt>*@
-
-
-
-@*<div>
-        <h3>Movie</h3>
-        @foreach (var movie in movies)
-        {
-            <p>Title: <b>@movie.Title</b></p>
-            <p>Release Date: <b>@movie.ReleaseDate.ToString("dd MMM yyyy")</b></p>
-        }
-    </div>*@
-
 <div>
     <h3>Movies:</h3>
     <MoviesList Movies="movies" />
 </div>
 
+<p></p>-->
+
+<h1>@currentHeading</h1>
+
+<p>
+    <label>
+        New title
+        <input @bind="newHeading" />
+    </label>
+    <button @onclick="UpdateHeading">Update heading </button>
+
+</p>
+
+<p>
+    <label>
+        <input type="checkbox" @onchange="CheckChanged" />
+        @checkedMessage
+    </label>
+</p>
 
 
 
-<p></p>
+<h1>@currentHeading1</h1>
+
+<p>
+    <label>
+        New title
+        <input @bind="newHeading1" />
+    </label>
+    <button @onclick="UpdateHeading1"> Update heading </button>
+</p>
 
 
 @code {
-    private List<Movie> movies;
-    protected override void OnInitialized()
-    {
-        movies = new List<Movie>()
-{
-            new Movie(){Title = "Spider-man: far from home", ReleaseDate = new DateTime(2019, 7, 2)},
-            new Movie(){Title = "Moana", ReleaseDate = new DateTime(2016, 11 ,23)},
-            new Movie(){Title = "Inception", ReleaseDate = new DateTime(2010, 7 ,16)},
-        };
-    }
-    string name = "ja cameron";
-
-    void WriteInlog()
-    {
-        Console.WriteLine("i've been clicked (from method)");
-    }
-
-
-
-
-
-
-
-    public class ChestExerciseName
-    {
-        public string Name { get; set; }
-    }
-    //public void ChestExerciseName();
-    List<ChestExerciseName> chestExercises = new List<ChestExerciseName>
-{
-    new ChestExerciseName() { Name = "Barbell Bench Press"},
-    new ChestExerciseName() { Name = "InclineBarbellBench"},
-    new ChestExerciseName() { Name = "CableFlyes"},
-    new ChestExerciseName() { Name = "DeclineBarbellBench"},
-    new ChestExerciseName() { Name = "DumbbellFlyes"},
-    new ChestExerciseName() { Name = "PecDec"},
-    new ChestExerciseName() { Name = "CableCrossover"},
-
-    };
-
-
-
-
-
-    private DateTime _Date = DateTime.Now;
-
-    public DateTime Date
-    {
-        get { return _Date; }
-        set { _Date = value; }
-    }
-
-    private string _firstName = "John";
-
-    public void CreateUser()
-    {
-        var u = new User();
-        u.DOB = Date;
-        u.FirstName = _firstName;
-
-        Data.AddUser(u);
-    }
-    //private enum  _ChestExerciseName; // thinking this should be a list but unsure of how to input it?
-    ////private List<ChestExerciseName> = _ChestExerciseName(); tried using list here
-
-    //public void ChestExercises()
+    //    private List<Movie> movies;
+    //    protected override void OnInitialized()
+    //    {
+    //        movies = new List<Movie>()
     //{
-    //    var chest = new ChestExerciseName();
+    //            new Movie(){Title = "Spider-man: far from home", ReleaseDate = new DateTime(2019, 7, 2)},
+    //            new Movie(){Title = "Moana", ReleaseDate = new DateTime(2016, 11 ,23)},
+    //            new Movie(){Title = "Inception", ReleaseDate = new DateTime(2010, 7 ,16)},
+    //        };
+    //    }
+    //    string name = "ja cameron";
 
-    //    chest = _ChestExerciseName; // tried to put multiple options in here as an identifier but none seem to be working
+    //    void WriteInlog()
+    //    {
+    //        Console.WriteLine("i've been clicked (from method)");
+    //    }
 
-    //    Data.AddChestExercise(chest);
 
+    //    public class ChestExerciseName
+    //    {
+    //        public string Name { get; set; }
+    //    }
+    //    //public void ChestExerciseName();
+    //    List<ChestExerciseName> chestExercises = new List<ChestExerciseName>
+    //{
+    //    new ChestExerciseName() { Name = "Barbell Bench Press"},
+    //    new ChestExerciseName() { Name = "InclineBarbellBench"},
+    //    new ChestExerciseName() { Name = "CableFlyes"},
+    //    new ChestExerciseName() { Name = "DeclineBarbellBench"},
+    //    new ChestExerciseName() { Name = "DumbbellFlyes"},
+    //    new ChestExerciseName() { Name = "PecDec"},
+    //    new ChestExerciseName() { Name = "CableCrossover"},
+
+    //    };
+
+    //private DateTime _Date = DateTime.Now;
+
+    //public DateTime Date
+    //{
+    //    get { return _Date; }
+    //    set { _Date = value; }
+    //}
+
+    //private string _firstName = "John";
+
+    //public void CreateUser()
+    //{
+    //    var u = new User();
+    //    u.DOB = Date;
+    //    u.FirstName = _firstName;
+
+    //    Data.AddUser(u);
+    //}
+
+
+    ////}
+    //private string _exerciseName;
+    //public void ExerciseChoice()
+    //{
+    //    var ec = new Exercise();
+    //    ec.ExerciseName = _exerciseName;
 
     //}
-    private string _exerciseName;
-    public void ExerciseChoice()
-    {
-        var ec = new Exercise();
-        ec.ExerciseName = _exerciseName;
 
+
+    private string currentHeading = "Event Change Test heading";
+    private string newHeading;
+    private string checkedMessage = "Not changed yet";
+
+    private void UpdateHeading()
+    {
+        currentHeading = $"{newHeading}";
+    }
+
+    private void CheckChanged()
+    {
+        /// shows when the event was changed last
+        checkedMessage = $"Last changed at {DateTime.Now}";
+    }
+
+
+    private string currentHeading1 = "Event Change Test heading";
+    private string newHeading1;
+
+    private async Task UpdateHeading1()
+    {
+        ///waits 2 seconds before making change
+        await Task.Delay(2000);
+
+        currentHeading1 = $"{newHeading1}";
     }
 
 

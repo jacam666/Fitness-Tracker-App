@@ -1,4 +1,4 @@
-﻿@inject Data.DataService Data
+﻿@inject Data.DataService DataS
 @using Fitness_Tracker_App.Data
 @using Fitness_Tracker_App
 
@@ -7,7 +7,7 @@
 
 <div style="border: thin solid black; margin: 5px">
     <h3>Training Day Details</h3>
-    @if (Data.CurrentUser == null)
+    @if (DataS.CurrentUser == null)
     {
         <p>Please Create a User first!</p>
     }
@@ -20,8 +20,13 @@
         <p>Body Weight in kg's':</p>
         <input type="number" @bind="_BodyWeight" />
         <br />
+
+        foreach (var wo in DataS.CurrentUser.TrainingDays.Last().Workouts)
+        {
+            <p>@wo.ExerciseName - @wo.AmountOfReps</p>
+        }
         <button class="btn btn-primary" @onclick="AddTrainingDay">Add Day</button>
-        @*<button class="btn btn-primary" @onclick="AddWorkoutExercises">Add Exercises</button>*@
+        <button class="btn btn-primary" @onclick="AddWorkoutExercises">Add Exercises</button>
 
         
     }
@@ -32,7 +37,7 @@
 
 
    <ExerciseDetails BodyPart="Chest"
-                    ExerciseNames="@Data.ChestExerciseNames"
+                    ExerciseNames="@DataS.ChestExerciseNames"
                     ImagePath="/ExerciseImages/chest - display.png"
                     @bind-SelectedWorkout="_Workout"
                     >
@@ -42,7 +47,7 @@
  
 
     <ExerciseDetails BodyPart="Shoulders"
-                     ExerciseNames="@Data.ShoulderExerciseNames"
+                     ExerciseNames="@DataS.ShoulderExerciseNames"
                      ImagePath="/ExerciseImages/shoulder - display.jpg"
                      @bind-SelectedWorkout="_Workout"
                      >
@@ -50,7 +55,7 @@
     </ExerciseDetails>
 
     <ExerciseDetails BodyPart="Back"
-                     ExerciseNames="@Data.BackExerciseNames"
+                     ExerciseNames="@DataS.BackExerciseNames"
                      ImagePath="/ExerciseImages/Back - upperBack.jpg"
                      ImagePath2="/ExerciseImages/lowerback display.jpg"
                       @bind-SelectedWorkout="_Workout"
@@ -59,7 +64,7 @@
     </ExerciseDetails>
 
     <ExerciseDetails BodyPart="Arms"
-                     ExerciseNames="@Data.ArmExerciseNames"
+                     ExerciseNames="@DataS.ArmExerciseNames"
                      ImagePath="/ExerciseImages/Bicep display image.jpg"
                      ImagePath2="/ExerciseImages/Arms - tricep display.jpg"
                      @bind-SelectedWorkout="_Workout"
@@ -69,7 +74,7 @@
 
 
     <ExerciseDetails BodyPart="Legs"
-                     ExerciseNames="@Data.LegExerciseNames"
+                     ExerciseNames="@DataS.LegExerciseNames"
                      ImagePath="/ExerciseImages/legs display.jpg"               
                       @bind-SelectedWorkout="_Workout"
                      >
@@ -94,7 +99,7 @@
         aTrainingDay.TodaysDate = _DateTime;
 
 
-        Data.CurrentUser.TrainingDays.Add(aTrainingDay);
+        DataS.CurrentUser.TrainingDays.Add(aTrainingDay);
 
         //Data.WriteXML();
         //Data.ReadXML();
@@ -107,17 +112,11 @@
     ////public int _NumberOfSets;
     ////public int _Weights;
 
-    //public void AddWorkoutExercises()
-    //{
-    //    var exerciseList = new Workout();
-    //    exerciseList.ExerciseName = _ExerciseNames;
-    //    //exerciseList.AmountOfReps = _NumberOfReps;
-    //    //exerciseList.AmountOfSets = _NumberOfSets;
-    //    //exerciseList.Weight = _Weights;
-    //    Data.AddWorkoutExercises(exerciseList);
+    public void AddWorkoutExercises()
+    {
+        DataS.AddNewWorkout(_Workout);
 
-
-    //}
+    }
 
 
 }

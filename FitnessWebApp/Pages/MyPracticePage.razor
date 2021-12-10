@@ -31,52 +31,6 @@ Hello @_firstName please choose a Chest Exercise:-->
 
 <p></p>-->
 
-<h1>@currentHeading</h1>
-
-<p>
-    <label>
-        New title
-        <input @bind="newHeading" />
-    </label>
-    <button @onclick="UpdateHeading">Update heading </button>
-
-</p>
-
-<p>
-    <label>
-        <input type="checkbox" @onchange="CheckChanged" />
-        @checkedMessage
-    </label>
-</p>
-
-
-
-<h1>@currentHeading1</h1>
-
-<p>
-    <label>
-        New title
-        <input @bind="newHeading1" />
-    </label>
-    <button @onclick="UpdateHeading1"> Update heading </button>
-</p>
-
-<br />
-
-<h3>Mouse Coordinates</h3>
-<button class="btn btn-primary" @onclick="MouseClick">Button 1</button>
-
-<br />
-<br />
-
-<button class="btn btn-primary" @onclick="MouseClick">Button 2</button>
-
-<p>@mouseCoordinates</p>
-
-
-
-
-
 
 
 @code {
@@ -147,50 +101,7 @@ Hello @_firstName please choose a Chest Exercise:-->
     /// <summary>
     /// 1st event example
     /// </summary>
-    private string currentHeading = "Event Change Test heading";
-    private string newHeading;
-    private string checkedMessage = "Not changed yet";
-
-    private void UpdateHeading()
-    {
-        currentHeading = $"{newHeading}";
-    }
-
-    private void CheckChanged()
-    {
-        /// shows when the event was changed last
-        checkedMessage = $"Last changed at {DateTime.Now}";
-    }
-
-
-
-
-    /// <summary>
-    /// 2nd event example
-    /// </summary>
-
-    private string currentHeading1 = "Event Change Test heading";
-    private string newHeading1;
-
-    private async Task UpdateHeading1()
-    {
-        ///waits 2 seconds before making change
-        await Task.Delay(2000);
-
-        currentHeading1 = $"{newHeading1}";
-    }
-
-
-    /// <summary>
-    /// 3rd event example!
-    /// </summary>
-    private string mouseCoordinates;
-
-    private void MouseClick(MouseEventArgs e)
-    {
-        //prints out position of the mouse over the click button
-        mouseCoordinates = $"Mouse coordinates: {e.ScreenX}:{e.ScreenY}";
-    }
+  
    
 
 

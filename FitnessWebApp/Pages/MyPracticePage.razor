@@ -6,14 +6,11 @@
 
 <h1>MyPracticePage</h1>
 <br />
-<!--<h3>We have @Data.Users.Count People in the List</h3>
+
 <h2>This page is for practising all my code</h2>
 Today is @_Date
 <br />
-Hello @_firstName please choose a Chest Exercise:-->
-@*<button class="btn btn-primary" @onclick="ChestExerciseName">Chest Exercise</button>*@
-<!--<input @bind="_firstName" />
-<input type="Date" @bind="_Date" />
+
 
 <button class="btn btn-primary" @onclick="CreateUser">Create User</button>
 <p>hello, @name.ToUpper()</p>
@@ -29,80 +26,57 @@ Hello @_firstName please choose a Chest Exercise:-->
     <MoviesList Movies="movies" />
 </div>
 
-<p></p>-->
+<p></p>
 
 
 
 @code {
-    //    private List<Movie> movies;
-    //    protected override void OnInitialized()
-    //    {
-    //        movies = new List<Movie>()
-    //{
-    //            new Movie(){Title = "Spider-man: far from home", ReleaseDate = new DateTime(2019, 7, 2)},
-    //            new Movie(){Title = "Moana", ReleaseDate = new DateTime(2016, 11 ,23)},
-    //            new Movie(){Title = "Inception", ReleaseDate = new DateTime(2010, 7 ,16)},
-    //        };
-    //    }
-    //    string name = "ja cameron";
+    private List<Movie> movies;
+    protected override void OnInitialized()
+    {
+        movies = new List<Movie>()
+    {
+                new Movie(){Title = "Spider-man: far from home", ReleaseDate = new DateTime(2019, 7, 2)},
+                new Movie(){Title = "Moana", ReleaseDate = new DateTime(2016, 11 ,23)},
+                new Movie(){Title = "Inception", ReleaseDate = new DateTime(2010, 7 ,16)},
+            };
+    }
+    string name = "ja cameron";
 
-    //    void WriteInlog()
-    //    {
-    //        Console.WriteLine("i've been clicked (from method)");
-    //    }
-
-
-    //    public class ChestExerciseName
-    //    {
-    //        public string Name { get; set; }
-    //    }
-    //    //public void ChestExerciseName();
-    //    List<ChestExerciseName> chestExercises = new List<ChestExerciseName>
-    //{
-    //    new ChestExerciseName() { Name = "Barbell Bench Press"},
-    //    new ChestExerciseName() { Name = "InclineBarbellBench"},
-    //    new ChestExerciseName() { Name = "CableFlyes"},
-    //    new ChestExerciseName() { Name = "DeclineBarbellBench"},
-    //    new ChestExerciseName() { Name = "DumbbellFlyes"},
-    //    new ChestExerciseName() { Name = "PecDec"},
-    //    new ChestExerciseName() { Name = "CableCrossover"},
-
-    //    };
-
-    //private DateTime _Date = DateTime.Now;
-
-    //public DateTime Date
-    //{
-    //    get { return _Date; }
-    //    set { _Date = value; }
-    //}
-
-    //private string _firstName = "John";
-
-    //public void CreateUser()
-    //{
-    //    var u = new User();
-    //    u.DOB = Date;
-    //    u.FirstName = _firstName;
-
-    //    Data.AddUser(u);
-    //}
+    void WriteInlog()
+    {
+        Console.WriteLine("i've been clicked (from method)");
+    }
 
 
-    ////}
-    //private string _exerciseName;
-    //public void ExerciseChoice()
-    //{
-    //    var ec = new Exercise();
-    //    ec.ExerciseName = _exerciseName;
+ 
 
-    //}
+    private DateTime _Date = DateTime.Now;
 
-    /// <summary>
-    /// 1st event example
-    /// </summary>
-  
+    public DateTime Date
+    {
+        get { return _Date; }
+        set { _Date = value; }
+    }
+
+    private string _firstName = "John";
+
+    public void CreateUser()
+    {
+        var u = new User();
+        u.DOB = Date;
+        u.FirstName = _firstName;
+
+        Data.AddUser(u);
+    }
+
+
+    
    
+
+
+
+
 
 
 

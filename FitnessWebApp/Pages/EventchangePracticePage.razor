@@ -46,12 +46,11 @@
 
 <p>@mouseCoordinates</p>
 
+<br />
 
-
-
-
-
-
+<p>
+    <input value="@count" @onkeydown="KeyHandler" @onkeydown:preventDefault />
+</p>
 
 
 @code {
@@ -99,4 +98,21 @@
         //prints out position of the mouse over the click button
         mouseCoordinates = $"Mouse coordinates: {e.ScreenX}:{e.ScreenY}";
     }
+
+    /// <summary>
+    /// 4th event example
+    /// </summary>
+    /// 
+    private int count = 0;
+
+    private void KeyHandler(KeyboardEventArgs e)
+    {
+        //only + key will effect the number count
+        if (e.Key == "j")
+        {
+            count++;
+        }
+    }
+
+
 }

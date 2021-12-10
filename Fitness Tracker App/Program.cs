@@ -112,7 +112,7 @@ namespace Fitness_Tracker_App
             User currentUser = new User();
             UI.EnterNewUser();
             BodyPart SelectedBodyPart = UI.SelectBodyPart();
-            string SpecificExercise = "";
+            //string SpecificExercise = "";
 
             if (SelectedBodyPart == BodyPart.Chest)
             {
@@ -177,9 +177,9 @@ namespace Fitness_Tracker_App
         }
         public static void User()
         {
-            string FirstName;
-            string LastName;
-            DateTime DOB;
+            //string FirstName;
+            //string LastName;
+            //DateTime DOB;
             DateTime Today = DateTime.Today;
             UI.EnterDateOfBirth();
             DateTime DateOfBirth = Convert.ToDateTime(Console.ReadLine());

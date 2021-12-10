@@ -17,7 +17,7 @@ namespace FitnessWebApp.Data
             set { _users = value; }
         }
 
-        private List<String> _chestExerciseNames = new()
+        private readonly List<String> _chestExerciseNames = new()
         {
 
             "Barbell Bench Press",
@@ -103,7 +103,7 @@ namespace FitnessWebApp.Data
             set { _ArmExerciseNames = value; }
         }
 
-        private Dictionary<string, string> _chestExercisePicturePaths = new()
+        private readonly Dictionary<string, string> _chestExercisePicturePaths = new()
         {
             ["Incline Barbell Press"] = "/ExerciseImages/Chest - incline barbell press Screenshot 2021-11-10 173214.png",
             ["cable crossover"] = "/ExerciseImages/Chest - cable crossover Screenshot 2021-11-10 173300.png",
@@ -125,7 +125,7 @@ namespace FitnessWebApp.Data
             get { return _chestExercisePicturePaths; }
         }
 
-        private Dictionary<string, string> _backExercisePicturePaths = new()
+        private readonly Dictionary<string, string> _backExercisePicturePaths = new()
         {
             ["Barbell Row"] = "/ExerciseImages/Back exercise deadlift Screenshot 2021-11-10 154854.png",
             ["Single Arm Dumbbell Row"] = "/ExerciseImages/Back - Dumbbell bench Row Screenshot 2021-11-10 155659.png",

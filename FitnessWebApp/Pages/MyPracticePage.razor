@@ -61,6 +61,23 @@ Hello @_firstName please choose a Chest Exercise:-->
     <button @onclick="UpdateHeading1"> Update heading </button>
 </p>
 
+<br />
+
+<h3>Mouse Coordinates</h3>
+<button class="btn btn-primary" @onclick="MouseClick">Button 1</button>
+
+<br />
+<br />
+
+<button class="btn btn-primary" @onclick="MouseClick">Button 2</button>
+
+<p>@mouseCoordinates</p>
+
+
+
+
+
+
 
 @code {
     //    private List<Movie> movies;
@@ -127,7 +144,9 @@ Hello @_firstName please choose a Chest Exercise:-->
 
     //}
 
-
+    /// <summary>
+    /// 1st event example
+    /// </summary>
     private string currentHeading = "Event Change Test heading";
     private string newHeading;
     private string checkedMessage = "Not changed yet";
@@ -144,6 +163,12 @@ Hello @_firstName please choose a Chest Exercise:-->
     }
 
 
+
+
+    /// <summary>
+    /// 2nd event example
+    /// </summary>
+
     private string currentHeading1 = "Event Change Test heading";
     private string newHeading1;
 
@@ -154,6 +179,26 @@ Hello @_firstName please choose a Chest Exercise:-->
 
         currentHeading1 = $"{newHeading1}";
     }
+
+
+    /// <summary>
+    /// 3rd event example!
+    /// </summary>
+    private string mouseCoordinates;
+
+    private void MouseClick(MouseEventArgs e)
+    {
+        //prints out position of the mouse over the click button
+        mouseCoordinates = $"Mouse coordinates: {e.ScreenX}:{e.ScreenY}";
+    }
+   
+
+
+
+
+
+
+
 
 
 }

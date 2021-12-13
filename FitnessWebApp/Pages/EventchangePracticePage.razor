@@ -52,6 +52,30 @@
     <input value="@count" @onkeydown="KeyHandler" @onkeydown:preventDefault />
 </p>
 
+<br />
+
+<label>
+    <input @bind="stopPropagation" type="checkbox" />
+    Stop Propagation
+</label>
+
+<div class="m-1 p-1 border border-primary" @onclick="OnSelectParentDiv">
+    <h3>Parent div</h3>
+
+    <div class="m-1 p-1 border" @onclick="OnSelectChildDiv">
+        Child div that doesn't stop propagation when selected.
+    </div>
+
+    <div class="m-1 p-1 border" @onclick="OnSelectChildDiv"
+         @onclick:stopPropagation="stopPropagation">
+        Child div that stops propagation when selected.
+    </div>
+</div>
+
+<p>
+    @message
+</p>
+
 
 @code {
     private string currentHeading = "Event Change Test heading";
@@ -102,7 +126,7 @@
     /// <summary>
     /// 4th event example
     /// </summary>
-    /// 
+    ///
     private int count = 0;
 
     private void KeyHandler(KeyboardEventArgs e)
@@ -113,6 +137,18 @@
             count++;
         }
     }
+
+
+
+
+    private bool stopPropagation = false;
+    private string message;
+
+    private void OnSelectParentDiv() =>
+        message = $"The parent div was selected. {DateTime.Now}";
+
+    private void OnSelectChildDiv() =>
+        message = $"A child div was selected. {DateTime.Now}";
 
 
 }

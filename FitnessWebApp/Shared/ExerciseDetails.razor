@@ -39,8 +39,9 @@
 
     </div>
 
-    <button @onclick="AddWorkout">Add Workout</button>
-    <button @onclick="UpdateTrainingDayDetails">Update Training Day Details</button>
+    <input @onchange="AddWorkout" />
+   
+    <input @onchange="UpdateTrainingDayDetails" />
 </div>
 @code {
     [Parameter]

@@ -23,7 +23,7 @@
 
         foreach (var wo in DataS.CurrentUser.TrainingDays.Last().Workouts)
         {
-            <p>@wo.ExerciseName - @wo.AmountOfReps</p>
+            <p>@wo.ExerciseName - reps:@wo.AmountOfReps - sets:@wo.AmountOfSets</p>
         }
         <input class="btn btn-primary" @onchange="AddTrainingDay" />
         <input class="btn btn-primary" @onchange="AddWorkoutExercises" />

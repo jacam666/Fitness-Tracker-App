@@ -22,7 +22,7 @@
     </select>
     <br />
     Reps:
-    <input type="number" @bind="_numberReps"/>
+    <input type="number" @bind="_numberReps" />
     <br />
     Sets:
     <input type="number" @bind="_numberSets" />
@@ -39,8 +39,9 @@
 
     </div>
 
+    @*<input @onchange="AddWorkout" />*@
     <input @onchange="AddWorkout" />
-   
+
     <input @onchange="UpdateTrainingDayDetails" />
 </div>
 @code {

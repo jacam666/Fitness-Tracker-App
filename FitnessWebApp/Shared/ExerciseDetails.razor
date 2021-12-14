@@ -40,10 +40,24 @@
     </div>
 
     @*<input @onchange="AddWorkout" />*@
-    <input @onchange="AddWorkout" />
+    @*<input @onchange="AddWorkout" />*@
 
-    <input @onchange="UpdateTrainingDayDetails" />
+    @*<input @onchange="UpdateTrainingDayDetails" />*@
+
+
+    <input @bind-value:event="onchange" @oninput="UpdateTrainingDayDetails"
+           @bind-value="SelectedWorkout" />
+
+    <input @bind-value:event="onchange" @oninput="AddWorkout" 
+           @bind-value="SelectedWorkout"/>  
+
+    
+
+
 </div>
+
+
+
 @code {
     [Parameter]
     public String BodyPart { get; set; }

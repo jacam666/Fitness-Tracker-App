@@ -26,40 +26,35 @@
             <p>@wo.ExerciseName - reps:@wo.AmountOfReps - sets:@wo.AmountOfSets</p>
         }
         <input class="btn btn-primary" @onchange="AddTrainingDay" />
-        <input class="btn btn-primary" @onchange="AddWorkoutExercises" />
+            <input class="btn btn-primary" @onchange="AddWorkoutExercises" />
 
-        
+        @*<button class="btn btn-primary" @onclick="UpdateTrainingDayDetails">update</button>
+        <button class="btn btn-primary" @onclick="AddWorkout">Add Workout</button>*@
+
+
     }
 
- 
 
+    <ExerciseDetails BodyPart="Chest"
+                     ExerciseNames="@DataS.ChestExerciseNames"
+                     ImagePath="/ExerciseImages/chest - display.png"
+                     @bind-SelectedWorkout="_Workout">
 
+    </ExerciseDetails>
 
-
-   <ExerciseDetails BodyPart="Chest"
-                    ExerciseNames="@DataS.ChestExerciseNames"
-                    ImagePath="/ExerciseImages/chest - display.png"
-                    @bind-SelectedWorkout="_Workout"
-                    >
-       
-   </ExerciseDetails>
-        
- 
 
     <ExerciseDetails BodyPart="Shoulders"
                      ExerciseNames="@DataS.ShoulderExerciseNames"
                      ImagePath="/ExerciseImages/shoulder - display.jpg"
-                     @bind-SelectedWorkout="_Workout"
-                     >
-               
+                     @bind-SelectedWorkout="_Workout">
+
     </ExerciseDetails>
 
     <ExerciseDetails BodyPart="Back"
                      ExerciseNames="@DataS.BackExerciseNames"
                      ImagePath="/ExerciseImages/Back - upperBack.jpg"
                      ImagePath2="/ExerciseImages/lowerback display.jpg"
-                      @bind-SelectedWorkout="_Workout"
-                   >
+                     @bind-SelectedWorkout="_Workout">
 
     </ExerciseDetails>
 
@@ -67,17 +62,15 @@
                      ExerciseNames="@DataS.ArmExerciseNames"
                      ImagePath="/ExerciseImages/Bicep display image.jpg"
                      ImagePath2="/ExerciseImages/Arms - tricep display.jpg"
-                     @bind-SelectedWorkout="_Workout"
-                     >
+                     @bind-SelectedWorkout="_Workout">
 
     </ExerciseDetails>
 
 
     <ExerciseDetails BodyPart="Legs"
                      ExerciseNames="@DataS.LegExerciseNames"
-                     ImagePath="/ExerciseImages/legs display.jpg"               
-                      @bind-SelectedWorkout="_Workout"
-                     >
+                     ImagePath="/ExerciseImages/legs display.jpg"
+                     @bind-SelectedWorkout="_Workout">
     </ExerciseDetails>
 
 </div>

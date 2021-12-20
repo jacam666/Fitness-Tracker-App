@@ -6,6 +6,6 @@
         public int AmountOfSets;
         public int AmountOfReps;
         public double Weight;
-        public int litersofsweat;
+       
     }
 }

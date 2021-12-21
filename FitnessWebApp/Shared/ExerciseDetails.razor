@@ -45,14 +45,14 @@
     @*<input @onchange="UpdateTrainingDayDetails" />*@
 
 
-    <input @bind-value:event="onchange" @oninput="UpdateTrainingDayDetails"
+@*    <input @bind-value:event="onchange" @oninput="UpdateTrainingDayDetails"
            @bind-value="SelectedWorkout" />
 
     <input @bind-value:event="onchange" @oninput="AddWorkout"
-           @bind-value="SelectedWorkout" />
+           @bind-value="SelectedWorkout" />*@
 
-    @*<button class="btn btn-primary" @onclick="UpdateTrainingDayDetails">update</button>
-    <button class="btn btn-primary" @onclick="AddWorkout">Add Workout</button>*@
+    <button class="btn btn-primary" @onclick="UpdateTrainingDayDetails">Update TraingDayDetails</button>
+@*    <button class="btn btn-primary" @onclick="AddWorkout">Add Workout</button>*@
 
 
 </div>
@@ -94,16 +94,16 @@
     public string _ExerciseNames;
 
 
-    public void AddWorkout()
-    {
-        var aWorkout = new Workout();
-        aWorkout.ExerciseName = _selectedName;
-        aWorkout.AmountOfReps = _numberReps;
-        aWorkout.AmountOfSets = _numberSets;
-        aWorkout.Weight = _weights;
+    //public void AddWorkout()
+    //{
+    //    var aWorkout = new Workout();
+    //    aWorkout.ExerciseName = _selectedName;
+    //    aWorkout.AmountOfReps = _numberReps;
+    //    aWorkout.AmountOfSets = _numberSets;
+    //    aWorkout.Weight = _weights;
 
-        Data.AddNewWorkout(aWorkout);
-    }
+    //    Data.AddNewWorkout(aWorkout);
+    //}
 
 
 

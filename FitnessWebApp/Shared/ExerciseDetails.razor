@@ -22,13 +22,13 @@
     </select>
     <br />
     Reps:
-    <input type="number" @bind="_numberReps" />
-    <br />
+    <input type="number" @bind="_numberReps" @oninput ="UpdateTrainingDayDetails"/>
+    <br /> 
     Sets:
-    <input type="number" @bind="_numberSets" />
+    <input type="number" @bind="_numberSets" @oninput ="UpdateTrainingDayDetails" />
     <br />
     Weight in kg's:
-    <input type="number" @bind="_weights" />
+    <input type="number" @bind="_weights" @oninput ="UpdateTrainingDayDetails" />
     <div class="container">
         <img src="@ImagePath" width="500" height="200" />
 

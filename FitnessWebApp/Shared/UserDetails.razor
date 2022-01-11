@@ -3,59 +3,66 @@
 
 <!-- if there's no user, gets general info about the user and saves it,
     if a user already exists displays general information about the user-->
-<div style="border: thin solid black; margin: 5px">
-    <h3>UserDetails</h3>
-    @if (Data.CurrentUser == null)
-    {
-        <p>Please enter your first name:</p>
-        <input type="text" @bind="_UsersFirstName"  />
-        <br />
-        <p>Please enter your last name:</p>
-        <input type="text" @bind="_UsersLastName"  />
-        <br />
-        <p>Please Enter Your Date Of Birth</p>
-        <input type="date" @bind="_DOB" />
-        <br />
-        
+
+<p style="color:antiquewhite">
+    <div style="border: thin solid black; margin: 5px">
 
 
-
-        <button @onclick="AddUser">Add User</button>
-    }
-    else
-    {
-        <p>Hello @Data.CurrentUser.FirstName!</p>
-        <p>There are @Data.CurrentUser.TrainingDays.Count saved Trainingdays:</p>
-        if (Data.CurrentUser.TrainingDays.Count > 1)
+        <h3>UserDetails</h3>
+        @if (Data.CurrentUser == null)
         {
-            <p>Your last entry was on @Data.CurrentUser.TrainingDays.OrderBy(o => o.TodaysDate).First().TodaysDate</p>
+            <p>Please enter your first name:</p>
+            <input type="text" @bind="_UsersFirstName" />
+            <br />
+            <p>Please enter your last name:</p>
+            <input type="text" @bind="_UsersLastName" />
+            <br />
+            <p>Please Enter Your Date Of Birth</p>
+            <input type="date" @bind="_DOB" />
+
+            <br />
+
+
+
+
+            <button @onclick="AddUser">Add User</button>
         }
         else
         {
-            <p>You have no recorded training days</p>
+            <p>Hello @Data.CurrentUser.FirstName!</p>
+            <p>There are @Data.CurrentUser.TrainingDays.Count saved Trainingdays:</p>
+            if (Data.CurrentUser.TrainingDays.Count > 1)
+            {
+                <p>Your last entry was on @Data.CurrentUser.TrainingDays.OrderBy(o => o.TodaysDate).First().TodaysDate</p>
+            }
+            else
+            {
+                <p>You have no recorded training days</p>
+            }
+
+
         }
 
-
-    }
-</div>
-@code {
-
-
-    private string _UsersFirstName;
-    private string _UsersLastName;
-    private DateTime _DOB;
-
-    public void AddUser()
-    {
-        var newUser = new User();
-        newUser.FirstName = _UsersFirstName;
-        newUser.LastName = _UsersLastName;
-        newUser.DOB = _DOB;
-
-        //add the dob
-        // Data.Users.Add(u);
-        Data.AddUser(newUser);
-    }
+    </div>
+</p>
+        @code {
 
 
-}
+            private string _UsersFirstName;
+            private string _UsersLastName;
+            private DateTime _DOB;
+
+            public void AddUser()
+            {
+                var newUser = new User();
+                newUser.FirstName = _UsersFirstName;
+                newUser.LastName = _UsersLastName;
+                newUser.DOB = _DOB;
+
+                //add the dob
+                // Data.Users.Add(u);
+                Data.AddUser(newUser);
+            }
+
+
+        }

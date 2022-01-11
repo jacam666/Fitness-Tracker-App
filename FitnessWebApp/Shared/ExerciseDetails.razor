@@ -1,6 +1,10 @@
 ﻿@inject Data.DataService Data
 @using Fitness_Tracker_App.Data
 
+<html>
+<body style="background-color:black;"
+      body/>
+</html>
 <!-- Gets the details (reps/sets/etc) specific to one exercise (i.e. bench press)-->
 <div style="border: thin solid black; margin: 5px">
     <h3>@BodyPart</h3>
@@ -21,23 +25,32 @@
 
     </select>
     <br />
-    Reps:
-    <input type="number" @bind="_numberReps" @oninput ="UpdateTrainingDayDetails"/>
-    <br /> 
-    Sets:
-    <input type="number" @bind="_numberSets" @oninput ="UpdateTrainingDayDetails" />
-    <br />
-    Weight in kg's:
-    <input type="number" @bind="_weights" @oninput ="UpdateTrainingDayDetails" />
-    <div class="container">
-        <img src="@ImagePath" width="500" height="200" />
 
-        @if (ImagePath2 != null)
-        {
-            <img src="@ImagePath2" width="500" height="200" />
-        }
+    <p style="color:white">
+        Reps:
+        <input type="number" @bind="_numberReps" @oninput="UpdateTrainingDayDetails" />
+        <br />
+        Sets:
+        <input type="number" @bind="_numberSets" @oninput="UpdateTrainingDayDetails" />
+        <br />
+        Weight in kg's:
+        <input type="number" @bind="_weights" @oninput="UpdateTrainingDayDetails" />
+    </p>
+        <div class="container">
+            <img src="@ImagePath" width="500" height="200" />
 
+            @if (ImagePath2 != null)
+            {
+                <img src="@ImagePath2" width="500" height="200" />
+            }
+
+
+    
     </div>
+
+
+
+
 
     @*<input @onchange="AddWorkout" />*@
     @*<input @onchange="AddWorkout" />*@
@@ -46,13 +59,13 @@
 
 
     @*<input @bind-value:event="onchange" @oninput="UpdateTrainingDayDetails"
-           @bind-value="SelectedWorkout" />*@
+        @bind-value="SelectedWorkout" />*@
 
     @*<input @bind-value:event="onchange" @oninput="AddWorkout"
-           @bind-value="SelectedWorkout" />*@
+        @bind-value="SelectedWorkout" />*@
 
     @*<button class="btn btn-primary" @onclick="UpdateTrainingDayDetails">update</button>
-    <button class="btn btn-primary" @onclick="AddWorkout">Add Workout</button>*@
+        <button class="btn btn-primary" @onclick="AddWorkout">Add Workout</button>*@
 
 
 </div>

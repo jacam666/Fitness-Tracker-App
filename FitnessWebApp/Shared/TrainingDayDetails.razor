@@ -4,113 +4,115 @@
 
 <!-- Get information about a day where training happend, and what exercises were done on this particular day-->
 
-
-<div style="border: thin solid black; margin: 5px">
-    <h3>Training Day Details</h3>
-    @if (DataS.CurrentUser == null)
-    {
-        <p>Please Create a User first!</p>
-    }
-    else
-    {
-        <p>Date:</p>
-        <input type="date" @bind="_DateTime" />
-
-        <br />
-        <p>Body Weight in kg's':</p>
-        <input type="number" @bind="_BodyWeight" />
-        <br />
-
-        foreach (var wo in DataS.CurrentUser.TrainingDays.Last().Workouts)
+<p style="color:white">
+    <div style="border: thin solid black; margin: 5px">
+        <h3>Training Day Details</h3>
+        
+        @if (DataS.CurrentUser == null)
         {
-            <p>@wo.ExerciseName - reps:@wo.AmountOfReps - sets:@wo.AmountOfSets</p>
+            <p>Please Create a User first!</p>
         }
-        <input class="btn btn-primary" @onchange="AddTrainingDay" />
+        else
+        {
+            <p>Date:</p>
+            <input type="date" @bind="_DateTime" />
+
+            <br />
+            <p>Body Weight in kg's':</p>
+            <input type="number" @bind="_BodyWeight" />
+            
+            <br />
+
+            foreach (var wo in DataS.CurrentUser.TrainingDays.Last().Workouts)
+            {
+                <p>@wo.ExerciseName - reps:@wo.AmountOfReps - sets:@wo.AmountOfSets</p>
+            }
+            <input class="btn btn-primary" @onchange="AddTrainingDay" />
             <input class="btn btn-primary" @onchange="AddWorkoutExercises" />
 
-        @*<button class="btn btn-primary" @onclick="UpdateTrainingDayDetails">update</button>
-        <button class="btn btn-primary" @onclick="AddWorkout">Add Workout</button>*@
+            @*<button class="btn btn-primary" @onclick="UpdateTrainingDayDetails">update</button>
+                <button class="btn btn-primary" @onclick="AddWorkout">Add Workout</button>*@
+
+
+        }
+        
+
+        <ExerciseDetails BodyPart="Chest"
+                         ExerciseNames="@DataS.ChestExerciseNames"
+                         ImagePath="/ExerciseImages/chest - display.png"
+                         @bind-SelectedWorkout="_Workout">
+
+        </ExerciseDetails>
+
+
+        <ExerciseDetails BodyPart="Shoulders"
+                         ExerciseNames="@DataS.ShoulderExerciseNames"
+                         ImagePath="/ExerciseImages/shoulder - display.jpg"
+                         @bind-SelectedWorkout="_Workout">
+
+        </ExerciseDetails>
+
+        <ExerciseDetails BodyPart="Back"
+                         ExerciseNames="@DataS.BackExerciseNames"
+                         ImagePath="/ExerciseImages/Back - upperBack.jpg"
+                         ImagePath2="/ExerciseImages/lowerback display.jpg"
+                         @bind-SelectedWorkout="_Workout">
+
+        </ExerciseDetails>
+
+        <ExerciseDetails BodyPart="Arms"
+                         ExerciseNames="@DataS.ArmExerciseNames"
+                         ImagePath="/ExerciseImages/Bicep display image.jpg"
+                         ImagePath2="/ExerciseImages/Arms - tricep display.jpg"
+                         @bind-SelectedWorkout="_Workout">
+
+        </ExerciseDetails>
+
+
+        <ExerciseDetails BodyPart="Legs"
+                         ExerciseNames="@DataS.LegExerciseNames"
+                         ImagePath="/ExerciseImages/legs display.jpg"
+                         @bind-SelectedWorkout="_Workout">
+        </ExerciseDetails>
+
+    </div>
+    </p>
+    @code {
+
+
+
+        private DateTime _DateTime;
+        private double _BodyWeight;
+        private Workout _Workout;
+
+
+
+        public void AddTrainingDay()
+        {
+            var aTrainingDay = new TrainingDay();
+            aTrainingDay.BodyWeight = _BodyWeight;
+            aTrainingDay.TodaysDate = _DateTime;
+
+
+            DataS.CurrentUser.TrainingDays.Add(aTrainingDay);
+
+            //Data.WriteXML();
+            //Data.ReadXML();
+
+        }
+
+
+        //public string _ExerciseNames;
+        ////public int _NumberOfReps;
+        ////public int _NumberOfSets;
+        ////public int _Weights;
+
+        public void AddWorkoutExercises()
+        {
+            DataS.AddNewWorkout(_Workout);
+
+        }
 
 
     }
-
-
-    <ExerciseDetails BodyPart="Chest"
-                     ExerciseNames="@DataS.ChestExerciseNames"
-                     ImagePath="/ExerciseImages/chest - display.png"
-                     @bind-SelectedWorkout="_Workout">
-
-    </ExerciseDetails>
-
-
-    <ExerciseDetails BodyPart="Shoulders"
-                     ExerciseNames="@DataS.ShoulderExerciseNames"
-                     ImagePath="/ExerciseImages/shoulder - display.jpg"
-                     @bind-SelectedWorkout="_Workout">
-
-    </ExerciseDetails>
-
-    <ExerciseDetails BodyPart="Back"
-                     ExerciseNames="@DataS.BackExerciseNames"
-                     ImagePath="/ExerciseImages/Back - upperBack.jpg"
-                     ImagePath2="/ExerciseImages/lowerback display.jpg"
-                     @bind-SelectedWorkout="_Workout">
-
-    </ExerciseDetails>
-
-    <ExerciseDetails BodyPart="Arms"
-                     ExerciseNames="@DataS.ArmExerciseNames"
-                     ImagePath="/ExerciseImages/Bicep display image.jpg"
-                     ImagePath2="/ExerciseImages/Arms - tricep display.jpg"
-                     @bind-SelectedWorkout="_Workout">
-
-    </ExerciseDetails>
-
-
-    <ExerciseDetails BodyPart="Legs"
-                     ExerciseNames="@DataS.LegExerciseNames"
-                     ImagePath="/ExerciseImages/legs display.jpg"
-                     @bind-SelectedWorkout="_Workout">
-    </ExerciseDetails>
-
-</div>
-
-@code {
-
-
-
-    private DateTime _DateTime;
-    private double _BodyWeight;
-    private Workout _Workout;
-
-
-
-    public void AddTrainingDay()
-    {
-        var aTrainingDay = new TrainingDay();
-        aTrainingDay.BodyWeight = _BodyWeight;
-        aTrainingDay.TodaysDate = _DateTime;
-
-
-        DataS.CurrentUser.TrainingDays.Add(aTrainingDay);
-
-        //Data.WriteXML();
-        //Data.ReadXML();
-
-    }
-
-
-    //public string _ExerciseNames;
-    ////public int _NumberOfReps;
-    ////public int _NumberOfSets;
-    ////public int _Weights;
-
-    public void AddWorkoutExercises()
-    {
-        DataS.AddNewWorkout(_Workout);
-
-    }
-
-
-}
 

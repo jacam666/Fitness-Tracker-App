@@ -29,9 +29,22 @@
             }
             <input class="btn btn-primary" @onchange="AddTrainingDay" />
             <input class="btn btn-primary" @onchange="AddWorkoutExercises" />
+        <br />
+        <p>Body Weight in kg's':</p>
+        <input type="number" @bind="_BodyWeight" />
+        <br />
+        if (DataS.CurrentUser.TrainingDays.Count > 0)
+        {
+            foreach (var wo in DataS.CurrentUser.TrainingDays.Last().Workouts)
+            {
+                <p>@wo.ExerciseName - reps:@wo.AmountOfReps - sets:@wo.AmountOfSets</p>
+            }
+        }
+        @*        <input class="btn btn-primary" @onchange="AddTrainingDay" />
+            <input class="btn btn-primary" @onchange="AddWorkoutExercises" />*@
 
-            @*<button class="btn btn-primary" @onclick="UpdateTrainingDayDetails">update</button>
-                <button class="btn btn-primary" @onclick="AddWorkout">Add Workout</button>*@
+        @*<button class="btn btn-primary" @onclick="UpdateTrainingDayDetails">update</button>
+        <button class="btn btn-primary" @onclick="AddWorkout">Add Workout</button>*@
 
 
         }

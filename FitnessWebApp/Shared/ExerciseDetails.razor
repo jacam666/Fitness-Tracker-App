@@ -26,57 +26,22 @@
     </select>
     <br />
 
-
-  
-    @*<body>
-
-        <h2>Table With Border</h2>
-
-        <p>Use the CSS border property to add a border to the table.</p>
-
-        <table style="width:100%">
-            <tr>
-                <th>Firstname</th>
-                <th>Lastname</th>
-                <th>Age</th>
-            </tr>
-            <tr>
-                <td>Jill</td>
-                <td>Smith</td>
-                <td>50</td>
-            </tr>
-            <tr>
-                <td>Eve</td>
-                <td>Jackson</td>
-                <td>94</td>
-            </tr>
-            <tr>
-                <td>John</td>
-                <td>Doe</td>
-                <td>80</td>
-            </tr>
-        </table>
-
-    </body>*@
-  
-
-
 <p style="color:white">
     <table style="width:100%">
         <tr>
             <th>Reps:</th>
             <th> <input type="number" @bind="_numberReps" @oninput="UpdateTrainingDayDetails" /></th>
 
-            <br />
+            
             <th>Sets:</th> 
            <th> <input type="number" @bind="_numberSets" @oninput="UpdateTrainingDayDetails" /></th>
-            <br />
+            
             <th>Weight in kg's:</th> 
             <th><input type="number" @bind="_weights" @oninput="UpdateTrainingDayDetails" /></th>
         </tr>
     </table>
 </p>
-    <div class="container">
+    <div  class="container">
         <img src="@ImagePath" width="500" height="200" />
 
         @if (ImagePath2 != null)
@@ -87,9 +52,6 @@
 
 
     </div>
-
-
-
 
 
     @*<input @onchange="AddWorkout" />*@
@@ -106,7 +68,6 @@
 
     @*<button class="btn btn-primary" @onclick="UpdateTrainingDayDetails">update</button>
         <button class="btn btn-primary" @onclick="AddWorkout">Add Workout</button>*@
-
 
 </div>
 

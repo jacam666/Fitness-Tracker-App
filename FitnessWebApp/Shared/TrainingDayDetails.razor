@@ -23,16 +23,17 @@
             
             <br />
 
-            foreach (var wo in DataS.CurrentUser.TrainingDays.Last().Workouts)
+            @*foreach (var wo in DataS.CurrentUser.TrainingDays.Last().Workouts)
             {
                 <p>@wo.ExerciseName - reps:@wo.AmountOfReps - sets:@wo.AmountOfSets</p>
-            }
+            }*@
             <input class="btn btn-primary" @onchange="AddTrainingDay" />
             <input class="btn btn-primary" @onchange="AddWorkoutExercises" />
+    @*<button type="button" @onclick="AddTrainingDay">Add Training Day</button>*@
         <br />
-        <p>Body Weight in kg's':</p>
-        <input type="number" @bind="_BodyWeight" />
-        <br />
+        @*<p>Body Weight in kg's':</p>*@
+        @*<input type="number" @bind="_BodyWeight" />
+        <br />*@
         if (DataS.CurrentUser.TrainingDays.Count > 0)
         {
             foreach (var wo in DataS.CurrentUser.TrainingDays.Last().Workouts)
@@ -49,7 +50,7 @@
 
         }
         
-
+        
         <ExerciseDetails BodyPart="Chest"
                          ExerciseNames="@DataS.ChestExerciseNames"
                          ImagePath="/ExerciseImages/chest - display.png"
@@ -65,7 +66,10 @@
 
         </ExerciseDetails>
 
-        <ExerciseDetails BodyPart="Back"
+
+        <ExerciseDetails
+                         
+                         BodyPart="Back"
                          ExerciseNames="@DataS.BackExerciseNames"
                          ImagePath="/ExerciseImages/Back - upperBack.jpg"
                          ImagePath2="/ExerciseImages/lowerback display.jpg"

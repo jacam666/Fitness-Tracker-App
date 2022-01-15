@@ -27,9 +27,14 @@
             {
                 <p>@wo.ExerciseName - reps:@wo.AmountOfReps - sets:@wo.AmountOfSets</p>
             }*@
-            <input class="btn btn-primary" @onchange="AddTrainingDay" />
+             <input class="btn btn-primary" @onchange="AddTrainingDay" //>
+           
             <input class="btn btn-primary" @onchange="AddWorkoutExercises" />
-    @*<button type="button" @onclick="AddTrainingDay">Add Training Day</button>*@
+
+            @*<input type="text" name="name" onchange="alert('value of name field is changed')">*@
+
+    <button type="button" @onclick="AddTrainingDay">Add Training Day</button>
+    <button type="button" @onclick="AddWorkoutExercises">Add Workout</button>
         <br />
         @*<p>Body Weight in kg's':</p>*@
         @*<input type="number" @bind="_BodyWeight" />

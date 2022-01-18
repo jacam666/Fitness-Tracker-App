@@ -1,35 +1,38 @@
 ﻿@page "/Back Exercises"
 @inject Data.DataService Data
-<h1>Back Exercises</h1>
+    <p style="color:white">
+        <h1>Back Exercises</h1>
+        </p>
+
+    <p style="color:white">
+        <div class="container">
+            <p>Barbell Row:</p>
+            <img src="@Data.BackExercisePicturePaths["Barbell Row"]" />
+            <br />
+
+            <p>Single Arm Dumbbell Row:</p>
+            <img src="@Data.BackExercisePicturePaths["Single Arm Dumbbell Row"]" />
+            <br />
+
+            <p>LatPulldown machine:</p>
+            <img src="@Data.BackExercisePicturePaths["LatPulldown machine"]" />
+            <br />
+
+            <p>BodyWeight Pullups:</p>
+            <img src="@Data.BackExercisePicturePaths["Bodyweight Pullups"]" />
+            <br />
+
+            <p>Seated Cable Row:</p>
+            <img src="@Data.BackExercisePicturePaths["Seated Cable Row"]" />
+            <br />
+
+            <p>T-Bar Row:</p>
+            <img src="@Data.BackExercisePicturePaths["T-Bar Row"]" />
+        </div>
+    </p>
 
 
-<div class="container">
-    <p>Barbell Row:</p>
-    <img src="@Data.BackExercisePicturePaths["Barbell Row"]" />
-    <br />
 
-    <p>Single Arm Dumbbell Row:</p>
-    <img src="@Data.BackExercisePicturePaths["Single Arm Dumbbell Row"]" />
-    <br />
+    @code {
 
-    <p>LatPulldown machine:</p>
-    <img src="@Data.BackExercisePicturePaths["LatPulldown machine"]" />
-    <br />
-
-    <p>BodyWeight Pullups:</p>
-    <img src="@Data.BackExercisePicturePaths["Bodyweight Pullups"]" />
-    <br />
-
-    <p>Seated Cable Row:</p>
-    <img src="@Data.BackExercisePicturePaths["Seated Cable Row"]" />
-    <br />
-
-    <p>T-Bar Row:</p>
-    <img src="@Data.BackExercisePicturePaths["T-Bar Row"]" />
-</div>
-
-
-
-@code {
-
-}
+    }

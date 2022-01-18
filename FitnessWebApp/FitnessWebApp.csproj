@@ -17,8 +17,4 @@
     <ProjectReference Include="..\Fitness Tracker App\Fitness Tracker App.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="NewFolder\" />
-  </ItemGroup>
-
 </Project>

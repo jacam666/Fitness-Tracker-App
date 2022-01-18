@@ -1,0 +1,57 @@
+﻿@page "/NotePage"
+
+
+<p style="color:white"
+    <div>
+
+        <h1>Please enter your notes here: </h1>
+        <fieldset>
+            <label for="Comment">
+                @*size of text square*@    @*binds NewComment*@
+                <textarea id="Comment" cols="50" rows="6" @bind="NewComment" @bind:event="onchange"></textarea>
+            </label>
+        </fieldset>
+        @*create a submit button*@
+        <button type="submit">Submit</button>
+    </div>
+
+    <div class="col-6">
+        <h2> Your saved notes:</h2>
+        @if (Notes?.Any() ?? false)
+            {
+                <ul>
+                    @foreach (var note in Notes)
+                {
+                    <NotePage Note="@Notes"></NotePage>
+                }
+                </ul>
+            }
+            else
+            {
+                <p>You have no saved notes</p>
+            }
+
+    </div>
+
+    </p>
+
+    @code {
+        public IList<NotePage> Notes { get; set; }
+
+        public string NewComment { get; set; }
+
+        protected override async Task OnInitializedAsync()
+        {
+            Notes = new List<NotePage>();
+
+            await base.OnInitializedAsync();
+        }
+
+        private void onSubmitNote(MouseEventArgs mouseEventArgs)
+        {
+            //Notes.Add(new NotePage(NewComment));
+            NewComment = string.Empty;
+        }
+
+
+}

@@ -200,7 +200,7 @@ namespace FitnessWebApp.Data
         {
             get { return _ArmExercisePicturePaths; }
         }
-
+  
         public void AddUser(User u)
         {
             CurrentUser = u;

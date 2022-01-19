@@ -18,22 +18,29 @@
     <div class="col-6">
         <h2> Your saved notes:</h2>
         @if (Notes?.Any() ?? false)
-            {
-                <ul>
-                    @foreach (var note in Notes)
+        {
+            <ul>
+                @foreach (var note in Notes)
                 {
                     <NotePage Note="@Notes"></NotePage>
                 }
-                </ul>
-            }
-            else
-            {
-                <p>You have no saved notes</p>
-            }
+            </ul>
+        }
+        else
+        {
+            <p>You have no saved notes</p>
+        }
+
+        <a class="HTml-guide" href="">
+            <img src="ExerciseImages\HTml guide.jpeg" width="400" height="300" alt="Logo" />
+        </a>
+        
 
     </div>
-
+   
     </p>
+
+
 
     @code {
         public IList<NotePage> Notes { get; set; }

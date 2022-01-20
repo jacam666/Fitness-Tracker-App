@@ -105,7 +105,7 @@
 
         private DateTime _DateTime;
         private double _BodyWeight;
-        private Workout _Workout;
+        private Workout _Workout = new();
 
 
 
@@ -131,7 +131,7 @@
 
         public void AddWorkoutExercises()
         {
-            DataS.AddNewWorkout(_Workout);
+            DataS.AddNewWorkout(new Workout(_Workout));
 
         }
 

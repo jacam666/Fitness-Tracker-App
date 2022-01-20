@@ -7,7 +7,7 @@
 <p style="color:white">
     <div style="border: thin solid black; margin: 5px">
         <h3>Training Day Details</h3>
-        
+
         @if (DataS.CurrentUser == null)
         {
             <p>Please Create a User first!</p>
@@ -20,42 +20,30 @@
             <br />
             <p>Body Weight in kg's':</p>
             <input type="number" @bind="_BodyWeight" />
-            
+
             <br />
 
-            @*foreach (var wo in DataS.CurrentUser.TrainingDays.Last().Workouts)
-            {
-                <p>@wo.ExerciseName - reps:@wo.AmountOfReps - sets:@wo.AmountOfSets</p>
-            }*@
-             <input class="btn btn-primary" @onchange="AddTrainingDay" />
-           
+            <input class="btn btn-primary" @onchange="AddTrainingDay" />
+
             <input class="btn btn-primary" @onchange="AddWorkoutExercises" />
 
-            @*<input type="text" name="name" onchange="alert('value of name field is changed')">*@
 
-    <button type="button" @onclick="AddTrainingDay">Add Training Day</button>
-    <button type="button" @onclick="AddWorkoutExercises">Add Workout</button>
-        <br />
-        @*<p>Body Weight in kg's':</p>*@
-        @*<input type="number" @bind="_BodyWeight" />
-        <br />*@
-        if (DataS.CurrentUser.TrainingDays.Count > 0)
-        {
-            foreach (var wo in DataS.CurrentUser.TrainingDays.Last().Workouts)
+
+            <button type="button" @onclick="AddTrainingDay">Add Training Day</button>
+            <button type="button" @onclick="AddWorkoutExercises">Add Workout</button>
+            <br />
+
+            if (DataS.CurrentUser.TrainingDays.Count > 0)
             {
-                <p>@wo.ExerciseName = reps:@wo.AmountOfReps = sets:@wo.AmountOfSets = weight:@wo.Weight</p>
+                foreach (var wo in DataS.CurrentUser.TrainingDays.Last().Workouts)
+                {
+                    <p>@wo.ExerciseName = reps:@wo.AmountOfReps = sets:@wo.AmountOfSets = weight:@wo.Weight</p>
+                }
             }
-        }
-        @*        <input class="btn btn-primary" @onchange="AddTrainingDay" />
-            <input class="btn btn-primary" @onchange="AddWorkoutExercises" />*@
-
-        @*<button class="btn btn-primary" @onclick="UpdateTrainingDayDetails">update</button>
-        <button class="btn btn-primary" @onclick="AddWorkout">Add Workout</button>*@
-
 
         }
-        
-        
+
+
         <ExerciseDetails BodyPart="Chest"
                          ExerciseNames="@DataS.ChestExerciseNames"
                          ImagePath="/ExerciseImages/chest - display.png"
@@ -72,9 +60,7 @@
         </ExerciseDetails>
 
 
-        <ExerciseDetails
-                         
-                         BodyPart="Back"
+        <ExerciseDetails BodyPart="Back"
                          ExerciseNames="@DataS.BackExerciseNames"
                          ImagePath="/ExerciseImages/Back - upperBack.jpg"
                          ImagePath2="/ExerciseImages/lowerback display.jpg"
@@ -98,43 +84,37 @@
         </ExerciseDetails>
 
     </div>
-    </p>
-    @code {
+</p>
+@code {
 
 
 
-        private DateTime _DateTime;
-        private double _BodyWeight;
-        private Workout _Workout;
+    private DateTime _DateTime;
+    private double _BodyWeight;
+    private Workout _Workout = new Workout();
 
 
 
-        public void AddTrainingDay()
-        {
-            var aTrainingDay = new TrainingDay();
-            aTrainingDay.BodyWeight = _BodyWeight;
-            aTrainingDay.TodaysDate = _DateTime;
+    public void AddTrainingDay()
+    {
+        var aTrainingDay = new TrainingDay();
+        aTrainingDay.BodyWeight = _BodyWeight;
+        aTrainingDay.TodaysDate = _DateTime;
 
 
-            DataS.CurrentUser.TrainingDays.Add(aTrainingDay);
+        DataS.CurrentUser.TrainingDays.Add(aTrainingDay);
 
-            //Data.WriteXML();
-            //Data.ReadXML();
-
-        }
-
-
-        //public string _ExerciseNames;
-        ////public int _NumberOfReps;
-        ////public int _NumberOfSets;
-        ////public int _Weights;
-
-        public void AddWorkoutExercises()
-        {
-            DataS.AddNewWorkout(_Workout);
-
-        }
-
+        //Data.WriteXML();
+        //Data.ReadXML();
 
     }
+
+    public void AddWorkoutExercises()
+    {
+        DataS.AddNewWorkout(new Workout(_Workout));
+
+    }
+
+
+}
 

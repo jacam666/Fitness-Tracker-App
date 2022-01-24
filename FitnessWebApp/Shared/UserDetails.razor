@@ -3,6 +3,8 @@
 
 <!-- if there's no user, gets general info about the user and saves it,
     if a user already exists displays general information about the user-->
+@*<FitnessWebApp.Pages.Index></FitnessWebApp.Pages.Index>*@
+
 
 <p style="color:white">
     <div style="border: thin solid black; margin: 5px">
@@ -45,24 +47,25 @@
 
     </div>
 </p>
-        @code {
+@code {
 
 
-            private string _UsersFirstName;
-            private string _UsersLastName;
-            private DateTime _DOB;
 
-            public void AddUser()
-            {
-                var newUser = new User();
-                newUser.FirstName = _UsersFirstName;
-                newUser.LastName = _UsersLastName;
-                newUser.DOB = _DOB;
+    private string _UsersFirstName;
+    private string _UsersLastName;
+    private DateTime _DOB;
 
-                //add the dob
-                // Data.Users.Add(u);
-                Data.AddUser(newUser);
-            }
+    public void AddUser()
+    {
+        var newUser = new User();
+        newUser.FirstName = _UsersFirstName;
+        newUser.LastName = _UsersLastName;
+        newUser.DOB = _DOB;
+
+        //add the dob
+        // Data.Users.Add(u);
+        Data.AddUser(newUser);
+    }
 
 
-        }
+}

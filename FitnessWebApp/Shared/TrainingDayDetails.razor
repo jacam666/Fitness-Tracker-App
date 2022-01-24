@@ -23,12 +23,6 @@
 
             <br />
 
-            @*<input class="btn btn-primary" @onchange="AddTrainingDay" />
-
-            <input class="btn btn-primary" @onchange="AddWorkoutExercises" />*@
-
-
-
             <button type="button" @onclick="AddTrainingDay">Add Training Day</button>
             <button type="button" @onclick="AddWorkoutExercises">Add Workout</button>
             <br />
@@ -87,7 +81,7 @@
 </p>
 @code {
 
-
+    DateTime now = DateTime.Now;
 
     private DateTime _DateTime;
     private double _BodyWeight;
